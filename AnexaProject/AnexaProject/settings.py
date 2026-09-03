@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-b63y%q+&wn7n4s&30!uwv3$yvgn7z!i7@m(6v$o08fc5#_0bu6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -125,3 +125,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+# cd ..
+# git add .
+# git commit -m "Add gunicorn and whitenoise for render deployment"
+# git push origin main
