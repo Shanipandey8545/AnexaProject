@@ -1,0 +1,329 @@
+{% load static %}
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      {% block title %} ANEXA Facade Systems LLP | Building Better Facades
+      {%endblock %}
+    </title>
+    <meta
+      name="description"
+      content="{% block description %}ANEXA FACADE SYSTEMS LLP specializes in architectural facade engineering, curtain walls, ACP cladding, structural glazing, louvers, and canopies.{% endblock %}"
+    />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brandDark: "#08182b",
+              brandBlue: "#0b3c6d",
+              brandAccent: "#1a73e8",
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Icons & Slider CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <style>
+      .swiper-button-next,
+      .swiper-button-prev {
+        color: #ffffff !important;
+      }
+      .swiper-pagination-bullet-active {
+        background: #1a73e8 !important;
+      }
+    </style>
+    {% block extra_css %}{% endblock %}
+  </head>
+  <body class="flex flex-col min-h-screen font-sans text-gray-800 bg-white">
+    <!-- Top Contact Bar (Cleaned of all cite tags) -->
+    <div
+      class="bg-black text-gray-300 text-xs py-2 px-4 border-b border-neutral-800"
+    >
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <div class="flex items-center space-x-4">
+          <a href="tel:+917992090282" class="hover:text-white transition">
+            <i class="fa-solid fa-phone text-blue-500 mr-1.5"></i>+91 7992090282
+          </a>
+          <span class="hidden sm:inline text-neutral-600">|</span>
+          <a
+            href="mailto:info@anexafacades.com"
+            class="hidden sm:inline hover:text-white transition"
+          >
+            <i class="fa-solid fa-envelope text-blue-500 mr-1.5"></i
+            >info@anexafacades.com
+          </a>
+        </div>
+        <div class="flex items-center space-x-3 text-sm">
+          <a href="#" class="hover:text-blue-400"
+            ><i class="fa-brands fa-facebook-f"></i
+          ></a>
+          <a href="#" class="hover:text-blue-400"
+            ><i class="fa-brands fa-twitter"></i
+          ></a>
+          <a href="#" class="hover:text-blue-400"
+            ><i class="fa-brands fa-linkedin-in"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Navigation Header (Clean & Always Visible Desktop Links) -->
+    <header
+      class="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-200"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+          <!-- Logo & Tagline -->
+          <a href="{% url 'home' %}" class="flex items-center space-x-3">
+            <img
+              src="{% static 'images/logo.png' %}"
+              alt="ANEXA Facade Systems Logo"
+              class="h-12 w-auto object-contain"
+              onerror="
+                this.src = 'https://placehold.co/180x48?text=ANEXA+FACADE'
+              "
+            />
+            <div class="hidden sm:block border-l pl-3 border-gray-300">
+              <span
+                class="block text-xs font-black tracking-widest text-brandDark uppercase"
+                >ANEXA FAÇADE SYSTEMS</span
+              >
+              <span
+                class="block text-[10px] text-gray-500 tracking-wider uppercase"
+                >Building Better Facades</span
+              >
+            </div>
+          </a>
+
+          <!-- Desktop Menu (Exactly matching your target reference) -->
+          <nav
+            class="hidden md:flex items-center space-x-4 lg:space-x-6 text-[12px] font-bold tracking-wider text-gray-700"
+          >
+            <a href="{% url 'home' %}" class="hover:text-brandAccent transition"
+              >HOME</a
+            >
+            <span class="text-gray-300">|</span>
+            <a
+              href="{% url 'about' %}"
+              class="hover:text-brandAccent transition"
+              >ABOUT</a
+            >
+            <span class="text-gray-300">|</span>
+            <a
+              href="{% url 'our_solutions' %}"
+              class="hover:text-brandAccent transition"
+              >PRODUCT &amp; SERVICES</a
+            >
+            <span class="text-gray-300">|</span>
+            <a
+              href="{% url 'project_capabilities' %}"
+              class="hover:text-brandAccent transition"
+              >PROJECTS</a
+            >
+            <span class="text-gray-300">|</span>
+            <a
+              href="{% url 'quality_safety' %}"
+              class="hover:text-brandAccent transition"
+              >INFRASTRUCTURE</a
+            >
+            <span class="text-gray-300">|</span>
+            <a
+              href="{% url 'why_anexa' %}"
+              class="hover:text-brandAccent transition"
+              >ALLIANCE</a
+            >
+            <span class="text-gray-300">|</span>
+            <a
+              href="{% url 'leadership_contact' %}"
+              class="hover:text-brandAccent transition"
+              >CONTACT</a
+            >
+          </nav>
+
+          <!-- Mobile Menu Button -->
+          <button
+            id="navToggle"
+            type="button"
+            class="md:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100"
+          >
+            <i id="navToggleIcon" class="fa-solid fa-bars text-xl"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Drawer Menu -->
+      <div
+        id="mobileMenu"
+        class="hidden md:hidden bg-white border-t border-gray-200 px-4 py-4 space-y-3 text-xs font-bold uppercase text-gray-700"
+      >
+        <a href="{% url 'home' %}" class="block py-2 border-b">HOME</a>
+        <a href="{% url 'about' %}" class="block py-2 border-b text-brandAccent"
+          >ABOUT</a
+        >
+        <a href="{% url 'our_solutions' %}" class="block py-2 border-b"
+          >PRODUCT &amp; SERVICES</a
+        >
+        <a href="{% url 'project_capabilities' %}" class="block py-2 border-b"
+          >PROJECTS</a
+        >
+        <a href="{% url 'quality_safety' %}" class="block py-2 border-b"
+          >INFRASTRUCTURE</a
+        >
+        <a href="{% url 'why_anexa' %}" class="block py-2 border-b">ALLIANCE</a>
+        <a
+          href="{% url 'leadership_contact' %}"
+          class="block py-2 text-brandAccent"
+          >CONTACT</a
+        >
+      </div>
+    </header>
+
+    <!-- Dynamic Content -->
+    <main class="flex-grow">{% block content %}{% endblock content %}</main>
+
+    <!-- Footer -->
+    <footer class="bg-brandDark text-gray-400 text-xs mt-auto">
+      <div
+        class="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-4 gap-8"
+      >
+        <div>
+          <h4 class="text-white text-sm font-bold uppercase mb-2">
+            ANEXA FACADE SYSTEMS LLP
+          </h4>
+          <p class="text-brandAccent font-semibold uppercase text-[11px] mb-3">
+            Building Better Facades
+          </p>
+          <p class="text-gray-400 leading-relaxed">
+            Integrated facade engineering, curtain walls, structural glazing,
+            cladding and associated architectural metalwork.
+          </p>
+        </div>
+        <div>
+          <h5
+            class="text-white uppercase font-bold mb-3 border-b border-gray-700 pb-1"
+          >
+            Navigation
+          </h5>
+          <ul class="space-y-1.5">
+            <li>
+              <a href="{% url 'home' %}" class="hover:text-white">Home</a>
+            </li>
+            <li>
+              <a href="{% url 'about' %}" class="hover:text-white"
+                >About Company</a
+              >
+            </li>
+            <li>
+              <a href="{% url 'our_solutions' %}" class="hover:text-white"
+                >Products &amp; Services</a
+              >
+            </li>
+            <li>
+              <a href="{% url 'leadership_contact' %}" class="hover:text-white"
+                >Contact &amp; Support</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h5
+            class="text-white uppercase font-bold mb-3 border-b border-gray-700 pb-1"
+          >
+            Solutions
+          </h5>
+          <p class="leading-loose">
+            Curtain Walls | ACP Cladding | Structural Glazing | Louvers |
+            Architectural Canopies | Handrails
+          </p>
+        </div>
+        <div>
+          <h5
+            class="text-white uppercase font-bold mb-3 border-b border-gray-700 pb-1"
+          >
+            Registered Office
+          </h5>
+          <p>
+            5/361, Shiv Kripa Building, Gomti Nagar Extension, Lucknow, UP -
+            226010, India
+          </p>
+          <p class="mt-2 text-white font-bold">+91 7992090282</p>
+          <p>info@anexafacades.com</p>
+        </div>
+      </div>
+      <div
+        class="border-t border-neutral-800 bg-neutral-950 py-3 text-center text-gray-500"
+      >
+        &copy; {% now "Y" %} ANEXA FACADE SYSTEMS LLP. All Rights Reserved.
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      const navToggle = document.getElementById("navToggle");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const navToggleIcon = document.getElementById("navToggleIcon");
+
+      navToggle.addEventListener("click", () => {
+        const isHidden = mobileMenu.classList.toggle("hidden");
+        navToggleIcon.className = isHidden
+          ? "fa-solid fa-bars text-xl"
+          : "fa-solid fa-xmark text-xl";
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        if (document.querySelector(".pageSwiper")) {
+          new Swiper(".pageSwiper", {
+            loop: true,
+            autoplay: { delay: 3500, disableOnInteraction: false },
+            pagination: { el: ".swiper-pagination", clickable: true },
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            },
+          });
+        }
+      });
+    </script>
+    {% block extra_js %}{% endblock extra_js %}
+
+    <!-- WHATSAPP FLOAT BUTTON (DHARMENDRA NISHAD) -->
+<div class="fixed bottom-6 right-6 flex flex-col items-end gap-2 z-50">
+  <a
+    href="https://wa.me/917380554414?text=Hello%20ANEXA%20Facade%20Systems,%20I%20have%20a%20facade%20project%20enquiry."
+    target="_blank"
+    rel="noopener noreferrer"
+    class="bg-emerald-500 hover:bg-emerald-600 text-white pl-3 pr-4 py-2.5 rounded-full shadow-2xl flex items-center gap-2.5 transition-all duration-300 hover:scale-105 group border border-emerald-400"
+    title="Chat with Dharmendra Nishad"
+  >
+    <!-- FontAwesome WhatsApp Icon (Agar image na mile toh bhi accurate dikhega) -->
+    <span class="bg-white text-emerald-600 w-7 h-7 rounded-full flex items-center justify-center text-base shadow-sm">
+      <i class="fa-brands fa-whatsapp"></i>
+    </span>
+
+    <div class="flex flex-col text-left leading-none">
+      <!-- <span class="text-[10px] text-emerald-100 uppercase tracking-wider font-semibold">Managing Partner</span>
+      <span class="text-xs font-bold tracking-wide">Dharmendra Nishad</span> -->
+    </div>
+  </a>
+</div>
+
+
+  </body>
+</html>

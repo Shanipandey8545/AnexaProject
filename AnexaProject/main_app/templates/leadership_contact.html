@@ -1,0 +1,187 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}07 | Leadership & Contact - ANEXA Facade Systems LLP{% endblock title %}
+
+{% block content %}
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="border-b pb-4 mb-8">
+        <span class="text-brandAccent font-bold text-xs uppercase tracking-widest">Section 07</span>
+        <h1 class="text-3xl font-extrabold text-gray-900 mt-1">LEADERSHIP &amp; CONTACT</h1>
+    </div>
+
+    <!-- Leadership Cards from PDF -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        <div class="border p-6 rounded bg-white shadow-sm flex items-start space-x-4">
+            <div class="p-3 bg-brandBlue text-white rounded">
+                <i class="fa-solid fa-user-tie text-xl"></i>
+            </div>
+            <div>
+                <h3 class="font-bold text-sm text-gray-900">VIRENDRA NISHAD</h3>
+                <p class="text-xs text-brandAccent font-semibold mb-2">Managing Director</p>
+                <p class="text-xs text-gray-600">
+                    <i class="fa-solid fa-phone mr-1.5"></i>+91 7992090282
+                </p>
+                <p class="text-xs text-gray-600">
+                    <i class="fa-solid fa-envelope mr-1.5"></i>virendra.nishad@anexafacades.com
+                </p>
+            </div>
+        </div>
+
+        <div class="border p-6 rounded bg-white shadow-sm flex items-start space-x-4">
+            <div class="p-3 bg-brandBlue text-white rounded">
+                <i class="fa-solid fa-user-gear text-xl"></i>
+            </div>
+            <div>
+                <h3 class="font-bold text-sm text-gray-900">DHARMENDRA NISHAD</h3>
+                <p class="text-xs text-brandAccent font-semibold mb-2">Managing Partner</p>
+                <p class="text-xs text-gray-600">
+                    <i class="fa-solid fa-phone mr-1.5"></i>+91 7380554414
+                </p>
+                <p class="text-xs text-gray-600">
+                    <i class="fa-solid fa-envelope mr-1.5"></i>info@anexafacades.com
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Office & Contact Form Row -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-16">
+        <!-- Office Location Details -->
+        <div>
+            <h3 class="text-base font-bold text-gray-900 uppercase tracking-wide mb-4">Office Location</h3>
+            <p class="text-xs text-gray-600 mb-6 leading-relaxed">
+                For project enquiries, facade package discussions, tender participation and technical coordination, please contact our team.
+            </p>
+
+            <div class="space-y-4 text-xs text-gray-700 mb-6">
+                <div class="flex items-start">
+                    <i class="fa-solid fa-location-dot text-brandAccent mt-1 mr-3"></i>
+                    <div>
+                        <strong>Registered Office:</strong>
+                        <p class="text-gray-600 mt-0.5">
+                            5/361, Shiv Kripa Building, Gomti Nagar Extension Lucknow, Uttar Pradesh - 226010, India
+                        </p>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <i class="fa-solid fa-envelope text-brandAccent mr-3"></i>
+                    <div><strong>General Email:</strong> info@anexafacades.com</div>
+                </div>
+                <div class="flex items-center">
+                    <i class="fa-solid fa-globe text-brandAccent mr-3"></i>
+                    <div><strong>Website:</strong> www.anexafacades.com</div>
+                </div>
+            </div>
+
+            <!-- Quick Direction Button -->
+            <a href="https://maps.google.com/?q=26.8499907,81.0060428" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 bg-gray-900 hover:bg-black text-white text-xs font-bold uppercase px-4 py-2.5 rounded transition">
+                <i class="fa-solid fa-diamond-turn-right text-brandAccent"></i>
+                <span>Open in Google Maps / Get Directions</span>
+            </a>
+        </div>
+
+        <!-- Contact Form Ready for Django Model hook -->
+        <div class="bg-gray-50 border p-6 rounded-lg shadow-sm">
+            <h3 class="text-base font-bold text-gray-900 mb-1">Get In Touch</h3>
+            <p class="text-xs text-gray-500 mb-4">
+                Leave your project inquiry details below.
+            </p>
+
+            <form method="POST" action="">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label class="block text-xs font-semibold text-gray-700 mb-1">Full Name</label>
+                    <input
+                        type="text"
+                        name="name"
+                        required
+                        class="w-full text-xs p-2.5 border rounded focus:ring-1 focus:ring-brandAccent focus:outline-none"
+                        placeholder="Your name"
+                    />
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-700 mb-1">Phone Number</label>
+                        <input
+                            type="tel"
+                            name="phone"
+                            required
+                            class="w-full text-xs p-2.5 border rounded focus:ring-1 focus:ring-brandAccent focus:outline-none"
+                            placeholder="+91 XXXXX XXXXX"
+                        />
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-700 mb-1">Email Address</label>
+                        <input
+                            type="email"
+                            name="email"
+                            required
+                            class="w-full text-xs p-2.5 border rounded focus:ring-1 focus:ring-brandAccent focus:outline-none"
+                            placeholder="name@company.com"
+                        />
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="block text-xs font-semibold text-gray-700 mb-1">Required Facade Scope</label>
+                    <select
+                        name="scope"
+                        class="w-full text-xs p-2.5 border rounded focus:ring-1 focus:ring-brandAccent focus:outline-none bg-white"
+                    >
+                        <option value="Curtain Walls">Curtain Walls</option>
+                        <option value="ACP Cladding">ACP Cladding</option>
+                        <option value="Structural Glazing">Structural Glazing</option>
+                        <option value="Louvers & Canopies">Louvers &amp; Canopies</option>
+                        <option value="Handrails">Handrails</option>
+                        <option value="Complete Package">Complete Package / Turnkey</option>
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-xs font-semibold text-gray-700 mb-1">Project Details / Message</label>
+                    <textarea
+                        name="message"
+                        rows="4"
+                        class="w-full text-xs p-2.5 border rounded focus:ring-1 focus:ring-brandAccent focus:outline-none"
+                        placeholder="Location, estimated area, drawings link..."
+                    ></textarea>
+                </div>
+                <button
+                    type="submit"
+                    class="w-full bg-brandAccent hover:bg-blue-600 text-white font-bold py-2.5 rounded text-xs uppercase tracking-wider transition"
+                >
+                    Submit Inquiry
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Google Maps Section (Full Width Responsive Embed) -->
+    <div class="border rounded-2xl overflow-hidden shadow-sm bg-white">
+        <div class="p-4 sm:p-5 bg-gray-50 border-b flex flex-col sm:flex-row justify-between sm:items-center gap-2">
+            <div>
+                <h3 class="font-bold text-gray-900 text-sm uppercase tracking-wide flex items-center">
+                    <i class="fa-solid fa-map-location-dot text-brandAccent text-base mr-2"></i>
+                    ANEXA FACADE SYSTEMS LLP &bull; Registered Office Location
+                </h3>
+                <p class="text-[11px] text-gray-500 mt-0.5">5/361, Shiv Kripa Building, Gomti Nagar Extension, Lucknow - 226010</p>
+            </div>
+            <a href="https://maps.google.com/?q=26.8499907,81.0060428" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs font-bold text-brandAccent hover:underline">
+                <span>View Larger Map</span>
+                <i class="fa-solid fa-arrow-up-right-from-square ml-1.5 text-[10px]"></i>
+            </a>
+        </div>
+        <div class="w-full h-[360px] sm:h-[450px]">
+            <iframe
+                title="ANEXA Facade Systems Office Location"
+                width="100%"
+                height="100%"
+                style="border:0;"
+                loading="lazy"
+                allowfullscreen
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://maps.google.com/maps?q=26.8499907,81.0060428&hl=en&z=16&output=embed">
+            </iframe>
+        </div>
+    </div>
+</section>
+{% endblock content %}

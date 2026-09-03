@@ -1,0 +1,250 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}06 | Why ANEXA - ANEXA Facade Systems LLP{% endblock title %}
+{% block description %}Why choose ANEXA Facade Systems LLP: Facade-focused, single-window coordination, practical detailing, technical expertise, and dependable execution. {% endblock description %}
+
+{% block extra_css %}
+<style>
+    .pillar-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .pillar-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 16px 28px -6px rgba(0, 0, 0, 0.1);
+    }
+    .pillar-img-box {
+        height: 210px;
+        overflow: hidden;
+    }
+    .pillar-img-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+    .pillar-card:hover .pillar-img-box img {
+        transform: scale(1.06);
+    }
+</style>
+{% endblock extra_css %}
+
+{% block content %}
+<!-- 1. Hero Image Slider with Overlay -->
+<div class="relative w-full bg-brandDark">
+    <div class="swiper pageSwiper w-full h-[340px] sm:h-[420px] md:h-[500px]">
+        <div class="swiper-wrapper">
+            <!-- Slide 1: Engineering & Site Leadership -->
+            <div class="swiper-slide relative">
+                <img src="https://images.unsplash.com/photo-1541888946425-d0fbb18086f6?auto=format&fit=crop&w=1600&q=80" alt="Site Team Coordination" class="w-full h-full object-cover object-center">
+                <div class="absolute inset-0 bg-gradient-to-t from-brandDark via-brandDark/50 to-transparent flex items-end pb-12">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-white">
+                        <span class="bg-brandAccent text-white text-xs font-bold uppercase px-3 py-1 rounded tracking-wider">Dependable Partner</span>
+                        <h1 class="text-2xl sm:text-4xl md:text-5xl font-black mt-2">Why Partner with ANEXA</h1>
+                        <p class="text-gray-300 text-xs sm:text-sm max-w-2xl mt-2">Combining responsive technical coordination with dependable site execution for modern architectural facades.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 2: Structural Glazing High-Rise -->
+            <div class="swiper-slide relative">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80" alt="Façade Execution Standard" class="w-full h-full object-cover object-center">
+                <div class="absolute inset-0 bg-gradient-to-t from-brandDark via-brandDark/50 to-transparent flex items-end pb-12">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-white">
+                        <span class="bg-sky-600 text-white text-xs font-bold uppercase px-3 py-1 rounded tracking-wider">Turnkey Execution</span>
+                        <h2 class="text-2xl sm:text-4xl md:text-5xl font-black mt-2">Single-Window Facade Delivery</h2>
+                        <p class="text-gray-300 text-xs sm:text-sm max-w-2xl mt-2">Practical details, clear communication, and quality-driven closure across every interface.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next !text-white"></div>
+        <div class="swiper-button-prev !text-white"></div>
+    </div>
+</div>
+
+<!-- 2. Performance Stats -->
+<section class="bg-white border-b py-8 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div class="border-r border-gray-100 last:border-0">
+                <div class="text-2xl md:text-3xl font-black text-brandAccent">Facade-Centric</div>
+                <div class="text-[11px] font-bold text-gray-600 uppercase mt-1">Core Domain Focus</div>
+            </div>
+            <div class="border-r border-gray-100 last:border-0">
+                <div class="text-2xl md:text-3xl font-black text-brandAccent">Single Source</div>
+                <div class="text-[11px] font-bold text-gray-600 uppercase mt-1">Package Coordination</div>
+            </div>
+            <div class="border-r border-gray-100 last:border-0">
+                <div class="text-2xl md:text-3xl font-black text-brandAccent">Site-Ready</div>
+                <div class="text-[11px] font-bold text-gray-600 uppercase mt-1">Practical Detailing</div>
+            </div>
+            <div>
+                <div class="text-2xl md:text-3xl font-black text-brandAccent">Rework-Free</div>
+                <div class="text-[11px] font-bold text-gray-600 uppercase mt-1">Quality At Source</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 3. The 6 Core Pillars (Detailed Cards with Authentic Work Visuals) -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="text-brandAccent font-bold text-xs uppercase tracking-widest">Section 06</span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-gray-900 mt-1">WHY CHOOSE ANEXA</h2>
+        <div class="w-16 h-1 bg-brandAccent mx-auto mt-3 mb-4"></div>
+        <p class="text-xs sm:text-sm text-gray-600">A disciplined balance of engineering rigor, site installation controls, and responsive client communication.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        
+        <!-- 1. Facade-Focused -->
+        <div class="pillar-card bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+            <div class="pillar-img-box relative">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" alt="Facade-Focused Execution">
+                <span class="absolute top-3 left-3 bg-brandDark/90 text-white text-xs font-bold px-2.5 py-1 rounded">01</span>
+            </div>
+            <div class="p-6">
+                <h3 class="font-bold text-base text-gray-900 mb-2">Facade-Focused</h3>
+                <p class="text-xs text-gray-600 leading-relaxed mb-4">
+                    Our service offering is centered on facade and related architectural envelope works.
+                </p>
+                <div class="text-[11px] text-brandAccent font-semibold border-t pt-3 flex items-center justify-between">
+                    <span>Envelopes &amp; Metalwork</span>
+                    <i class="fa-solid fa-check"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Single-Window Coordination -->
+        <div class="pillar-card bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+            <div class="pillar-img-box relative">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa0C3H6w1jr6aYsh-C8O0bvjS_YZwTKwlC2Ax8gAr_7g&s=10" alt="Single-Window Package Coordination">
+                <span class="absolute top-3 left-3 bg-brandDark/90 text-white text-xs font-bold px-2.5 py-1 rounded">02</span>
+            </div>
+            <div class="p-6">
+                <h3 class="font-bold text-base text-gray-900 mb-2">Single-Window Coordination</h3>
+                <p class="text-xs text-gray-600 leading-relaxed mb-4">
+                    Multiple facade elements can be coordinated under one execution approach where scope permits.
+                </p>
+                <div class="text-[11px] text-brandAccent font-semibold border-t pt-3 flex items-center justify-between">
+                    <span>Turnkey Envelope Scope</span>
+                    <i class="fa-solid fa-check"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Technical + Site Perspective -->
+        <div class="pillar-card bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+            <div class="pillar-img-box relative">
+                <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80" alt="Technical Drawing and Site Analysis">
+                <span class="absolute top-3 left-3 bg-brandDark/90 text-white text-xs font-bold px-2.5 py-1 rounded">03</span>
+            </div>
+            <div class="p-6">
+                <h3 class="font-bold text-base text-gray-900 mb-2">Technical + Site Perspective</h3>
+                <p class="text-xs text-gray-600 leading-relaxed mb-4">
+                    We consider drawings and specifications alongside actual site conditions and installation sequence.
+                </p>
+                <div class="text-[11px] text-brandAccent font-semibold border-t pt-3 flex items-center justify-between">
+                    <span>Constructability Checks</span>
+                    <i class="fa-solid fa-check"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Practical Detailing -->
+        <div class="pillar-card bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+            <div class="pillar-img-box relative">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIF6ldIeZgI3SUscVROAhWzhi7PZxfnaoQqCa55i2f5w&s=10" alt="CAD Shop Detailing">
+                <span class="absolute top-3 left-3 bg-brandDark/90 text-white text-xs font-bold px-2.5 py-1 rounded">04</span>
+            </div>
+            <div class="p-6">
+                <h3 class="font-bold text-base text-gray-900 mb-2">Practical Detailing</h3>
+                <p class="text-xs text-gray-600 leading-relaxed mb-4">
+                    The emphasis is on details that are clear to fabrication and installation teams.
+                </p>
+                <div class="text-[11px] text-brandAccent font-semibold border-t pt-3 flex items-center justify-between">
+                    <span>Clear Fabrication Data</span>
+                    <i class="fa-solid fa-check"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. Professional Communication -->
+        <div class="pillar-card bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+            <div class="pillar-img-box relative">
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="Professional Interface Communication">
+                <span class="absolute top-3 left-3 bg-brandDark/90 text-white text-xs font-bold px-2.5 py-1 rounded">05</span>
+            </div>
+            <div class="p-6">
+                <h3 class="font-bold text-base text-gray-900 mb-2">Professional Communication</h3>
+                <p class="text-xs text-gray-600 leading-relaxed mb-4">
+                    Structured coordination with clients, consultants, contractors and other trades.
+                </p>
+                <div class="text-[11px] text-brandAccent font-semibold border-t pt-3 flex items-center justify-between">
+                    <span>Transparent Reporting</span>
+                    <i class="fa-solid fa-check"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. Quality-Oriented Execution -->
+        <div class="pillar-card bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+            <div class="pillar-img-box relative">
+                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" alt="Inspection and Close-Out">
+                <span class="absolute top-3 left-3 bg-brandDark/90 text-white text-xs font-bold px-2.5 py-1 rounded">06</span>
+            </div>
+            <div class="p-6">
+                <h3 class="font-bold text-base text-gray-900 mb-2">Quality-Oriented Execution</h3>
+                <p class="text-xs text-gray-600 leading-relaxed mb-4">
+                    A systematic approach to inspection, rectification, finishing and close-out.
+                </p>
+                <div class="text-[11px] text-brandAccent font-semibold border-t pt-3 flex items-center justify-between">
+                    <span>Defect-Free Handover</span>
+                    <i class="fa-solid fa-check"></i>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 4. Contrast: The ANEXA Advantage -->
+    <div class="bg-gray-50 border border-gray-200 rounded-xl p-6 sm:p-8 mb-16 shadow-sm">
+        <h3 class="text-base sm:text-lg font-bold text-gray-900 mb-6 text-center">How Our Approach Delivers Real Site Advantages</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs">
+            <div class="bg-white p-5 rounded border border-gray-200">
+                <div class="text-brandAccent text-xl mb-2"><i class="fa-solid fa-diagram-project"></i></div>
+                <h4 class="font-bold text-gray-900 mb-1">Pre-Fabrication Checking</h4>
+                <p class="text-gray-600 leading-relaxed">Early site survey and verification eliminate misalignments before expensive cutting, bonding, or glazing begins.</p>
+            </div>
+            <div class="bg-white p-5 rounded border border-gray-200">
+                <div class="text-brandAccent text-xl mb-2"><i class="fa-solid fa-layer-group"></i></div>
+                <h4 class="font-bold text-gray-900 mb-1">Interface Cohesion</h4>
+                <p class="text-gray-600 leading-relaxed">Civil datums, MEP ducts, and waterproofing flashings are integrated directly into common working drawings.</p>
+            </div>
+            <div class="bg-white p-5 rounded border border-gray-200">
+                <div class="text-brandAccent text-xl mb-2"><i class="fa-solid fa-list-check"></i></div>
+                <h4 class="font-bold text-gray-900 mb-1">Methodical Punch Closure</h4>
+                <p class="text-gray-600 leading-relaxed">Joint sealants, glass alignment, and fastener torques are addressed systematically for certified handover.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. Our Commitment Banner (PDF Page 7) -->
+    <div class="bg-brandDark text-white p-8 sm:p-12 rounded-xl shadow-lg border border-neutral-800">
+        <div class="max-w-3xl">
+            <span class="text-xs uppercase font-bold text-brandAccent tracking-widest block mb-2">Long-Term Value</span>
+            <h3 class="text-xl sm:text-2xl font-bold mb-4">Our Commitment</h3>
+            <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
+                We seek to build long-term relationships by combining responsive coordination with dependable execution. Every project is treated as an opportunity to improve the quality, clarity and performance of the building facade.
+            </p>
+        </div>
+        <div class="mt-8 border-t border-neutral-800 pt-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <span class="text-xs text-gray-400">Ready to discuss your building envelope tender or BOQ package?</span>
+            <a href="{% url 'leadership_contact' %}" class="inline-block bg-brandAccent hover:bg-blue-600 text-white text-xs font-bold uppercase tracking-wider px-6 py-3 rounded transition shadow text-center">
+                Contact Leadership Team
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock content %}

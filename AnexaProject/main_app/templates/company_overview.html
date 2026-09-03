@@ -1,0 +1,102 @@
+{% extends 'base.html' %} {% load static %} {% block title %}01 | Company
+Overview - ANEXA Facade Systems LLP{% endblock title %} {% block content %}
+<div class="swiper pageSwiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <img
+        src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80"
+        alt="Slider 1"
+      />
+    </div>
+    <div class="swiper-slide">
+      <img
+        src="https://images.unsplash.com/photo-1541888946425-d0fbb18086f6?auto=format&fit=crop&w=1600&q=80"
+        alt="Slider 2"
+      />
+    </div>
+    <div class="swiper-slide">
+      <img
+        src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1600&q=80"
+        alt="Slider 3"
+      />
+    </div>
+  </div>
+  <div class="swiper-pagination"></div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+</div>
+
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <div class="border-b pb-4 mb-8">
+    <span class="text-brandAccent font-bold text-xs uppercase tracking-widest"
+      >Section 01</span
+    >
+    <h1 class="text-3xl font-extrabold text-gray-900 mt-1">COMPANY OVERVIEW</h1>
+  </div>
+
+  <p class="text-gray-700 text-sm leading-relaxed mb-8">
+    ANEXA FACADE SYSTEMS LLP is a facade-focused company offering integrated
+    solutions for contemporary building envelopes. Our service portfolio covers
+    curtain walls, ACP cladding, structural glazing, handrails, louvers and
+    canopies. We aim to bring together technical understanding, disciplined site
+    execution and a professional approach to coordination.
+  </p>
+
+  <!-- Details Table directly from PDF -->
+  <div class="overflow-x-auto border rounded-lg shadow-sm mb-12">
+    <table class="w-full text-left text-xs border-collapse">
+      <tbody>
+        <tr class="border-b bg-gray-50">
+          <th class="p-3 w-1/4 font-bold text-gray-900 border-r">Company</th>
+          <td class="p-3">ANEXA FACADE SYSTEMS LLP</td>
+        </tr>
+        <tr class="border-b">
+          <th class="p-3 font-bold text-gray-900 border-r">Tagline</th>
+          <td class="p-3">Building Better Facades</td>
+        </tr>
+        <tr class="border-b bg-gray-50">
+          <th class="p-3 font-bold text-gray-900 border-r">Business Focus</th>
+          <td class="p-3">
+            Facade systems, glazing, cladding and associated architectural
+            metalwork
+          </td>
+        </tr>
+        <tr class="border-b">
+          <th class="p-3 font-bold text-gray-900 border-r">Primary Market</th>
+          <td class="p-3">
+            Commercial, institutional, hospitality, residential and other
+            built-environment projects
+          </td>
+        </tr>
+        <tr class="bg-gray-50">
+          <th class="p-3 font-bold text-gray-900 border-r">Approach</th>
+          <td class="p-3">
+            Technical coordination + fabrication + installation +
+            quality-focused execution
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="text-xl font-bold text-gray-900 mb-4">What We Stand For</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-gray-700">
+    <div class="p-4 border-l-4 border-brandAccent bg-gray-50">
+      <strong>Buildability:</strong> We focus on practical details that can be
+      fabricated, installed and maintained effectively.
+    </div>
+    <div class="p-4 border-l-4 border-brandAccent bg-gray-50">
+      <strong>Coordination:</strong> Facade interfaces are treated as a
+      coordinated part of the building rather than an isolated trade.
+    </div>
+    <div class="p-4 border-l-4 border-brandAccent bg-gray-50">
+      <strong>Quality:</strong> Work is approached with attention to materials,
+      workmanship, alignment, joints, sealants and finishing.
+    </div>
+    <div class="p-4 border-l-4 border-brandAccent bg-gray-50">
+      <strong>Professional delivery:</strong> Clear communication, documentation
+      and site discipline are central to our working method.
+    </div>
+  </div>
+</section>
+{% endblock content %}

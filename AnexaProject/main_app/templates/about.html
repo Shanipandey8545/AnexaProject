@@ -1,0 +1,227 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About Us | ANEXA Facade Systems LLP{% endblock title %}
+{% block description %}Discover ANEXA Facade Systems LLP - our vision, mission, engineering principles, leadership, and comprehensive facade capabilities.{% endblock description %}
+
+{% block extra_css %}
+<style>
+    .about-stat-card {
+        background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+        transition: all 0.3s ease;
+    }
+    .about-stat-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 24px -6px rgba(0, 0, 0, 0.08);
+    }
+</style>
+{% endblock extra_css %}
+
+{% block content %}
+<!-- 1. Hero Image Slider with Deep Gradient -->
+<div class="relative w-full overflow-hidden bg-brandDark">
+    <div class="swiper pageSwiper w-full h-[360px] sm:h-[440px] md:h-[500px]">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide relative">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80" alt="ANEXA Architectural Facade" class="w-full h-full object-cover object-center">
+                <div class="absolute inset-0 bg-gradient-to-t from-brandDark via-brandDark/50 to-transparent flex items-end pb-12">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white w-full">
+                        <span class="bg-brandAccent px-3 py-1 text-xs font-bold uppercase rounded tracking-wider">Enterprise Profile</span>
+                        <h1 class="text-3xl sm:text-5xl font-black mt-3">ANEXA FACADE SYSTEMS LLP</h1>
+                        <p class="text-xs sm:text-sm text-gray-200 mt-2 max-w-xl leading-relaxed">Engineering, fabrication, glazing, and cladding for contemporary high-performance architecture.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide relative">
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80" alt="Site Coordination" class="w-full h-full object-cover object-center">
+                <div class="absolute inset-0 bg-gradient-to-t from-brandDark via-brandDark/50 to-transparent flex items-end pb-12">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white w-full">
+                        <span class="bg-sky-600 px-3 py-1 text-xs font-bold uppercase rounded tracking-wider">Our Commitment</span>
+                        <h2 class="text-3xl sm:text-5xl font-black mt-3">Building Better Facades</h2>
+                        <p class="text-xs sm:text-sm text-gray-200 mt-2 max-w-xl leading-relaxed">Technical coordination + disciplined execution across complex building envelopes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next !text-white"></div>
+        <div class="swiper-button-prev !text-white"></div>
+    </div>
+</div>
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+
+    <!-- Section 01: Company Overview (from PDF) -->
+    <section class="mb-20">
+        <div class="flex items-center space-x-2 text-brandAccent font-bold text-xs uppercase tracking-widest mb-1">
+            <span>01</span>
+            <span>/</span>
+            <span>Company Overview</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-black text-gray-900 mb-4">Integrated Contemporary Facade Solutions</h2>
+        <p class="text-sm text-gray-700 leading-relaxed mb-8 max-w-4xl">
+            ANEXA FACADE SYSTEMS LLP is a facade-focused company offering integrated solutions for contemporary building envelopes. Our service portfolio covers curtain walls, ACP cladding, structural glazing, handrails, louvers and canopies. We aim to bring together technical understanding, disciplined site execution and a professional approach to coordination.
+        </p>
+
+        <!-- Company Details Table with Responsive Overflow Wrapper -->
+        <div class="overflow-x-auto border border-gray-200 rounded-xl shadow-sm mb-12 bg-white">
+            <table class="w-full text-left text-xs border-collapse">
+                <tbody>
+                    <tr class="border-b bg-gray-50/75">
+                        <th class="p-4 w-1/4 font-bold text-gray-900 border-r border-gray-200">Company Name</th>
+                        <td class="p-4 font-semibold text-gray-800">ANEXA FACADE SYSTEMS LLP</td>
+                    </tr>
+                    <tr class="border-b">
+                        <th class="p-4 font-bold text-gray-900 border-r border-gray-200">Official Tagline</th>
+                        <td class="p-4 font-bold text-brandAccent">Building Better Facades</td>
+                    </tr>
+                    <tr class="border-b bg-gray-50/75">
+                        <th class="p-4 font-bold text-gray-900 border-r border-gray-200">Business Focus</th>
+                        <td class="p-4 text-gray-700">Facade systems, glazing, cladding and associated architectural metalwork</td>
+                    </tr>
+                    <tr class="border-b">
+                        <th class="p-4 font-bold text-gray-900 border-r border-gray-200">Primary Market</th>
+                        <td class="p-4 text-gray-700">Commercial, institutional, hospitality, residential and other built-environment projects</td>
+                    </tr>
+                    <tr class="bg-gray-50/75">
+                        <th class="p-4 font-bold text-gray-900 border-r border-gray-200">Delivery Approach</th>
+                        <td class="p-4 text-gray-700 font-medium">Technical coordination + fabrication + installation + quality-focused execution</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- What We Stand For (4 Core Pillars) -->
+        <h3 class="text-lg font-bold text-gray-900 mb-6">What We Stand For</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div class="p-5 border-l-4 border-brandAccent bg-gray-50 rounded-r-lg shadow-sm">
+                <strong class="text-gray-900 text-sm block mb-1">Buildability</strong>
+                <p class="text-xs text-gray-600 leading-relaxed">We focus on practical details that can be fabricated, installed and maintained effectively.</p>
+            </div>
+            <div class="p-5 border-l-4 border-brandAccent bg-gray-50 rounded-r-lg shadow-sm">
+                <strong class="text-gray-900 text-sm block mb-1">Coordination</strong>
+                <p class="text-xs text-gray-600 leading-relaxed">Facade interfaces are treated as a coordinated part of the building rather than an isolated trade.</p>
+            </div>
+            <div class="p-5 border-l-4 border-brandAccent bg-gray-50 rounded-r-lg shadow-sm">
+                <strong class="text-gray-900 text-sm block mb-1">Quality</strong>
+                <p class="text-xs text-gray-600 leading-relaxed">Work is approached with attention to materials, workmanship, alignment, joints, sealants and finishing.</p>
+            </div>
+            <div class="p-5 border-l-4 border-brandAccent bg-gray-50 rounded-r-lg shadow-sm">
+                <strong class="text-gray-900 text-sm block mb-1">Professional Delivery</strong>
+                <p class="text-xs text-gray-600 leading-relaxed">Clear communication, documentation and site discipline are central to our working method.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 02: Vision & Mission (from PDF) -->
+    <section class="mb-20 border-t border-gray-200 pt-16">
+        <div class="flex items-center space-x-2 text-brandAccent font-bold text-xs uppercase tracking-widest mb-1">
+            <span>02</span>
+            <span>/</span>
+            <span>Strategic Direction</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-black text-gray-900 mb-8">Vision &amp; Mission</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+            <div class="bg-brandDark text-white p-8 sm:p-10 rounded-2xl shadow-md relative overflow-hidden">
+                <div class="absolute -bottom-6 -right-6 text-white/5 text-9xl font-black select-none">V</div>
+                <span class="text-xs font-bold uppercase tracking-widest text-brandAccent block mb-3">Our Vision</span>
+                <p class="text-sm sm:text-base leading-relaxed text-gray-200 relative z-10">
+                    To become a trusted facade partner known for technically sound solutions, dependable execution and professional project coordination.
+                </p>
+            </div>
+            <div class="bg-brandBlue text-white p-8 sm:p-10 rounded-2xl shadow-md relative overflow-hidden">
+                <div class="absolute -bottom-6 -right-6 text-white/5 text-9xl font-black select-none">M</div>
+                <span class="text-xs font-bold uppercase tracking-widest text-sky-300 block mb-3">Our Mission</span>
+                <p class="text-sm sm:text-base leading-relaxed text-gray-200 relative z-10">
+                    To deliver facade packages that balance aesthetics, performance, constructability and site execution through disciplined processes and teamwork.
+                </p>
+            </div>
+        </div>
+
+        <!-- 6 Working Principles (Structured Numbered Cards) -->
+        <h3 class="text-lg font-bold text-gray-900 mb-6">Our 6 Working Principles</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="p-6 border border-gray-200 rounded-xl bg-white shadow-sm hover:border-brandAccent transition">
+                <span class="text-2xl font-black text-brandAccent">01</span>
+                <h4 class="font-bold text-sm text-gray-900 my-2">Safety First</h4>
+                <p class="text-xs text-gray-600 leading-relaxed">Plan work, access, lifting and installation activities with safety as a core requirement.</p>
+            </div>
+            <div class="p-6 border border-gray-200 rounded-xl bg-white shadow-sm hover:border-brandAccent transition">
+                <span class="text-2xl font-black text-brandAccent">02</span>
+                <h4 class="font-bold text-sm text-gray-900 my-2">Technical Discipline</h4>
+                <p class="text-xs text-gray-600 leading-relaxed">Use coordinated drawings, specifications, measurements and approved materials as the basis of execution.</p>
+            </div>
+            <div class="p-6 border border-gray-200 rounded-xl bg-white shadow-sm hover:border-brandAccent transition">
+                <span class="text-2xl font-black text-brandAccent">03</span>
+                <h4 class="font-bold text-sm text-gray-900 my-2">Quality at Source</h4>
+                <p class="text-xs text-gray-600 leading-relaxed">Control fabrication and installation details early to reduce rework and site delays.</p>
+            </div>
+            <div class="p-6 border border-gray-200 rounded-xl bg-white shadow-sm hover:border-brandAccent transition">
+                <span class="text-2xl font-black text-brandAccent">04</span>
+                <h4 class="font-bold text-sm text-gray-900 my-2">Transparent Coordination</h4>
+                <p class="text-xs text-gray-600 leading-relaxed">Keep interfaces with civil, MEP, structural and other trades clearly coordinated.</p>
+            </div>
+            <div class="p-6 border border-gray-200 rounded-xl bg-white shadow-sm hover:border-brandAccent transition">
+                <span class="text-2xl font-black text-brandAccent">05</span>
+                <h4 class="font-bold text-sm text-gray-900 my-2">Client Focus</h4>
+                <p class="text-xs text-gray-600 leading-relaxed">Understand the project requirement and work toward practical, maintainable and visually consistent results.</p>
+            </div>
+            <div class="p-6 border border-gray-200 rounded-xl bg-white shadow-sm hover:border-brandAccent transition">
+                <span class="text-2xl font-black text-brandAccent">06</span>
+                <h4 class="font-bold text-sm text-gray-900 my-2">Continuous Improvement</h4>
+                <p class="text-xs text-gray-600 leading-relaxed">Capture site learning and improve methods, documentation and execution from project to project.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Section inside About (PDF Page 8) -->
+    <section class="border-t border-gray-200 pt-16">
+        <div class="flex items-center space-x-2 text-brandAccent font-bold text-xs uppercase tracking-widest mb-1">
+            <span>07</span>
+            <span>/</span>
+            <span>Executive Board</span>
+        </div>
+        <h3 class="text-2xl font-black text-gray-900 mb-8">Key Leadership</h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Managing Director -->
+            <div class="border border-gray-200 p-6 sm:p-8 rounded-2xl bg-white shadow-sm flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <div class="w-16 h-16 rounded-2xl bg-brandDark text-white flex items-center justify-center font-black text-xl shadow-md shrink-0">
+                    <i class="fa-solid fa-user-tie"></i>
+                </div>
+                <div class="flex-grow">
+                    <div class="flex flex-wrap items-center justify-between gap-2">
+                        <h4 class="font-bold text-base text-gray-900">VIRENDRA NISHAD</h4>
+                        <span class="text-[10px] font-bold uppercase px-2.5 py-0.5 rounded bg-blue-50 text-brandAccent border border-blue-100">Executive</span>
+                    </div>
+                    <p class="text-xs text-brandAccent font-semibold mt-0.5 mb-3">Managing Director</p>
+                    <div class="text-xs text-gray-600 space-y-1">
+                        <p class="flex items-center"><i class="fa-solid fa-phone text-gray-400 mr-2"></i><a href="tel:+917992090282" class="hover:text-brandAccent">+91 7992090282</a></p>
+                        <p class="flex items-center"><i class="fa-solid fa-envelope text-gray-400 mr-2"></i><a href="mailto:virendra.nishad@anexafacades.com" class="hover:text-brandAccent break-all">virendra.nishad@anexafacades.com</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Managing Partner -->
+            <div class="border border-gray-200 p-6 sm:p-8 rounded-2xl bg-white shadow-sm flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <div class="w-16 h-16 rounded-2xl bg-brandBlue text-white flex items-center justify-center font-black text-xl shadow-md shrink-0">
+                    <i class="fa-solid fa-user-gear"></i>
+                </div>
+                <div class="flex-grow">
+                    <div class="flex flex-wrap items-center justify-between gap-2">
+                        <h4 class="font-bold text-base text-gray-900">DHARMENDRA NISHAD</h4>
+                        <span class="text-[10px] font-bold uppercase px-2.5 py-0.5 rounded bg-blue-50 text-brandAccent border border-blue-100">Operations</span>
+                    </div>
+                    <p class="text-xs text-brandAccent font-semibold mt-0.5 mb-3">Managing Partner</p>
+                    <div class="text-xs text-gray-600 space-y-1">
+                        <p class="flex items-center"><i class="fa-solid fa-phone text-gray-400 mr-2"></i><a href="tel:+917380554414" class="hover:text-brandAccent">+91 7380554414</a></p>
+                        <p class="flex items-center"><i class="fa-solid fa-envelope text-gray-400 mr-2"></i><a href="mailto:info@anexafacades.com" class="hover:text-brandAccent break-all">info@anexafacades.com</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+{% endblock content %}
