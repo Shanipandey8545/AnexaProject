@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>New Lead Received - ANEXA Management</title>
+</head>
+<body style="margin:0; padding:40px 10px; background-color:#eef2f6; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; -webkit-font-smoothing:antialiased;">
+  <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+      <td align="center">
+        <!-- Main 3D Card Container -->
+        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:580px; background:#ffffff; border-radius:20px; box-shadow:0 20px 45px -10px rgba(15, 23, 42, 0.18), 0 8px 18px -6px rgba(15, 23, 42, 0.08); border:1px solid #e2e8f0; overflow:hidden; padding:45px 35px; text-align:center;">
+          
+          <!-- 3D Square-Rounded Transparent Logo Container -->
+          <tr>
+            <td align="center" style="padding-bottom:24px;">
+              <div style="display:inline-block; padding:16px 20px; border-radius:14px; background:linear-gradient(145deg, #f8fafc, #edf2f7); box-shadow:6px 6px 16px #d1d9e6, -6px -6px 16px #ffffff; border:1px solid #e2e8f0;">
+                <img src="https://anexaproject-1.onrender.com/static/images/logo.png" onerror="this.src='https://placehold.co/140x50/transparent/0284c7?text=ANEXA'" alt="ANEXA Logo" width="140" style="display:block; border:0; outline:none; text-decoration:none; object-fit:contain; background:transparent;" />
+              </div>
+            </td>
+          </tr>
+
+          <!-- Alert Title -->
+          <tr>
+            <td style="padding-bottom:20px;">
+              <span style="display:inline-block; background:#fee2e2; color:#b91c1c; font-size:11px; font-weight:800; padding:5px 12px; border-radius:20px; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">
+                🚨 Action Required
+              </span>
+              <h2 style="margin:0; color:#08182b; font-size:22px; font-weight:900; letter-spacing:0.5px; text-transform:uppercase;">New Facade Lead Received</h2>
+              <div style="width:40px; height:3px; background:#ef4444; margin:8px auto 0 auto; border-radius:2px;"></div>
+            </td>
+          </tr>
+
+          <!-- Lead Details Table -->
+          <tr>
+            <td style="padding-bottom:25px;">
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background:#f8fafc; border-radius:14px; border:1px solid #e2e8f0; border-collapse:separate; text-align:left; font-size:13px; color:#334155; overflow:hidden;">
+                <tr>
+                  <td style="padding:12px 16px; border-bottom:1px solid #e2e8f0; font-weight:bold; width:120px; color:#64748b;">Client Name</td>
+                  <td style="padding:12px 16px; border-bottom:1px solid #e2e8f0; font-weight:700; color:#0f172a;">{{ name }}</td>
+                </tr>
+                <tr>
+                  <td style="padding:12px 16px; border-bottom:1px solid #e2e8f0; font-weight:bold; color:#64748b;">Phone</td>
+                  <td style="padding:12px 16px; border-bottom:1px solid #e2e8f0;">
+                    <a href="tel:{{ phone }}" style="color:#0284c7; text-decoration:none; font-weight:700;">{{ phone }}</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding:12px 16px; border-bottom:1px solid #e2e8f0; font-weight:bold; color:#64748b;">Email</td>
+                  <td style="padding:12px 16px; border-bottom:1px solid #e2e8f0;">
+                    <a href="mailto:{{ email }}" style="color:#0284c7; text-decoration:none;">{{ email }}</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding:12px 16px; border-bottom:1px solid #e2e8f0; font-weight:bold; color:#64748b;">Required Scope</td>
+                  <td style="padding:12px 16px; border-bottom:1px solid #e2e8f0; color:#0284c7; font-weight:700;">{{ required_facade_scope }}</td>
+                </tr>
+                <tr>
+                  <td style="padding:12px 16px; font-weight:bold; color:#64748b; vertical-align:top;">Message / Notes</td>
+                  <td style="padding:12px 16px; line-height:1.6; color:#475569;">{{ description|default:"No specific notes added." }}</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Admin Portal Quick CTA Button -->
+          <tr>
+            <td align="center" style="padding-bottom:30px;">
+              <a href="https://anexaproject-1.onrender.com/contact-list/" target="_blank" style="display:inline-block; background:linear-gradient(135deg, #08182b 0%, #0f2d52 100%); color:#ffffff; text-decoration:none; font-size:12px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:14px 34px; border-radius:12px; box-shadow:0 10px 20px -5px rgba(8, 24, 43, 0.4); border-bottom:3px solid #030b14;">
+                Open Leads Management
+              </a>
+            </td>
+          </tr>
+
+          <!-- Footer Info -->
+          <tr>
+            <td style="padding-top:24px; border-top:1px solid #f1f5f9; color:#94a3b8; font-size:11px;">
+              Lead captured at: <strong>{{ created_at }}</strong><br>
+              ANEXA System Notification • Automated Server Alert
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

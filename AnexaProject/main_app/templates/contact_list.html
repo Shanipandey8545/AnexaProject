@@ -1,0 +1,339 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Lead Inquiries | ANEXA Management{% endblock title %}
+
+{% block content %}
+<div class="min-h-screen bg-slate-100 py-10 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto space-y-6">
+    
+    <!-- Top Header, Search & Filter Bar -->
+    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+      <div>
+        <div class="flex items-center gap-3">
+          <span class="p-2.5 bg-sky-50 text-sky-600 rounded-xl border border-sky-100">
+            <i class="fa-solid fa-address-book text-xl"></i>
+          </span>
+          <div>
+            <h1 class="text-xl sm:text-2xl font-black text-brandDark uppercase tracking-tight">Lead Inquiries Management</h1>
+            <p class="text-xs text-slate-500 mt-0.5">Manage customer inquiries, change statuses, and track project requirements.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Search & Filter Controls -->
+      <form method="GET" action="" class="flex flex-wrap items-center gap-2.5">
+        
+        <!-- Search Input (Name, Phone, Email) -->
+        <div class="relative">
+          <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+            <i class="fa-solid fa-magnifying-glass text-xs"></i>
+          </span>
+          <input 
+            type="text" 
+            name="q" 
+            value="{{ search_query }}" 
+            placeholder="Search name, phone, email..." 
+            class="text-xs bg-slate-50 border border-slate-300 rounded-lg pl-8 pr-3 py-2 text-slate-700 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 w-52 sm:w-64"
+          />
+        </div>
+
+        <!-- Filter by Status -->
+        <div class="flex items-center gap-1.5">
+          <select 
+            id="status-select" 
+            name="status" 
+            class="text-xs bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 font-medium text-slate-700 focus:outline-none focus:ring-2 focus:ring-sky-500"
+          >
+            <option value="" {% if not request.GET.status %}selected{% endif %}>All Statuses</option>
+            <option value="New" {% if request.GET.status == 'New' %}selected{% endif %}>New</option>
+            <option value="InProgress" {% if request.GET.status == 'InProgress' %}selected{% endif %}>InProgress</option>
+            <option value="Contacted" {% if request.GET.status == 'Contacted' %}selected{% endif %}>Contacted</option>
+            <option value="Converted" {% if request.GET.status == 'Converted' %}selected{% endif %}>Converted</option>
+            <option value="Closed" {% if request.GET.status == 'Closed' %}selected{% endif %}>Closed</option>
+          </select>
+        </div>
+
+        <!-- Search Submit Button -->
+        <button 
+          type="submit" 
+          class="px-3.5 py-2 bg-sky-600 hover:bg-sky-700 text-white rounded-lg text-xs font-bold uppercase tracking-wider transition flex items-center gap-1.5 shadow-sm"
+        >
+          <i class="fa-solid fa-filter text-[10px]"></i> Apply
+        </button>
+
+        <!-- Reset Button -->
+        {% if request.GET.status or search_query %}
+          <a href="{% url 'contact_list' %}" class="text-xs text-rose-600 hover:underline font-semibold ml-1">
+            Reset
+          </a>
+        {% endif %}
+      </form>
+    </div>
+
+    <!-- Django Messages -->
+    {% if messages %}
+      <div class="space-y-2">
+        {% for message in messages %}
+          <div class="p-4 rounded-xl text-xs font-semibold flex items-center justify-between {% if message.tags == 'error' %}bg-rose-50 text-rose-700 border border-rose-200{% else %}bg-emerald-50 text-emerald-700 border border-emerald-200{% endif %}">
+            <div class="flex items-center gap-2">
+              <i class="fa-solid {% if message.tags == 'error' %}fa-circle-exclamation{% else %}fa-circle-check{% endif %}"></i>
+              <span>{{ message }}</span>
+            </div>
+            <button type="button" onclick="this.parentElement.remove()" class="text-slate-400 hover:text-slate-600">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <!-- Data Table Card -->
+    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xs border-collapse">
+          <thead>
+            <tr class="bg-slate-50 border-b border-slate-200 text-slate-500 uppercase tracking-wider font-bold">
+              <th class="py-4 px-4 sm:px-6">Client Info</th>
+              <th class="py-4 px-4">Contact</th>
+              <th class="py-4 px-4">Required Scope</th>
+              <th class="py-4 px-4">Message / Description</th>
+              <th class="py-4 px-4">Date</th>
+              <th class="py-4 px-4">Status Update</th>
+              <th class="py-4 px-4 sm:px-6 text-center">Action</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 text-slate-700 font-medium">
+            {% for item in contact %}
+              <tr class="hover:bg-slate-50/80 transition duration-150" id="row-{{ item.id }}">
+                
+                <!-- Client Info -->
+                <td class="py-4 px-4 sm:px-6 whitespace-nowrap">
+                  <div class="font-bold text-brandDark text-sm">{{ item.name|default:"Not Provided" }}</div>
+                  <span class="text-[10px] text-slate-400 font-mono">ID: #{{ item.id }}</span>
+                </td>
+
+                <!-- Contact -->
+                <td class="py-4 px-4 whitespace-nowrap">
+                  <div class="flex flex-col gap-0.5">
+                    {% if item.phone %}
+                      <a href="tel:{{ item.phone }}" class="text-sky-600 hover:underline flex items-center gap-1.5 font-bold">
+                        <i class="fa-solid fa-phone text-[10px]"></i> {{ item.phone }}
+                      </a>
+                    {% else %}
+                      <span class="text-slate-400">No Phone</span>
+                    {% endif %}
+                    
+                    {% if item.email %}
+                      <a href="mailto:{{ item.email }}" class="text-slate-500 hover:underline flex items-center gap-1.5 text-[11px]">
+                        <i class="fa-solid fa-envelope text-[10px]"></i> {{ item.email }}
+                      </a>
+                    {% endif %}
+                  </div>
+                </td>
+
+                <!-- Scope -->
+                <td class="py-4 px-4 whitespace-nowrap">
+                  <span class="inline-block px-2.5 py-1 bg-sky-50 text-sky-700 rounded-md border border-sky-100 font-bold uppercase text-[10px] tracking-wider">
+                    {{ item.required_facade_scope|default:"General Inquiry" }}
+                  </span>
+                </td>
+
+                <!-- Description -->
+                <td class="py-4 px-4 max-w-xs">
+                  <p class="truncate text-slate-600" title="{{ item.description }}">
+                    {{ item.description|default:"No details shared" }}
+                  </p>
+                </td>
+
+                <!-- Date -->
+                <td class="py-4 px-4 whitespace-nowrap text-slate-500 text-[11px]">
+                  {{ item.created_at|date:"d M Y" }}<br>
+                  <span class="text-[10px] text-slate-400">{{ item.created_at|date:"h:i A" }}</span>
+                </td>
+
+                <!-- Status Update -->
+                <td class="py-4 px-4 whitespace-nowrap">
+                  <form method="POST" action="{% url 'update_contact_status' item.id %}" class="inline-block">
+                    {% csrf_token %}
+                    <select 
+                      name="status" 
+                      onchange="this.form.submit()" 
+                      class="text-[11px] font-bold rounded-lg px-2.5 py-1.5 border shadow-sm focus:outline-none cursor-pointer
+                      {% if item.status == 'New' %}bg-blue-50 text-blue-700 border-blue-200
+                      {% elif item.status == 'InProgress' %}bg-amber-50 text-amber-700 border-amber-200
+                      {% elif item.status == 'Contacted' %}bg-purple-50 text-purple-700 border-purple-200
+                      {% elif item.status == 'Converted' %}bg-emerald-50 text-emerald-700 border-emerald-200
+                      {% elif item.status == 'Closed' %}bg-rose-50 text-rose-700 border-rose-200
+                      {% else %}bg-slate-50 text-slate-700 border-slate-200{% endif %}"
+                    >
+                      <option value="New" {% if item.status == 'New' %}selected{% endif %}>● New</option>
+                      <option value="InProgress" {% if item.status == 'InProgress' %}selected{% endif %}>● InProgress</option>
+                      <option value="Contacted" {% if item.status == 'Contacted' %}selected{% endif %}>● Contacted</option>
+                      <option value="Converted" {% if item.status == 'Converted' %}selected{% endif %}>● Converted</option>
+                      <option value="Closed" {% if item.status == 'Closed' %}selected{% endif %}>● Closed</option>
+                    </select>
+                  </form>
+                </td>
+
+                <!-- Actions -->
+                <td class="py-4 px-4 sm:px-6 whitespace-nowrap text-center">
+                  <div class="flex items-center justify-center gap-2">
+                    <button 
+                      type="button" 
+                      onclick="openPreview('{{ item.name|escapejs }}', '{{ item.phone|escapejs }}', '{{ item.email|escapejs }}', '{{ item.required_facade_scope|escapejs }}', '{{ item.description|escapejs }}', '{{ item.created_at|date:"d M Y, h:i A" }}')" 
+                      class="p-2 bg-slate-100 hover:bg-sky-50 text-slate-600 hover:text-sky-600 rounded-lg transition"
+                      title="View Details"
+                    >
+                      <i class="fa-solid fa-eye"></i>
+                    </button>
+
+                    <form method="POST" action="{% url 'delete_contact' item.id %}" onsubmit="return confirm('Are you sure you want to delete lead ({{ item.name }})?');">
+                      {% csrf_token %}
+                      <button 
+                        type="submit" 
+                        class="p-2 bg-slate-100 hover:bg-rose-50 text-slate-600 hover:text-rose-600 rounded-lg transition"
+                        title="Delete Lead"
+                      >
+                        <i class="fa-solid fa-trash"></i>
+                      </button>
+                    </form>
+                  </div>
+                </td>
+
+              </tr>
+            {% empty %}
+              <tr>
+                <td colspan="7" class="py-12 text-center text-slate-400">
+                  <i class="fa-regular fa-folder-open text-3xl mb-2"></i>
+                  <p class="text-sm font-semibold">No leads match your search or filter criteria.</p>
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Pagination Controls (With Search & Filter Query Preservation) -->
+      {% if contact.has_other_pages %}
+        <div class="bg-white px-4 py-4 sm:px-6 border-t border-slate-200 flex items-center justify-between">
+          
+          <!-- Mobile Summary & Actions -->
+          <div class="flex-1 flex justify-between sm:hidden">
+            {% if contact.has_previous %}
+              <a href="?page={{ contact.previous_page_number }}{% if request.GET.status %}&status={{ request.GET.status }}{% endif %}{% if search_query %}&q={{ search_query }}{% endif %}" class="relative inline-flex items-center px-4 py-2 border border-slate-300 text-xs font-bold rounded-lg text-slate-700 bg-white hover:bg-slate-50">
+                Previous
+              </a>
+            {% else %}
+              <span class="opacity-40 px-4 py-2 text-xs font-bold border border-slate-200 rounded-lg text-slate-400 cursor-not-allowed">Previous</span>
+            {% endif %}
+
+            {% if contact.has_next %}
+              <a href="?page={{ contact.next_page_number }}{% if request.GET.status %}&status={{ request.GET.status }}{% endif %}{% if search_query %}&q={{ search_query }}{% endif %}" class="ml-3 relative inline-flex items-center px-4 py-2 border border-slate-300 text-xs font-bold rounded-lg text-slate-700 bg-white hover:bg-slate-50">
+                Next
+              </a>
+            {% else %}
+              <span class="opacity-40 ml-3 px-4 py-2 text-xs font-bold border border-slate-200 rounded-lg text-slate-400 cursor-not-allowed">Next</span>
+            {% endif %}
+          </div>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+            <div>
+              <p class="text-xs text-slate-600">
+                Showing <span class="font-bold text-slate-900">{{ contact.start_index }}</span> to <span class="font-bold text-slate-900">{{ contact.end_index }}</span> of <span class="font-bold text-slate-900">{{ contact.paginator.count }}</span> entries
+              </p>
+            </div>
+            <div>
+              <nav class="relative z-0 inline-flex rounded-lg shadow-sm -space-x-px" aria-label="Pagination">
+                
+                <!-- Previous Button -->
+                {% if contact.has_previous %}
+                  <a href="?page={{ contact.previous_page_number }}{% if request.GET.status %}&status={{ request.GET.status }}{% endif %}{% if search_query %}&q={{ search_query }}{% endif %}" class="relative inline-flex items-center px-3 py-2 rounded-l-lg border border-slate-300 bg-white text-xs font-medium text-slate-500 hover:bg-slate-50">
+                    <i class="fa-solid fa-chevron-left"></i>
+                  </a>
+                {% else %}
+                  <span class="relative inline-flex items-center px-3 py-2 rounded-l-lg border border-slate-200 bg-slate-50 text-xs font-medium text-slate-300 cursor-not-allowed">
+                    <i class="fa-solid fa-chevron-left"></i>
+                  </span>
+                {% endif %}
+
+                <!-- Dynamic Page Numbers -->
+                {% for num in contact.paginator.page_range %}
+                  {% if contact.number == num %}
+                    <span class="z-10 bg-sky-600 border-sky-600 text-white relative inline-flex items-center px-3.5 py-2 border text-xs font-bold">
+                      {{ num }}
+                    </span>
+                  {% elif num > contact.number|add:'-3' and num < contact.number|add:'3' %}
+                    <a href="?page={{ num }}{% if request.GET.status %}&status={{ request.GET.status }}{% endif %}{% if search_query %}&q={{ search_query }}{% endif %}" class="bg-white border-slate-300 text-slate-600 hover:bg-slate-50 relative inline-flex items-center px-3.5 py-2 border text-xs font-medium">
+                      {{ num }}
+                    </a>
+                  {% endif %}
+                {% endfor %}
+
+                <!-- Next Button -->
+                {% if contact.has_next %}
+                  <a href="?page={{ contact.next_page_number }}{% if request.GET.status %}&status={{ request.GET.status }}{% endif %}{% if search_query %}&q={{ search_query }}{% endif %}" class="relative inline-flex items-center px-3 py-2 rounded-r-lg border border-slate-300 bg-white text-xs font-medium text-slate-500 hover:bg-slate-50">
+                    <i class="fa-solid fa-chevron-right"></i>
+                  </a>
+                {% else %}
+                  <span class="relative inline-flex items-center px-3 py-2 rounded-r-lg border border-slate-200 bg-slate-50 text-xs font-medium text-slate-300 cursor-not-allowed">
+                    <i class="fa-solid fa-chevron-right"></i>
+                  </span>
+                {% endif %}
+
+              </nav>
+            </div>
+          </div>
+
+        </div>
+      {% endif %}
+
+    </div>
+
+  </div>
+</div>
+
+<!-- Simple Preview Modal -->
+<div id="previewModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+  <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl space-y-4 relative border border-slate-200">
+    <div class="flex items-center justify-between border-b pb-3">
+      <h3 class="font-bold text-brandDark uppercase text-sm" id="modalName">Lead Details</h3>
+      <button onclick="closePreview()" class="text-slate-400 hover:text-slate-600">
+        <i class="fa-solid fa-xmark text-lg"></i>
+      </button>
+    </div>
+    
+    <div class="space-y-2.5 text-xs text-slate-600">
+      <p><strong class="text-slate-800">Phone:</strong> <span id="modalPhone"></span></p>
+      <p><strong class="text-slate-800">Email:</strong> <span id="modalEmail"></span></p>
+      <p><strong class="text-slate-800">Scope:</strong> <span id="modalScope" class="font-semibold text-sky-700"></span></p>
+      <p><strong class="text-slate-800">Date:</strong> <span id="modalDate"></span></p>
+      <div>
+        <strong class="text-slate-800 block mb-1">Message:</strong>
+        <div id="modalDesc" class="bg-slate-50 p-3 rounded-lg border text-slate-700 whitespace-pre-wrap leading-relaxed max-h-48 overflow-y-auto"></div>
+      </div>
+    </div>
+
+    <div class="pt-2 text-right">
+      <button onclick="closePreview()" class="px-4 py-2 bg-slate-200 hover:bg-slate-300 text-slate-800 rounded-lg text-xs font-bold uppercase transition">Close</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function openPreview(name, phone, email, scope, desc, date) {
+    document.getElementById('modalName').innerText = name + ' - Lead Details';
+    document.getElementById('modalPhone').innerText = phone || 'N/A';
+    document.getElementById('modalEmail').innerText = email || 'N/A';
+    document.getElementById('modalScope').innerText = scope || 'N/A';
+    document.getElementById('modalDate').innerText = date;
+    document.getElementById('modalDesc').innerText = desc || 'No message provided';
+    document.getElementById('previewModal').classList.remove('hidden');
+  }
+
+  function closePreview() {
+    document.getElementById('previewModal').classList.add('hidden');
+  }
+</script>
+{% endblock content %}

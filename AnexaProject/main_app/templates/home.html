@@ -19,7 +19,6 @@ endblock description %} {% block extra_css %}
     height: 100%;
     object-fit: cover;
   }
-  /* Circular Service Badges (From Screenshot 2) */
   .service-circle {
     width: 80px;
     height: 80px;
@@ -37,103 +36,97 @@ endblock description %} {% block extra_css %}
   }
 </style>
 {% endblock extra_css %} {% block content %}
+
 <!-- 1. TOP HERO SECTION WITH FULL IMAGE SLIDER -->
 <div class="relative w-full overflow-hidden bg-brandDark">
   <div class="swiper hero-slider pageSwiper">
     <div class="swiper-wrapper">
+      
       <!-- Slide 1 -->
       <div class="swiper-slide relative">
-        <img
-          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80"
-          alt="ANEXA Facade Engineering"
-        />
-        <div
-          class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"
-        ></div>
+        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=80" alt="ANEXA Commercial Tower Facades" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-transparent"></div>
+        <div class="absolute inset-0 flex items-center justify-start max-w-7xl mx-auto px-6 sm:px-8 pb-20">
+          <div class="max-w-2xl text-left">
+            <span class="inline-block px-3.5 py-1 bg-sky-600 text-white text-[11px] font-bold tracking-widest rounded uppercase mb-4">Pioneering Building Skin Systems</span>
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white leading-tight uppercase">High-Performance Facade Engineering</h1>
+            <p class="text-gray-200 text-xs sm:text-sm mt-3.5 max-w-xl leading-relaxed">Turnkey engineering for high-rise curtain walling, unitized glazing, and architectural cladding built to resist peak wind dynamics.</p>
+            <div class="mt-8 flex flex-wrap gap-4">
+              <a href="{% url 'leadership_contact' %}" class="bg-sky-600 hover:bg-sky-700 text-white font-bold text-xs uppercase tracking-wider px-7 py-3.5 rounded shadow-lg transition">
+                <i class="fa-solid fa-file-arrow-up mr-2"></i>Send Drawings / BOQ
+              </a>
+              <a href="{% url 'our_solutions' %}" class="border border-white/50 text-white hover:bg-white hover:text-slate-900 font-bold text-xs uppercase tracking-wider px-7 py-3.5 rounded transition">
+                Explore Solutions
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
+
       <!-- Slide 2 -->
       <div class="swiper-slide relative">
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKqktGGv3vxBIJoiNFkJ3D3AocICxbbWgfqLVdFTfZ4Q&s=10"
-          alt="Curtain Walls Installation"
-        />
-        <div
-          class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"
-        ></div>
+        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1920&q=80" alt="Curtain Walls Installation" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-transparent"></div>
+        <div class="absolute inset-0 flex items-center justify-start max-w-7xl mx-auto px-6 sm:px-8 pb-20">
+          <div class="max-w-2xl text-left">
+            <span class="inline-block px-3.5 py-1 bg-sky-600 text-white text-[11px] font-bold tracking-widest rounded uppercase mb-4">Precision Manufacturing</span>
+            <h2 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white leading-tight uppercase">Unitized &amp; Structural Glazing</h2>
+            <p class="text-gray-200 text-xs sm:text-sm mt-3.5 max-w-xl leading-relaxed">Off-site factory assembled and glazed panels ensuring immaculate sealant joints and rapid on-site crane hoisting.</p>
+            <div class="mt-8">
+              <a href="{% url 'leadership_contact' %}" class="bg-sky-600 hover:bg-sky-700 text-white font-bold text-xs uppercase tracking-wider px-7 py-3.5 rounded shadow-lg transition">
+                <i class="fa-solid fa-file-arrow-up mr-2"></i>Send Drawings / BOQ
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
+
       <!-- Slide 3 -->
       <div class="swiper-slide relative">
-        <img
-          src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1600&q=80"
-          alt="Structural Glazing Precision"
-        />
-        <div
-          class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"
-        ></div>
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1920&q=80" alt="Architectural Cladding and Louvers" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-transparent"></div>
+        <div class="absolute inset-0 flex items-center justify-start max-w-7xl mx-auto px-6 sm:px-8 pb-20">
+          <div class="max-w-2xl text-left">
+            <span class="inline-block px-3.5 py-1 bg-sky-600 text-white text-[11px] font-bold tracking-widest rounded uppercase mb-4">Architectural Envelopes</span>
+            <h2 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white leading-tight uppercase">FR-Grade ACP &amp; Aerofoil Louvers</h2>
+            <p class="text-gray-200 text-xs sm:text-sm mt-3.5 max-w-xl leading-relaxed">Integrated solar management fins and fire-retardant solid metal skins tailored for landmark structures.</p>
+            <div class="mt-8">
+              <a href="{% url 'leadership_contact' %}" class="bg-sky-600 hover:bg-sky-700 text-white font-bold text-xs uppercase tracking-wider px-7 py-3.5 rounded shadow-lg transition">
+                <i class="fa-solid fa-file-arrow-up mr-2"></i>Send Drawings / BOQ
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
+
     </div>
     <div class="swiper-pagination"></div>
-    <div class="swiper-button-next !text-white"></div>
-    <div class="swiper-button-prev !text-white"></div>
+    <!-- <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div> -->
   </div>
 
-  <!-- 3 Floating Feature Boxes (Matches Screenshot 1 Exactly) -->
-  <div
-    class="relative md:absolute md:bottom-8 left-0 right-0 z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-[-60px] md:mt-0"
-  >
+  <!-- Floating Feature Tiles -->
+  <div class="relative md:absolute md:bottom-6 left-0 right-0 z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-[-55px] md:mt-0 pb-4 md:pb-0">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-      <!-- Feature 1 -->
-      <div
-        class="bg-black/75 backdrop-blur-md border border-white/20 p-5 rounded flex items-center space-x-4 hover:bg-black/90 transition shadow-lg"
-      >
-        <div class="text-white text-3xl">
-          <i class="fa-solid fa-compass-drafting text-sky-400"></i>
-        </div>
+      <div class="bg-black/85 backdrop-blur-md border border-white/20 p-5 rounded-xl flex items-center space-x-4 shadow-2xl">
+        <div class="text-sky-400 text-3xl"><i class="fa-solid fa-compass-drafting"></i></div>
         <div>
-          <h3
-            class="text-white text-xs sm:text-sm font-bold tracking-wider uppercase"
-          >
-            DESIGN AND<br />TECHNICAL STUDIO
-          </h3>
-          <p class="text-gray-300 text-[11px] mt-0.5">
-            Coordinated drawings &amp; engineering
-          </p>
+          <h3 class="text-white text-xs sm:text-sm font-bold uppercase tracking-wider">Design &amp; Static Calculations</h3>
+          <p class="text-gray-300 text-[11px] mt-0.5">Deflection checks, wind load sizing &amp; CAD blueprints.</p>
         </div>
       </div>
-      <!-- Feature 2 -->
-      <div
-        class="bg-black/75 backdrop-blur-md border border-white/20 p-5 rounded flex items-center space-x-4 hover:bg-black/90 transition shadow-lg"
-      >
-        <div class="text-white text-3xl">
-          <i class="fa-solid fa-helmet-safety text-sky-400"></i>
-        </div>
+      <div class="bg-black/85 backdrop-blur-md border border-white/20 p-5 rounded-xl flex items-center space-x-4 shadow-2xl">
+        <div class="text-sky-400 text-3xl"><i class="fa-solid fa-industry"></i></div>
         <div>
-          <h3
-            class="text-white text-xs sm:text-sm font-bold tracking-wider uppercase"
-          >
-            SAFETY IS OUR<br />PRIME FOCUS
-          </h3>
-          <p class="text-gray-300 text-[11px] mt-0.5">
-            Disciplined site execution &amp; height safety
-          </p>
+          <h3 class="text-white text-xs sm:text-sm font-bold uppercase tracking-wider">Fabrication Facility</h3>
+          <p class="text-gray-300 text-[11px] mt-0.5">CNC profile processing and factory unit assembly.</p>
         </div>
       </div>
-      <!-- Feature 3 -->
-      <div
-        class="bg-black/75 backdrop-blur-md border border-white/20 p-5 rounded flex items-center space-x-4 hover:bg-black/90 transition shadow-lg"
-      >
-        <div class="text-white text-3xl">
-          <i class="fa-regular fa-lightbulb text-sky-400"></i>
-        </div>
+      <div class="bg-black/85 backdrop-blur-md border border-white/20 p-5 rounded-xl flex items-center space-x-4 shadow-2xl">
+        <div class="text-sky-400 text-3xl"><i class="fa-solid fa-shield-halved"></i></div>
         <div>
-          <h3
-            class="text-white text-xs sm:text-sm font-bold tracking-wider uppercase"
-          >
-            SPIRIT OF<br />INNOVATION
-          </h3>
-          <p class="text-gray-300 text-[11px] mt-0.5">
-            Contemporary envelope technologies
-          </p>
+          <h3 class="text-white text-xs sm:text-sm font-bold uppercase tracking-wider">Safety &amp; Water Testing</h3>
+          <p class="text-gray-300 text-[11px] mt-0.5">Calibrated field hose sprays &amp; fall-arrest rigging.</p>
         </div>
       </div>
     </div>
@@ -249,34 +242,107 @@ endblock description %} {% block extra_css %}
   </div>
 </section>
 
-<!-- 3. METRICS / STATS BAR (Matches Screenshot 2) -->
-<section class="py-12 bg-gray-50 border-b">
-  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
-      <div>
-        <h3 class="text-3xl sm:text-4xl font-extrabold text-sky-700">175+</h3>
-        <p
-          class="text-xs font-bold text-gray-500 uppercase tracking-wider mt-1"
-        >
-          Projects Completed
-        </p>
+<!-- 3. MANUFACTURING & FACTORY FLOOR SHOWCASE (BIG VISUAL TILES) -->
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Off-Site Precision</span>
+      <h2 class="text-2xl sm:text-4xl font-extrabold text-gray-900 uppercase tracking-tight mt-1.5">Fabrication &amp; Assembly Standards</h2>
+      <div class="w-16 h-1 bg-sky-600 mx-auto mt-3 mb-3"></div>
+      <p class="text-gray-600 text-xs sm:text-sm">Factory-controlled workmanship preventing site misalignments and weather-related construction delays.</p>
+    </div>
+
+    <!-- 3 Huge High-Resolution Visual Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <div class="visual-card group overflow-hidden rounded-2xl bg-slate-950 shadow-md relative h-80 sm:h-96">
+        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=900&q=80" alt="CNC Cutting" class="w-full h-full object-cover transition-transform duration-700" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+        <div class="absolute bottom-6 left-6 right-6">
+          <span class="bg-sky-600 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">Stage 01</span>
+          <h4 class="text-white text-base sm:text-lg font-bold mt-2">Automated Profile Milling</h4>
+          <p class="text-gray-300 text-xs mt-1">High-accuracy aluminum extrusion cutting and notch profiling.</p>
+        </div>
       </div>
-      <div>
-        <h3 class="text-3xl sm:text-4xl font-extrabold text-sky-700">15+</h3>
-        <p
-          class="text-xs font-bold text-gray-500 uppercase tracking-wider mt-1"
-        >
-          Years Of Experience
-        </p>
+
+      <div class="visual-card group overflow-hidden rounded-2xl bg-slate-950 shadow-md relative h-80 sm:h-96">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyGLUyGET_WncaCQQxS9OU4iiycp1fd4CTbf-CyDFD7Q&s=10" alt="Material Storage" class="w-full h-full object-cover transition-transform duration-700" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+        <div class="absolute bottom-6 left-6 right-6">
+          <span class="bg-sky-600 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">Stage 02</span>
+          <h4 class="text-white text-base sm:text-lg font-bold mt-2">Material Staging &amp; Racking</h4>
+          <p class="text-gray-300 text-xs mt-1">Certified alloy extrusions, bracket stocks, and gaskets.</p>
+        </div>
       </div>
-      <div>
-        <h3 class="text-3xl sm:text-4xl font-extrabold text-sky-700">200+</h3>
-        <p
-          class="text-xs font-bold text-gray-500 uppercase tracking-wider mt-1"
-        >
-          Team Members
-        </p>
+
+      <div class="visual-card group overflow-hidden rounded-2xl bg-slate-950 shadow-md relative h-80 sm:h-96">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBpLEOHGwHFbiFOH3HR-0H9-6KEp6O7zoIbDgbIpUWow&s=10" alt="Clean Room Assembly" class="w-full h-full object-cover transition-transform duration-700" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+        <div class="absolute bottom-6 left-6 right-6">
+          <span class="bg-sky-600 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">Stage 03</span>
+          <h4 class="text-white text-base sm:text-lg font-bold mt-2">Silicone Bonding &amp; Inspection</h4>
+          <p class="text-gray-300 text-xs mt-1">Dust-free structural sealant curing and unit QA approval.</p>
+        </div>
       </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      
+      <!-- Big Visual Column -->
+      <div class="relative rounded-3xl overflow-hidden shadow-2xl h-[420px] sm:h-[500px] bg-slate-950">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRRguH9IjRWEBJGqBGYcrI9fMURcjC232NR0c31efR3A&s=10" alt="Tower Crane Facade Installation" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
+        <div class="absolute bottom-8 left-8 right-8">
+          <span class="bg-sky-600 text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded">Site Protocols</span>
+          <h3 class="text-white text-xl sm:text-2xl font-black uppercase mt-2.5">Crane Lifting &amp; Height Rigging</h3>
+          <p class="text-gray-300 text-xs mt-1 max-w-md">Laser-aligned bracket leveling ensuring millimetric accuracy across multi-story facades.</p>
+        </div>
+      </div>
+
+      <!-- Content & Feature Blocks -->
+      <div class="space-y-6">
+        <div>
+          <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Site Safety &amp; Quality</span>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-gray-900 uppercase tracking-tight mt-1.5">Disciplined Execution At Heights</h2>
+          <div class="w-14 h-1 bg-sky-600 mt-3"></div>
+        </div>
+
+        <p class="text-gray-600 text-xs sm:text-sm leading-relaxed">
+          Facade installation is a high-risk trade that requires uncompromising safety standards. Our crews use dual-rope fall-arrest systems, certified hoisting slings, and continuous site supervision to execute work smoothly without interrupting civil contractors.
+        </p>
+
+        <!-- 2 Visual Feature Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+          <div class="p-5 bg-slate-50 border border-gray-200 rounded-xl">
+            <div class="w-10 h-10 rounded-lg bg-sky-100 text-sky-600 flex items-center justify-center text-lg mb-3">
+              <i class="fa-solid fa-droplet"></i>
+            </div>
+            <h4 class="font-bold text-sm text-gray-900 uppercase">Field Hose Testing</h4>
+            <p class="text-[11px] text-gray-500 mt-1">On-site calibrated water spray tests before scaffolding is dismantled.</p>
+          </div>
+
+          <div class="p-5 bg-slate-50 border border-gray-200 rounded-xl">
+            <div class="w-10 h-10 rounded-lg bg-sky-100 text-sky-600 flex items-center justify-center text-lg mb-3">
+              <i class="fa-solid fa-wind"></i>
+            </div>
+            <h4 class="font-bold text-sm text-gray-900 uppercase">Wind Resistance</h4>
+            <p class="text-[11px] text-gray-500 mt-1">Anchors and mullions calculated according to regional IS 875 codes.</p>
+          </div>
+        </div>
+
+        <div class="pt-2">
+          <a href="{% url 'leadership_contact' %}" class="inline-block bg-brandDark hover:bg-sky-600 text-white font-bold text-xs uppercase tracking-wider px-8 py-3.5 rounded shadow-lg transition">
+            <i class="fa-solid fa-file-arrow-up mr-2"></i>Send Drawings / BOQ
+          </a>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -304,7 +370,7 @@ endblock description %} {% block extra_css %}
         ANEXA FACADE SYSTEMS LLP is a facade-focused enterprise offering
         integrated engineering solutions for contemporary building envelopes.
         Our service portfolio covers curtain walls, ACP cladding, structural
-        glazing, handrails, louvers, and canopies[cite: 1, 2].
+        glazing, handrails, louvers, and canopies.
       </p>
 
       <p class="text-xs sm:text-sm text-gray-300 leading-relaxed mb-6">
@@ -449,4 +515,30 @@ endblock description %} {% block extra_css %}
     </div>
   </div>
 </section>
+
+
+<!-- 7. BIG CALL TO ACTION & DIRECT DRAWINGS SUBMISSION BANNER -->
+<section class="py-20 bg-brandDark text-white relative border-t border-slate-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <span class="text-sky-400 font-bold text-xs uppercase tracking-widest">Connect With Us</span>
+    <h2 class="text-2xl sm:text-4xl font-black uppercase tracking-tight mt-2">
+      Ready To Engineer Your Building's Facade?
+    </h2>
+    <p class="text-gray-300 text-xs sm:text-sm max-w-2xl mx-auto mt-3 mb-8 leading-relaxed">
+      Submit your architectural elevations, structural drawings, or BOQ specifications. Our engineering desk in Lucknow will review structural feasibility and prepare a detailed cost estimation.
+    </p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="{% url 'leadership_contact' %}" class="bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs uppercase tracking-wider px-8 py-4 rounded-xl shadow-xl transition flex items-center">
+        <i class="fa-solid fa-file-arrow-up mr-2.5 text-base"></i>Send Drawings / BOQ
+      </a>
+      <a href="tel:+917992090282" class="border border-white/40 hover:bg-white hover:text-brandDark font-bold text-xs uppercase tracking-wider px-8 py-4 rounded-xl transition flex items-center">
+        <i class="fa-solid fa-phone mr-2.5 text-sky-400 text-base"></i>+91 7992090282
+      </a>
+    </div>
+  </div>
+</section>
+
+
 {% endblock content %}
+
+

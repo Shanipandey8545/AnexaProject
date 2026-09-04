@@ -5,24 +5,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      {% block title %} ANEXA Facade Systems LLP | Building Better Facades
-      {%endblock %}
+      {% block title %}ANEXA Facade Systems LLP | Building Better Facades{% endblock %}
     </title>
     <meta
       name="description"
       content="{% block description %}ANEXA FACADE SYSTEMS LLP specializes in architectural facade engineering, curtain walls, ACP cladding, structural glazing, louvers, and canopies.{% endblock %}"
     />
 
-    <!-- Tailwind CSS CDN -->
+    <!-- Google Fonts: Inter (Global Font) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS CDN with Global Font Config -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
         theme: {
           extend: {
+            fontFamily: {
+              sans: ["Inter", "system-ui", "-apple-system", "sans-serif"],
+            },
             colors: {
               brandDark: "#08182b",
               brandBlue: "#0b3c6d",
-              brandAccent: "#1a73e8",
+              brandAccent: "#0284c7",
             },
           },
         },
@@ -40,235 +50,158 @@
     />
 
     <style>
+      body {
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      }
       .swiper-button-next,
       .swiper-button-prev {
         color: #ffffff !important;
       }
       .swiper-pagination-bullet-active {
-        background: #1a73e8 !important;
+        background: #0284c7 !important;
       }
     </style>
     {% block extra_css %}{% endblock %}
   </head>
-  <body class="flex flex-col min-h-screen font-sans text-gray-800 bg-white">
-    <!-- Top Contact Bar (Cleaned of all cite tags) -->
-    <div
-      class="bg-black text-gray-300 text-xs py-2 px-4 border-b border-neutral-800"
-    >
+  <body class="flex flex-col min-h-screen font-sans text-gray-800 bg-white antialiased">
+    
+    <!-- Top Contact Bar -->
+    <div class="bg-black text-gray-300 text-xs py-2 px-4 border-b border-neutral-800">
       <div class="max-w-7xl mx-auto flex justify-between items-center">
         <div class="flex items-center space-x-4">
-          <a href="tel:+917992090282" class="hover:text-white transition">
-            <i class="fa-solid fa-phone text-blue-500 mr-1.5"></i>+91 7992090282
+          <a href="tel:+917992090282" class="hover:text-white transition flex items-center">
+            <i class="fa-solid fa-phone text-sky-400 mr-1.5"></i>+91 7992090282
           </a>
           <span class="hidden sm:inline text-neutral-600">|</span>
-          <a
-            href="mailto:info@anexafacades.com"
-            class="hidden sm:inline hover:text-white transition"
-          >
-            <i class="fa-solid fa-envelope text-blue-500 mr-1.5"></i
-            >info@anexafacades.com
+          <a href="mailto:info@anexafacades.com" class="hidden sm:flex items-center hover:text-white transition">
+            <i class="fa-solid fa-envelope text-sky-400 mr-1.5"></i>info@anexafacades.com
           </a>
         </div>
-        <div class="flex items-center space-x-3 text-sm">
-          <a href="#" class="hover:text-blue-400"
-            ><i class="fa-brands fa-facebook-f"></i
-          ></a>
-          <a href="#" class="hover:text-blue-400"
-            ><i class="fa-brands fa-twitter"></i
-          ></a>
-          <a href="#" class="hover:text-blue-400"
-            ><i class="fa-brands fa-linkedin-in"></i
-          ></a>
+        <div class="flex items-center space-x-4 text-xs">
+          <span class="hidden md:inline text-neutral-400">Lucknow, Uttar Pradesh</span>
+          <div class="flex items-center space-x-3 text-sm">
+            <a href="#" class="hover:text-sky-400 transition"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="hover:text-sky-400 transition"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="hover:text-sky-400 transition"><i class="fa-brands fa-instagram"></i></a>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Main Navigation Header (Clean & Always Visible Desktop Links) -->
-    <header
-      class="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-200"
-    >
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-20">
-          <!-- Logo & Tagline -->
-          <a href="{% url 'home' %}" class="flex items-center space-x-3">
-            <img
-              src="{% static 'images/logo.png' %}"
-              alt="ANEXA Facade Systems Logo"
-              class="h-12 w-auto object-contain"
-              onerror="
-                this.src = 'https://placehold.co/180x48?text=ANEXA+FACADE'
-              "
-            />
-            <div class="hidden sm:block border-l pl-3 border-gray-300">
-              <span
-                class="block text-xs font-black tracking-widest text-brandDark uppercase"
-                >ANEXA FAÇADE SYSTEMS</span
-              >
-              <span
-                class="block text-[10px] text-gray-500 tracking-wider uppercase"
-                >Building Better Facades</span
-              >
-            </div>
+    <!-- Main Navigation Header -->
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-20">
+      
+      <!-- Logo & Tagline -->
+      <a href="{% url 'home' %}" class="flex items-center space-x-3 group shrink-0">
+        <img
+          src="{% static 'images/logo.png' %}"
+          alt="ANEXA Facade Systems Logo"
+          class="h-10 sm:h-11 w-auto object-contain"
+          onerror="this.src='https://placehold.co/180x48?text=ANEXA+FACADE'"
+        />
+        <div class="hidden sm:block border-l pl-3 border-gray-300">
+          <span class="block text-xs font-black tracking-widest text-brandDark uppercase group-hover:text-sky-600 transition">ANEXA FAÇADE SYSTEMS</span>
+          <span class="block text-[10px] text-gray-500 tracking-wider uppercase">Building Better Facades</span>
+        </div>
+      </a>
+
+      <!-- Desktop & Laptop Navigation Menu (Always visible on laptops 1024px+) -->
+      <nav class="hidden lg:flex items-center gap-0.5 xl:gap-1 text-[10px] font-bold tracking-wider text-gray-700">
+        <a href="{% url 'home' %}" class="px-2 py-1.5 rounded hover:text-sky-600 hover:bg-slate-50 transition">HOME</a>
+        <a href="{% url 'about' %}" class="px-2 py-1.5 rounded hover:text-sky-600 hover:bg-slate-50 transition">ABOUT</a>
+        <a href="{% url 'our_solutions' %}" class="px-2 py-1.5 rounded hover:text-sky-600 hover:bg-slate-50 transition">PRODUCTS &amp; SERVICES</a>
+        <a href="{% url 'project_capabilities' %}" class="px-2 py-1.5 rounded hover:text-sky-600 hover:bg-slate-50 transition">PROJECTS</a>
+        <a href="{% url 'quality_safety' %}" class="px-2 py-1.5 rounded hover:text-sky-600 hover:bg-slate-50 transition">INFRASTRUCTURE</a>
+        <a href="{% url 'why_anexa' %}" class="px-2 py-1.5 rounded hover:text-sky-600 hover:bg-slate-50 transition">WHY ANEXA</a>
+        <a href="{% url 'leadership_contact' %}" class="ml-1 bg-brandDark hover:bg-sky-600 text-white px-3 py-1.5 rounded shadow-sm transition">CONTACT</a>
+
+        {% if request.user.is_authenticated %}
+          <!-- Enquiries List Link -->
+          <a href="{% url 'contact_list' %}" class="ml-1.5 bg-sky-50 text-sky-700 border border-sky-200 hover:bg-sky-600 hover:text-white px-2.5 py-1.5 rounded transition flex items-center gap-1">
+            <i class="fa-solid fa-clipboard-list text-[11px]"></i>
+            <span>ENQUIRIES</span>
           </a>
 
-          <!-- Desktop Menu (Exactly matching your target reference) -->
-          <nav
-            class="hidden md:flex items-center space-x-4 lg:space-x-6 text-[12px] font-bold tracking-wider text-gray-700"
-          >
-            <a href="{% url 'home' %}" class="hover:text-brandAccent transition"
-              >HOME</a
-            >
-            <span class="text-gray-300">|</span>
-            <a
-              href="{% url 'about' %}"
-              class="hover:text-brandAccent transition"
-              >ABOUT</a
-            >
-            <span class="text-gray-300">|</span>
-            <a
-              href="{% url 'our_solutions' %}"
-              class="hover:text-brandAccent transition"
-              >PRODUCT &amp; SERVICES</a
-            >
-            <span class="text-gray-300">|</span>
-            <a
-              href="{% url 'project_capabilities' %}"
-              class="hover:text-brandAccent transition"
-              >PROJECTS</a
-            >
-            <span class="text-gray-300">|</span>
-            <a
-              href="{% url 'quality_safety' %}"
-              class="hover:text-brandAccent transition"
-              >INFRASTRUCTURE</a
-            >
-            <span class="text-gray-300">|</span>
-            <a
-              href="{% url 'why_anexa' %}"
-              class="hover:text-brandAccent transition"
-              >ALLIANCE</a
-            >
-            <span class="text-gray-300">|</span>
-            <a
-              href="{% url 'leadership_contact' %}"
-              class="hover:text-brandAccent transition"
-              >CONTACT</a
-            >
-          </nav>
+          <!-- Logout Link -->
+          <a href="{% url 'adminlogout' %}" class="ml-1 bg-rose-50 text-rose-600 border border-rose-200 hover:bg-rose-600 hover:text-white px-2.5 py-1.5 rounded transition flex items-center gap-1">
+            <i class="fa-solid fa-arrow-right-from-bracket text-[11px]"></i>
+            <span>LOGOUT</span>
+          </a>
+        {% endif %}
+      </nav>
 
-          <!-- Mobile Menu Button -->
-          <button
-            id="navToggle"
-            type="button"
-            class="md:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100"
-          >
-            <i id="navToggleIcon" class="fa-solid fa-bars text-xl"></i>
-          </button>
-        </div>
+      <!-- Mobile/Tablet Hamburger Toggle (Strictly hidden on Laptop/Desktop) -->
+      <button id="navToggle" type="button" class="lg:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100 focus:outline-none">
+        <i id="navToggleIcon" class="fa-solid fa-bars text-xl"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Drawer Menu (Only displays when toggled on Mobile/Tablet) -->
+  <div id="mobileMenu" class="hidden lg:hidden bg-white border-t border-gray-200 px-5 py-4 space-y-2 text-xs font-bold uppercase text-gray-700 shadow-xl">
+    <a href="{% url 'home' %}" class="block py-2 border-b border-gray-100 hover:text-sky-600">HOME</a>
+    <a href="{% url 'about' %}" class="block py-2 border-b border-gray-100 hover:text-sky-600">ABOUT</a>
+    <a href="{% url 'our_solutions' %}" class="block py-2 border-b border-gray-100 hover:text-sky-600">PRODUCTS &amp; SERVICES</a>
+    <a href="{% url 'project_capabilities' %}" class="block py-2 border-b border-gray-100 hover:text-sky-600">PROJECTS</a>
+    <a href="{% url 'quality_safety' %}" class="block py-2 border-b border-gray-100 hover:text-sky-600">INFRASTRUCTURE</a>
+    <a href="{% url 'why_anexa' %}" class="block py-2 border-b border-gray-100 hover:text-sky-600">WHY ANEXA</a>
+    <a href="{% url 'leadership_contact' %}" class="block py-2 border-b border-gray-100 text-sky-600">CONTACT</a>
+
+    {% if request.user.is_authenticated %}
+      <div class="pt-2 flex flex-col gap-2">
+        <a href="{% url 'contact_list' %}" class="flex items-center justify-center gap-2 py-2.5 bg-sky-50 text-sky-700 border border-sky-200 rounded-lg">
+          <i class="fa-solid fa-clipboard-list"></i> ENQUIRIES LIST
+        </a>
+        <a href="{% url 'adminlogout' %}" class="flex items-center justify-center gap-2 py-2.5 bg-rose-50 text-rose-600 border border-rose-200 rounded-lg">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i> LOGOUT
+        </a>
       </div>
-
-      <!-- Mobile Drawer Menu -->
-      <div
-        id="mobileMenu"
-        class="hidden md:hidden bg-white border-t border-gray-200 px-4 py-4 space-y-3 text-xs font-bold uppercase text-gray-700"
-      >
-        <a href="{% url 'home' %}" class="block py-2 border-b">HOME</a>
-        <a href="{% url 'about' %}" class="block py-2 border-b text-brandAccent"
-          >ABOUT</a
-        >
-        <a href="{% url 'our_solutions' %}" class="block py-2 border-b"
-          >PRODUCT &amp; SERVICES</a
-        >
-        <a href="{% url 'project_capabilities' %}" class="block py-2 border-b"
-          >PROJECTS</a
-        >
-        <a href="{% url 'quality_safety' %}" class="block py-2 border-b"
-          >INFRASTRUCTURE</a
-        >
-        <a href="{% url 'why_anexa' %}" class="block py-2 border-b">ALLIANCE</a>
-        <a
-          href="{% url 'leadership_contact' %}"
-          class="block py-2 text-brandAccent"
-          >CONTACT</a
-        >
-      </div>
-    </header>
-
-    <!-- Dynamic Content -->
-    <main class="flex-grow">{% block content %}{% endblock content %}</main>
+    {% endif %}
+  </div>
+</header>
+    <!-- Dynamic Main Content -->
+    <main class="flex-grow">
+      {% block content %}{% endblock content %}
+    </main>
 
     <!-- Footer -->
     <footer class="bg-brandDark text-gray-400 text-xs mt-auto">
-      <div
-        class="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-4 gap-8"
-      >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 grid grid-cols-1 md:grid-cols-4 gap-8">
         <div>
-          <h4 class="text-white text-sm font-bold uppercase mb-2">
-            ANEXA FACADE SYSTEMS LLP
-          </h4>
-          <p class="text-brandAccent font-semibold uppercase text-[11px] mb-3">
-            Building Better Facades
-          </p>
-          <p class="text-gray-400 leading-relaxed">
-            Integrated facade engineering, curtain walls, structural glazing,
-            cladding and associated architectural metalwork.
-          </p>
+          <h4 class="text-white text-sm font-bold uppercase mb-2">ANEXA FACADE SYSTEMS LLP</h4>
+          <p class="text-sky-400 font-semibold uppercase text-[11px] mb-3">Building Better Facades</p>
+          <p class="text-gray-400 leading-relaxed">Integrated facade engineering, curtain walls, structural glazing, cladding, and precision architectural envelopes.</p>
         </div>
         <div>
-          <h5
-            class="text-white uppercase font-bold mb-3 border-b border-gray-700 pb-1"
-          >
-            Navigation
-          </h5>
-          <ul class="space-y-1.5">
-            <li>
-              <a href="{% url 'home' %}" class="hover:text-white">Home</a>
-            </li>
-            <li>
-              <a href="{% url 'about' %}" class="hover:text-white"
-                >About Company</a
-              >
-            </li>
-            <li>
-              <a href="{% url 'our_solutions' %}" class="hover:text-white"
-                >Products &amp; Services</a
-              >
-            </li>
-            <li>
-              <a href="{% url 'leadership_contact' %}" class="hover:text-white"
-                >Contact &amp; Support</a
-              >
-            </li>
+          <h5 class="text-white uppercase font-bold mb-3 border-b border-gray-800 pb-1.5">Quick Links</h5>
+          <ul class="space-y-2">
+            <li><a href="{% url 'home' %}" class="hover:text-white transition">Home</a></li>
+            <li><a href="{% url 'about' %}" class="hover:text-white transition">About Company</a></li>
+            <li><a href="{% url 'our_solutions' %}" class="hover:text-white transition">Products &amp; Services</a></li>
+            <li><a href="{% url 'project_capabilities' %}" class="hover:text-white transition">Projects &amp; Systems</a></li>
+            <li><a href="{% url 'leadership_contact' %}" class="hover:text-white transition">Contact &amp; Support</a></li>
           </ul>
         </div>
         <div>
-          <h5
-            class="text-white uppercase font-bold mb-3 border-b border-gray-700 pb-1"
-          >
-            Solutions
-          </h5>
-          <p class="leading-loose">
-            Curtain Walls | ACP Cladding | Structural Glazing | Louvers |
-            Architectural Canopies | Handrails
-          </p>
+          <h5 class="text-white uppercase font-bold mb-3 border-b border-gray-800 pb-1.5">System Portfolio</h5>
+          <ul class="space-y-1.5 leading-relaxed text-gray-400">
+            <li>• Unitized &amp; Semi-Unitized Glazing</li>
+            <li>• Fire-Rated ACP Cladding (FR Grade)</li>
+            <li>• Aerofoil Louvers &amp; Sunscreens</li>
+            <li>• Spider Glazed Atrium Enclosures</li>
+            <li>• Frameless Balustrades &amp; Railings</li>
+          </ul>
         </div>
         <div>
-          <h5
-            class="text-white uppercase font-bold mb-3 border-b border-gray-700 pb-1"
-          >
-            Registered Office
-          </h5>
-          <p>
-            5/361, Shiv Kripa Building, Gomti Nagar Extension, Lucknow, UP -
-            226010, India
-          </p>
-          <p class="mt-2 text-white font-bold">+91 7992090282</p>
-          <p>info@anexafacades.com</p>
+          <h5 class="text-white uppercase font-bold mb-3 border-b border-gray-800 pb-1.5">Registered Office</h5>
+          <p class="leading-relaxed">5/361, Shiv Kripa Building, Gomti Nagar Extension, Lucknow, UP - 226010, India</p>
+          <p class="mt-3 text-white font-bold"><i class="fa-solid fa-phone text-sky-400 mr-1.5"></i>+91 7992090282</p>
+          <p class="mt-1"><i class="fa-solid fa-envelope text-sky-400 mr-1.5"></i>info@anexafacades.com</p>
         </div>
       </div>
-      <div
-        class="border-t border-neutral-800 bg-neutral-950 py-3 text-center text-gray-500"
-      >
+      <div class="border-t border-neutral-800 bg-neutral-950 py-4 text-center text-gray-500">
         &copy; {% now "Y" %} ANEXA FACADE SYSTEMS LLP. All Rights Reserved.
       </div>
     </footer>
@@ -282,48 +215,34 @@
 
       navToggle.addEventListener("click", () => {
         const isHidden = mobileMenu.classList.toggle("hidden");
-        navToggleIcon.className = isHidden
-          ? "fa-solid fa-bars text-xl"
-          : "fa-solid fa-xmark text-xl";
+        navToggleIcon.className = isHidden ? "fa-solid fa-bars text-xl" : "fa-solid fa-xmark text-xl";
       });
 
       document.addEventListener("DOMContentLoaded", function () {
         if (document.querySelector(".pageSwiper")) {
           new Swiper(".pageSwiper", {
             loop: true,
-            autoplay: { delay: 3500, disableOnInteraction: false },
+            autoplay: { delay: 4000, disableOnInteraction: false },
             pagination: { el: ".swiper-pagination", clickable: true },
-            navigation: {
-              nextEl: ".swiper-button-next",
-              prevEl: ".swiper-button-prev",
-            },
+           
           });
         }
       });
     </script>
     {% block extra_js %}{% endblock extra_js %}
 
-    <!-- WHATSAPP FLOAT BUTTON (DHARMENDRA NISHAD) -->
-<div class="fixed bottom-6 right-6 flex flex-col items-end gap-2 z-50">
-  <a
-    href="https://wa.me/917380554414?text=Hello%20ANEXA%20Facade%20Systems,%20I%20have%20a%20facade%20project%20enquiry."
-    target="_blank"
-    rel="noopener noreferrer"
-    class="bg-emerald-500 hover:bg-emerald-600 text-white pl-3 pr-4 py-2.5 rounded-full shadow-2xl flex items-center gap-2.5 transition-all duration-300 hover:scale-105 group border border-emerald-400"
-    title="Chat with Dharmendra Nishad"
-  >
-    <!-- FontAwesome WhatsApp Icon (Agar image na mile toh bhi accurate dikhega) -->
-    <span class="bg-white text-emerald-600 w-7 h-7 rounded-full flex items-center justify-center text-base shadow-sm">
-      <i class="fa-brands fa-whatsapp"></i>
-    </span>
-
-    <div class="flex flex-col text-left leading-none">
-      <!-- <span class="text-[10px] text-emerald-100 uppercase tracking-wider font-semibold">Managing Partner</span>
-      <span class="text-xs font-bold tracking-wide">Dharmendra Nishad</span> -->
+    <!-- WHATSAPP FLOATING BUTTON -->
+    <div class="fixed bottom-6 right-6 z-50">
+      <a
+        href="https://wa.me/917992090282?text=Hello%20ANEXA%20Facade%20Systems,%20I%20have%20a%20facade%20project%20enquiry."
+        target="_blank"
+        rel="noopener noreferrer"
+        class="bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-3 rounded-full shadow-2xl flex items-center gap-2.5 transition-all duration-300 hover:scale-105 group border border-emerald-400"
+        title="Chat on WhatsApp"
+      >
+        <i class="fa-brands fa-whatsapp text-xl"></i>
+        <span class="text-xs font-bold tracking-wide hidden sm:inline">WhatsApp Enquiry</span>
+      </a>
     </div>
-  </a>
-</div>
-
-
   </body>
 </html>
