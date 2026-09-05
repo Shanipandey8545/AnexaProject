@@ -58,8 +58,6 @@ WSGI_APPLICATION = 'AnexaProject.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
@@ -68,15 +66,13 @@ WSGI_APPLICATION = 'AnexaProject.wsgi.application'
 # }
 
 
-
-# Render पर PostgreSQL इस्तेमाल होगा, लोकल पर SQLite
 DATABASES = {
-    'default': dj_database_url.config(
-        default='sqlite:///db.sqlite3',
-        conn_max_age=600
+    'default': dj_database_url.parse(
+        "postgresql://anexafacedsdb_user:N9U0CsAugbgcW3vwxOtHM3lBK0dovhx4@dpg-dadptnf40ujc73ch4kk0-a.oregon-postgres.render.com/anexafacedsdb",
+        conn_max_age=600,
+        ssl_require=True
     )
 }
-
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
