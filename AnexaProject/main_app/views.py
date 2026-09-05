@@ -13,6 +13,8 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from django.db.models import Q
+import threading
+from .utils import *
 
 
 def login_admin(request):
@@ -73,48 +75,69 @@ def why_anexa(request):
     return render(request, 'why_anexa.html')
 
 
-def send_inquiry_emails(contact):
-    context = {
-        'name': contact.name or 'Client',
-        'phone': contact.phone or 'N/A',
-        'email': contact.email or 'N/A',
-        'required_facade_scope': contact.required_facade_scope or 'Architectural Facade',
-        'description': contact.description or 'No details provided',
-        'created_at': contact.created_at.strftime("%d %b %Y, %I:%M %p")
-    }
+# def send_inquiry_emails(contact):
+#     context = {
+#         'name': contact.name or 'Client',
+#         'phone': contact.phone or 'N/A',
+#         'email': contact.email or 'N/A',
+#         'required_facade_scope': contact.required_facade_scope or 'Architectural Facade',
+#         'description': contact.description or 'No details provided',
+#         'created_at': contact.created_at.strftime("%d %b %Y, %I:%M %p")
+#     }
 
-    from_sender = getattr(settings, 'DEFAULT_FROM_EMAIL')
-    if contact.email:
-        try:
-            cust_html = render_to_string('EmailFormat/customer_ack.html', context)
-            cust_msg = EmailMultiAlternatives(
-                subject="Inquiry Received | ANEXA Facade Systems LLP",
-                body=strip_tags(cust_html),
-                from_email=from_sender,
-                to=[contact.email]
-            )
-            cust_msg.attach_alternative(cust_html, "text/html")
-            cust_msg.send(fail_silently=True)
-            print("Customer Email send", contact.email)
+#     from_sender = getattr(settings, 'DEFAULT_FROM_EMAIL')
+#     if contact.email:
+#         try:
+#             cust_html = render_to_string('EmailFormat/customer_ack.html', context)
+#             cust_msg = EmailMultiAlternatives(
+#                 subject="Inquiry Received | ANEXA Facade Systems LLP",
+#                 body=strip_tags(cust_html),
+#                 from_email=from_sender,
+#                 to=[contact.email]
+#             )
+#             cust_msg.attach_alternative(cust_html, "text/html")
+#             cust_msg.send(fail_silently=True)
+#             print("Customer Email send", contact.email)
             
-        except Exception as e:
-            print("Customer Email Error:", e)
+#         except Exception as e:
+#             print("Customer Email Error:", e)
 
-    # 2. Send notification to ANEXA Admin
-    try:
-        admin_html = render_to_string('EmailFormat/admin_alert.html', context)
-        admin_msg = EmailMultiAlternatives(
-            subject=f"New Lead: {contact.name} - {contact.required_facade_scope}",
-            body=strip_tags(admin_html),
-            from_email=from_sender,
-            to=['info@anexafacades.com']
-        )
-        admin_msg.attach_alternative(admin_html, "text/html")
-        admin_msg.send(fail_silently=True)
-        print("Customer Email send Admin")
+#     # 2. Send notification to ANEXA Admin
+#     try:
+#         admin_html = render_to_string('EmailFormat/admin_alert.html', context)
+#         admin_msg = EmailMultiAlternatives(
+#             subject=f"New Lead: {contact.name} - {contact.required_facade_scope}",
+#             body=strip_tags(admin_html),
+#             from_email=from_sender,
+#             to=['info@anexafacades.com']
+#         )
+#         admin_msg.attach_alternative(admin_html, "text/html")
+#         admin_msg.send(fail_silently=True)
+#         print("Customer Email send Admin")
         
-    except Exception as e:
-        print("Admin Email Error:", e)
+#     except Exception as e:
+#         print("Admin Email Error:", e)
+
+
+# def fill_contact_form(request):
+#     if request.method == "POST":
+#         name = request.POST.get('name')
+#         phone = request.POST.get('phone')
+#         email = request.POST.get('email')
+#         scope = request.POST.get('scope') or request.POST.get('required_facade_scope')
+#         message = request.POST.get('message') or request.POST.get('description')
+
+#         contact = ContactForm.objects.create(name=name,phone=phone,
+#             email=email,required_facade_scope=scope,
+#             description=message,status='New'
+#         )
+
+#         send_inquiry_emails(contact)
+#         messages.success(request, "Thank you! Your inquiry has been submitted successfully.")
+#         return redirect('leadership_contact')
+
+#     return render(request, 'leadership_contact.html')
+
 
 
 def fill_contact_form(request):
@@ -125,18 +148,20 @@ def fill_contact_form(request):
         scope = request.POST.get('scope') or request.POST.get('required_facade_scope')
         message = request.POST.get('message') or request.POST.get('description')
 
-        contact = ContactForm.objects.create(name=name,phone=phone,
-            email=email,required_facade_scope=scope,
-            description=message,status='New'
+        contact = ContactForm.objects.create(
+            name=name,
+            phone=phone,
+            email=email,
+            required_facade_scope=scope,
+            description=message,
+            status='New'
         )
-
         send_inquiry_emails(contact)
+
         messages.success(request, "Thank you! Your inquiry has been submitted successfully.")
         return redirect('leadership_contact')
 
     return render(request, 'leadership_contact.html')
-
-
 
 
 @login_required(login_url='login')

@@ -135,11 +135,11 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
-EMAIL_HOST_USER = 'shanipandey123@gmail.com'
-EMAIL_HOST_PASSWORD = 'oqth viip spfp hgaq'
+EMAIL_HOST_USER = 'shaneepandey123@gmail.com'
+EMAIL_HOST_PASSWORD = 'mdpv rqhj offz xhrd'
 
-DEFAULT_FROM_EMAIL = 'ANEXA Facade Systems <shanipandey123@gmail.com>'
-SERVER_EMAIL = 'shanipandey123@gmail.com'
+DEFAULT_FROM_EMAIL = 'ANEXA Facade Systems <shaneepandey123@gmail.com>'
+SERVER_EMAIL = 'shaneepandey123@gmail.com'
 
 
 # pip install gunicorn whitenoise
