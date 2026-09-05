@@ -141,10 +141,10 @@
 
                 <!-- Description -->
                 <td class="py-4 px-4 max-w-xs">
-                  <p class="truncate text-slate-600" title="{{ item.description }}">
-                    {{ item.description|default:"No details shared" }}
+                  <p class="text-slate-600" title="{{ item.description }}">
+                      {{ item.description|default:"No details shared"|truncatechars:20 }}
                   </p>
-                </td>
+              </td>
 
                 <!-- Date -->
                 <td class="py-4 px-4 whitespace-nowrap text-slate-500 text-[11px]">

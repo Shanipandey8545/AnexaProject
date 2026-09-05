@@ -213,3 +213,26 @@ def delete_contact(request, pk):
 
     referer = request.META.get('HTTP_REFERER')
     return redirect(referer if referer else 'contact_list')
+
+
+
+
+
+def service_facade_cladding(request):
+    return render(request, 'service_facade_cladding.html')
+
+def service_glazing_systems(request):
+    return render(request, 'service_glazing_systems.html')
+
+def service_aluminium_works(request):
+    return render(request, 'service_aluminium_works.html')
+
+def service_glass_works(request):
+    return render(request, 'service_glass_works.html')
+
+def service_special_facade_works(request):
+    return render(request, 'service_special_facade_works.html')
+
+def service_engineering_execution(request):
+    return render(request, 'service_engineering_execution.html')
+

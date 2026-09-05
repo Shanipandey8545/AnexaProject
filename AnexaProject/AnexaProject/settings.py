@@ -130,16 +130,33 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_USE_SSL = False
+# EMAIL_HOST_USER = 'shaneepandey123@gmail.com'
+# EMAIL_HOST_PASSWORD = 'mdpv rqhj offz xhrd'
+
+# DEFAULT_FROM_EMAIL = 'ANEXA Facade Systems <shaneepandey123@gmail.com>'
+# SERVER_EMAIL = 'shaneepandey123@gmail.com'
+
+
+
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
-EMAIL_HOST_USER = 'shaneepandey123@gmail.com'
-EMAIL_HOST_PASSWORD = 'mdpv rqhj offz xhrd'
+EMAIL_HOST_USER = 'info@anexafacade.com'
+EMAIL_HOST_PASSWORD = 'ibwi lsly ubmr ybie'
 
-DEFAULT_FROM_EMAIL = 'ANEXA Facade Systems <shaneepandey123@gmail.com>'
-SERVER_EMAIL = 'shaneepandey123@gmail.com'
+DEFAULT_FROM_EMAIL = 'ANEXA Facade Systems <info@anexafacade.com>'
+SERVER_EMAIL = 'info@anexafacade.com'
+
+
+
+
 
 
 # pip install gunicorn whitenoise

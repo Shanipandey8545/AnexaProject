@@ -2,121 +2,367 @@
 {% load static %}
 
 {% block title %}05 | Quality, Safety & Site Control - ANEXA Facade Systems LLP{% endblock title %}
-{% block description %}Site safety rules, dimensional verification, material control, and installation inspection standards by ANEXA Facade Systems LLP. {% endblock description %}
+{% block description %}Comprehensive field QA/QC protocols, work-at-height HSE safety frameworks, AAMA water testing, and zero-defect handover governance by ANEXA Facade Systems LLP.{% endblock description %}
+
+{% block extra_css %}
+<style>
+    .qa-card {
+        transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease;
+    }
+    .qa-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 16px 30px -8px rgba(2, 132, 199, 0.12), 0 8px 12px -3px rgba(0, 0, 0, 0.04);
+        border-color: #0284c7;
+    }
+    .safety-check-item {
+        background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+    }
+</style>
+{% endblock extra_css %}
 
 {% block content %}
-<!-- Full-Width Hero with Overlay Statement -->
-<div class="relative w-full h-[360px] sm:h-[440px] bg-brandDark">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpw17Jpi1NuNkbbexYKcPhJX8eiI0xu5Ybg-WqBsUYBw&s=10" alt="Work at height safety" class="w-full h-full object-cover opacity-35">
-    <div class="absolute inset-0 flex items-center">
+<!-- Full-Width Hero with High-Contrast Overlay -->
+<div class="relative w-full h-[380px] sm:h-[460px] md:h-[520px] bg-slate-950 overflow-hidden">
+    <img 
+        src="https://images.unsplash.com/photo-1541888946425-d0fbb18086f6?auto=format&fit=crop&w=1920&q=85" 
+        alt="Facade Work at Height Safety Rigging" 
+        class="w-full h-full object-cover object-center opacity-30 scale-105"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/65 to-transparent flex items-end pb-14">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-white">
-            <span class="bg-brandAccent text-white text-xs font-bold uppercase px-3 py-1 rounded tracking-wider">Protocol 05</span>
-            <h1 class="text-3xl sm:text-5xl font-black mt-3">QUALITY, SAFETY &amp; SITE CONTROL</h1>
-            <p class="text-gray-300 text-xs sm:text-sm max-w-xl mt-3 leading-relaxed">
-                Plan work, access, lifting, and installation activities with safety as a core requirement and quality verified at source.
+            <span class="bg-sky-600 text-white text-[11px] font-black uppercase px-3.5 py-1.5 rounded tracking-widest inline-block mb-3">Protocol 05</span>
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight leading-tight">QUALITY, SAFETY &amp; SITE CONTROL</h1>
+            <p class="text-slate-300 text-xs sm:text-base max-w-2xl mt-3 leading-relaxed">
+                Zero-compromise high-altitude safety governance, millimeter-level dimensional surveying, dust-free silicone curing, and certified AAMA water-penetration resistance.
             </p>
         </div>
     </div>
 </div>
 
+<!-- 2. High-Level Performance Metrics -->
+<section class="bg-white border-b border-gray-200 py-10 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+            <div class="border-r border-gray-200 last:border-0 px-3">
+                <div class="text-2xl sm:text-4xl font-black text-sky-600 tracking-tight">Zero Incident</div>
+                <div class="text-xs font-bold text-slate-900 uppercase mt-1 tracking-wider">HSE Mandate</div>
+                <p class="text-[11px] text-slate-500 mt-0.5 hidden sm:block">100% dual-lanyard fall-arrest compliance</p>
+            </div>
+            <div class="border-r border-gray-200 last:border-0 px-3">
+                <div class="text-2xl sm:text-4xl font-black text-sky-600 tracking-tight">&plusmn;1.0 mm</div>
+                <div class="text-xs font-bold text-slate-900 uppercase mt-1 tracking-wider">Total Station Plumb</div>
+                <p class="text-[11px] text-slate-500 mt-0.5 hidden sm:block">Optical slab alignment before anchor drilling</p>
+            </div>
+            <div class="border-r border-gray-200 last:border-0 px-3">
+                <div class="text-2xl sm:text-4xl font-black text-sky-600 tracking-tight">AAMA 501.2</div>
+                <div class="text-xs font-bold text-slate-900 uppercase mt-1 tracking-wider">Hose Spray Testing</div>
+                <p class="text-[11px] text-slate-500 mt-0.5 hidden sm:block">Mandatory leak checks prior to scaffold de-rigging</p>
+            </div>
+            <div class="px-3">
+                <div class="text-2xl sm:text-4xl font-black text-sky-600 tracking-tight">100% Batch</div>
+                <div class="text-xs font-bold text-slate-900 uppercase mt-1 tracking-wider">Material Traceability</div>
+                <p class="text-[11px] text-slate-500 mt-0.5 hidden sm:block">MTC certified alloy 6063-T6 &amp; structural sealants</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Main Operational Protocols Content -->
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
 
-    <!-- Split Section: Left Sticky Visual, Right Inspection Workflow -->
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+    <!-- Split Section: Sticky Visual Left + 6 Step Rigorous QA Right -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-24">
         
-        <!-- Left Side: Sticky Operational Cards -->
+        <!-- Left Side: Sticky Operational Cards & Safety Policy -->
         <div class="lg:col-span-5 space-y-6 lg:sticky lg:top-28">
-            <div class="rounded-2xl overflow-hidden shadow-lg border border-gray-200">
-                <div class="h-64 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" alt="Engineers Inspecting Site" class="w-full h-full object-cover">
+            <div class="rounded-2xl overflow-hidden shadow-lg border border-gray-200 bg-white">
+                <div class="h-64 sm:h-72 overflow-hidden relative">
+                    <img 
+                        src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=85" 
+                        alt="Engineers Inspecting Site Rigging" 
+                        class="w-full h-full object-cover"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
+                    <span class="absolute bottom-4 left-4 bg-sky-600 text-white text-[10px] font-black uppercase tracking-widest px-2.5 py-1 rounded">
+                        Active Field Governance
+                    </span>
                 </div>
-                <div class="p-5 bg-white">
-                    <span class="text-brandAccent text-[11px] font-bold uppercase tracking-wider block">Field Protocol</span>
-                    <h3 class="font-bold text-gray-900 text-base mt-1">Disciplined Site Presence</h3>
-                    <p class="text-xs text-gray-600 mt-2 leading-relaxed">
-                        Every activity at height, from cradle rigging to structural glass setting, follows verified method statements and statutory guidelines.
+                <div class="p-6">
+                    <span class="text-sky-600 text-[11px] font-bold uppercase tracking-wider block">Field Protocol Execution</span>
+                    <h3 class="font-extrabold text-slate-950 text-lg mt-1 uppercase tracking-tight">Disciplined Site Presence</h3>
+                    <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                        Every activity at height—from spider winch anchoring and cradle rigging to structural unit hoisting and sealant tooling—strictly follows verified Method Statements (MS) and safe Work Method Procedures (SWMS).
                     </p>
                 </div>
             </div>
 
-            <div class="p-6 bg-brandDark text-white rounded-2xl shadow-md border border-neutral-800">
-                <h4 class="text-sm font-bold uppercase text-brandAccent mb-2">Project-Specific Quality Notice</h4>
-                <p class="text-xs text-gray-300 leading-relaxed">
-                    Project-specific quality plans, method statements, inspection test plans, safety plans and statutory requirements will be followed as applicable to the awarded scope.
+            <!-- Notice Callout Box -->
+            <div class="p-7 bg-slate-950 text-white rounded-2xl shadow-xl border border-slate-800 relative overflow-hidden">
+                <div class="w-2 h-full bg-sky-600 absolute left-0 top-0"></div>
+                <h4 class="text-xs font-black uppercase tracking-widest text-sky-400 mb-2.5">Project-Specific Quality Mandate</h4>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                    Prior to mobilizing on site, ANEXA submits custom <strong>Inspection &amp; Test Plans (ITP)</strong>, lifting engineering studies, chemical anchor pull-out test regimes, and statutory safety checklists configured to match client and PMC site rules.
                 </p>
+                <div class="mt-4 pt-4 border-t border-slate-800 flex items-center justify-between text-[11px] text-slate-400">
+                    <span>Approved Method Statements</span>
+                    <i class="fa-solid fa-file-circle-check text-sky-400 text-sm"></i>
+                </div>
+            </div>
+
+            <!-- Testing Standards Overview -->
+            <div class="p-6 bg-sky-50/70 border border-sky-200 rounded-2xl">
+                <h4 class="text-xs font-bold text-sky-900 uppercase tracking-widest mb-3 flex items-center">
+                    <i class="fa-solid fa-vial-circle-check text-sky-600 mr-2 text-sm"></i> Statutory Testing Codes Followed
+                </h4>
+                <div class="space-y-2 text-xs text-slate-700 font-medium">
+                    <div class="flex items-center justify-between border-b border-sky-100 pb-1.5">
+                        <span>Wind Load Calculations</span>
+                        <strong class="text-slate-900">IS 875 (Part 3)</strong>
+                    </div>
+                    <div class="flex items-center justify-between border-b border-sky-100 pb-1.5">
+                        <span>Structural Silicone Adhesion</span>
+                        <strong class="text-slate-900">ASTM C1401 / C1135</strong>
+                    </div>
+                    <div class="flex items-center justify-between border-b border-sky-100 pb-1.5">
+                        <span>Field Water Penetration</span>
+                        <strong class="text-slate-900">AAMA 501.2</strong>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span>Safety Glazing Standards</span>
+                        <strong class="text-slate-900">IS 2553 / EN 12600</strong>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- Right Side: Step-by-Step QA Checklist & Protocols from PDF -->
+        <!-- Right Side: Step-by-Step QA Checklist & Protocols from PDF (Expanded Detail) -->
         <div class="lg:col-span-7 space-y-6">
             
             <!-- Item 1 -->
-            <div class="p-6 bg-white border border-gray-200 rounded-xl shadow-sm hover:border-brandAccent transition">
-                <div class="flex items-center space-x-3 mb-2">
-                    <span class="w-7 h-7 rounded-full bg-blue-50 text-brandAccent font-bold text-xs flex items-center justify-center">01</span>
-                    <h3 class="text-base font-bold text-gray-900">Quality Planning</h3>
+            <div class="qa-card p-6 sm:p-7 bg-white border border-gray-200 rounded-2xl shadow-sm">
+                <div class="flex items-start space-x-4">
+                    <span class="w-9 h-9 rounded-xl bg-sky-50 text-sky-600 font-black text-sm flex items-center justify-center shrink-0 border border-sky-100">01</span>
+                    <div class="flex-grow">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-base sm:text-lg font-black text-slate-950 uppercase tracking-tight">Quality Planning &amp; Engineering Submittals</h3>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-sky-600 bg-sky-50 px-2 py-0.5 rounded border border-sky-100 hidden sm:inline-block">Stage 1</span>
+                        </div>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mt-2">
+                            Every facade project begins with detailed engineering submittals. We use client-approved 2D fabrication shop drawings, 3D BIM connection sections, structural static calculations, and full-scale physical visual mock-ups (VMU) to freeze all visual reveals, bracket anchors, and corner transitions before mass extrusion.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-4 text-[11px] text-slate-700">
+                            <div class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Signed-off Inspection &amp; Test Plans (ITP)</div>
+                            <div class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Approved glass &amp; metal material finish samples</div>
+                        </div>
+                    </div>
                 </div>
-                <p class="text-xs text-gray-600 leading-relaxed pl-10">
-                    Use approved drawings, material specifications, samples/mock-ups where applicable, inspection points and documented approvals.
-                </p>
             </div>
 
             <!-- Item 2 -->
-            <div class="p-6 bg-white border border-gray-200 rounded-xl shadow-sm hover:border-brandAccent transition">
-                <div class="flex items-center space-x-3 mb-2">
-                    <span class="w-7 h-7 rounded-full bg-blue-50 text-brandAccent font-bold text-xs flex items-center justify-center">02</span>
-                    <h3 class="text-base font-bold text-gray-900">Dimensional Control</h3>
+            <div class="qa-card p-6 sm:p-7 bg-white border border-gray-200 rounded-2xl shadow-sm">
+                <div class="flex items-start space-x-4">
+                    <span class="w-9 h-9 rounded-xl bg-sky-50 text-sky-600 font-black text-sm flex items-center justify-center shrink-0 border border-sky-100">02</span>
+                    <div class="flex-grow">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-base sm:text-lg font-black text-slate-950 uppercase tracking-tight">Dimensional Survey &amp; Grid Control</h3>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-sky-600 bg-sky-50 px-2 py-0.5 rounded border border-sky-100 hidden sm:inline-block">Stage 2</span>
+                        </div>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mt-2">
+                            Civil structures always exhibit out-of-plumb deviations and slab edge drops. Our optical total-station surveyors establish primary benchmark grids on every floor slab, documenting actual as-built conditions to allow custom bracket adjustments and eliminate forced on-site profile fitting.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-4 text-[11px] text-slate-700">
+                            <div class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Laser plumb verification across multi-story spans</div>
+                            <div class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>3D datum check before anchor fastener drilling</div>
+                        </div>
+                    </div>
                 </div>
-                <p class="text-xs text-gray-600 leading-relaxed pl-10">
-                    Verify site dimensions and setting-out before fabrication/installation wherever required by the project.
-                </p>
             </div>
 
             <!-- Item 3 -->
-            <div class="p-6 bg-white border border-gray-200 rounded-xl shadow-sm hover:border-brandAccent transition">
-                <div class="flex items-center space-x-3 mb-2">
-                    <span class="w-7 h-7 rounded-full bg-blue-50 text-brandAccent font-bold text-xs flex items-center justify-center">03</span>
-                    <h3 class="text-base font-bold text-gray-900">Material Control</h3>
+            <div class="qa-card p-6 sm:p-7 bg-white border border-gray-200 rounded-2xl shadow-sm">
+                <div class="flex items-start space-x-4">
+                    <span class="w-9 h-9 rounded-xl bg-sky-50 text-sky-600 font-black text-sm flex items-center justify-center shrink-0 border border-sky-100">03</span>
+                    <div class="flex-grow">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-base sm:text-lg font-black text-slate-950 uppercase tracking-tight">Material Intake &amp; Batch Traceability</h3>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-sky-600 bg-sky-50 px-2 py-0.5 rounded border border-sky-100 hidden sm:inline-block">Stage 3</span>
+                        </div>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mt-2">
+                            Raw material integrity is controlled before items enter the workshop. Extrusions are checked for alloy 6063-T6 composition, PVDF coating thickness (microns), and glass batches are audited for roller wave distortions, bow-and-warp, and Heat Soak Test (HST) certification.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-4 text-[11px] text-slate-700">
+                            <div class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Manufacturer Test Certificates (MTC) logged per heat</div>
+                            <div class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Silicone lot verification &amp; expiry tracking</div>
+                        </div>
+                    </div>
                 </div>
-                <p class="text-xs text-gray-600 leading-relaxed pl-10">
-                    Maintain traceability/identification and check delivered materials against approved requirements.
-                </p>
             </div>
 
             <!-- Item 4 -->
-            <div class="p-6 bg-white border border-gray-200 rounded-xl shadow-sm hover:border-brandAccent transition">
-                <div class="flex items-center space-x-3 mb-2">
-                    <span class="w-7 h-7 rounded-full bg-blue-50 text-brandAccent font-bold text-xs flex items-center justify-center">04</span>
-                    <h3 class="text-base font-bold text-gray-900">Installation Quality</h3>
+            <div class="qa-card p-6 sm:p-7 bg-white border border-gray-200 rounded-2xl shadow-sm">
+                <div class="flex items-start space-x-4">
+                    <span class="w-9 h-9 rounded-xl bg-sky-50 text-sky-600 font-black text-sm flex items-center justify-center shrink-0 border border-sky-100">04</span>
+                    <div class="flex-grow">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-base sm:text-lg font-black text-slate-950 uppercase tracking-tight">Precision Installation Quality</h3>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-sky-600 bg-sky-50 px-2 py-0.5 rounded border border-sky-100 hidden sm:inline-block">Stage 4</span>
+                        </div>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mt-2">
+                            Daily site inspections monitor mullion alignment, expansion joint gaps, SS-304/316 fastener tightening torques, setting block positioning, EPDM gasket continuity, and clean weather silicone tooling to ensure weatherproofing and acoustic integrity.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-4 text-[11px] text-slate-700">
+                            <div class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Calibrated torque wrenches on anchor connections</div>
+                            <div class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Non-staining neutral cure weather sealing</div>
+                        </div>
+                    </div>
                 </div>
-                <p class="text-xs text-gray-600 leading-relaxed pl-10">
-                    Monitor alignment, levels, joints, fasteners, glass setting, sealants, panel interfaces and finishing.
-                </p>
             </div>
 
             <!-- Item 5 -->
-            <div class="p-6 bg-white border border-gray-200 rounded-xl shadow-sm hover:border-brandAccent transition">
-                <div class="flex items-center space-x-3 mb-2">
-                    <span class="w-7 h-7 rounded-full bg-blue-50 text-brandAccent font-bold text-xs flex items-center justify-center">05</span>
-                    <h3 class="text-base font-bold text-gray-900">Safety Coordination</h3>
+            <div class="qa-card p-6 sm:p-7 bg-white border border-gray-200 rounded-2xl shadow-sm">
+                <div class="flex items-start space-x-4">
+                    <span class="w-9 h-9 rounded-xl bg-sky-50 text-sky-600 font-black text-sm flex items-center justify-center shrink-0 border border-sky-100">05</span>
+                    <div class="flex-grow">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-base sm:text-lg font-black text-slate-950 uppercase tracking-tight">HSE &amp; Height Safety Coordination</h3>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-sky-600 bg-sky-50 px-2 py-0.5 rounded border border-sky-100 hidden sm:inline-block">Stage 5</span>
+                        </div>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mt-2">
+                            High-altitude facade rigging is inherently critical. All cradles, scaffolding access, spider lifting cranes, and personal protective equipment (PPE) undergo daily toolbox inspections. Working crews operate on dual-rope safety lines with certified fall-arresters.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-4 text-[11px] text-slate-700">
+                            <div class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Daily pre-shift safety briefings &amp; harness audits</div>
+                            <div class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Exclusion zone barricading below overhead rigs</div>
+                        </div>
+                    </div>
                 </div>
-                <p class="text-xs text-gray-600 leading-relaxed pl-10">
-                    Plan work at height, access, lifting, tools, barricading and site housekeeping in accordance with applicable project safety rules.
-                </p>
             </div>
 
             <!-- Item 6 -->
-            <div class="p-6 bg-white border border-gray-200 rounded-xl shadow-sm hover:border-brandAccent transition">
-                <div class="flex items-center space-x-3 mb-2">
-                    <span class="w-7 h-7 rounded-full bg-blue-50 text-brandAccent font-bold text-xs flex items-center justify-center">06</span>
-                    <h3 class="text-base font-bold text-gray-900">Close-Out</h3>
+            <div class="qa-card p-6 sm:p-7 bg-white border border-gray-200 rounded-2xl shadow-sm">
+                <div class="flex items-start space-x-4">
+                    <span class="w-9 h-9 rounded-xl bg-sky-50 text-sky-600 font-black text-sm flex items-center justify-center shrink-0 border border-sky-100">06</span>
+                    <div class="flex-grow">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-base sm:text-lg font-black text-slate-950 uppercase tracking-tight">Systematic Closeout &amp; Defect-Free Handover</h3>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-sky-600 bg-sky-50 px-2 py-0.5 rounded border border-sky-100 hidden sm:inline-block">Stage 6</span>
+                        </div>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mt-2">
+                            Prior to dismantling external scaffolding, we conduct formal joint punch-list walkthroughs with PMC representatives. On-site field water spray hose tests (AAMA 501.2) are executed, and as-built drawings along with warranty dossiers are finalized for handover.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-4 text-[11px] text-slate-700">
+                            <div class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Signed AAMA 501.2 field hose water leak certificate</div>
+                            <div class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Comprehensive As-Built CAD dossiers &amp; O&amp;M manuals</div>
+                        </div>
+                    </div>
                 </div>
-                <p class="text-xs text-gray-600 leading-relaxed pl-10">
-                    Address observations and punch points systematically and support final handover documentation.
-                </p>
             </div>
 
         </div>
     </div>
+
+    <!-- On-Site Water Leakage Testing Showcase Banner -->
+    <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8 sm:p-12 text-white mb-24 shadow-2xl relative overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            <div class="lg:col-span-7 space-y-4">
+                <span class="text-sky-400 font-black text-xs uppercase tracking-widest">Watertight Envelopes</span>
+                <h3 class="text-2xl sm:text-3xl font-black uppercase tracking-tight">On-Site AAMA 501.2 Calibrated Water Spray Testing</h3>
+                <div class="w-12 h-1 bg-sky-500 my-2"></div>
+                <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                    Most facade leaks occur around mullion splices, perimeter flashing transitions, and screw penetrations. ANEXA conducts calibrated Monarch Type B-25 water nozzle spray testing at 30–35 PSI pressure directly against installed joints before interior gypsum ceilings are put in place.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs text-slate-300">
+                    <div class="flex items-center"><i class="fa-solid fa-droplet text-sky-400 mr-2"></i>30 PSI calibrated water nozzle pressure</div>
+                    <div class="flex items-center"><i class="fa-solid fa-shield-halved text-sky-400 mr-2"></i>Pre-handover internal chamber leak detection</div>
+                    <div class="flex items-center"><i class="fa-solid fa-clock text-sky-400 mr-2"></i>Continuous 5-minute spray per 5-foot joint length</div>
+                    <div class="flex items-center"><i class="fa-solid fa-certificate text-sky-400 mr-2"></i>Formal sign-off with project structural engineers</div>
+                </div>
+            </div>
+            <div class="lg:col-span-5 relative rounded-2xl overflow-hidden shadow-xl h-64 sm:h-80 bg-slate-950">
+                <img 
+                    src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=900&q=85" 
+                    alt="Water Tightness Inspection" 
+                    class="w-full h-full object-cover"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+                <div class="absolute bottom-4 left-4 right-4">
+                    <span class="bg-sky-600 text-white text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded">Inspection Standard</span>
+                    <p class="text-white text-xs font-bold mt-1">Certified Waterproof Barrier Delivery</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Health, Safety & Environment (HSE) Protocol Cards -->
+    <div class="mb-24">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Work-At-Height Protocols</span>
+            <h2 class="text-2xl sm:text-3xl font-black text-slate-950 uppercase tracking-tight mt-1">Health, Safety &amp; Environment (HSE) Discipline</h2>
+            <div class="w-14 h-1 bg-sky-600 mx-auto mt-3 mb-4"></div>
+            <p class="text-slate-600 text-xs sm:text-sm">We maintain a culture of personal accountability and strict procedural compliance across all high-altitude work fronts.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="safety-check-item p-6 rounded-2xl border border-gray-200 shadow-sm">
+                <div class="w-12 h-12 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center text-xl mb-4 border border-sky-100">
+                    <i class="fa-solid fa-person-falling-burst"></i>
+                </div>
+                <h4 class="font-extrabold text-sm text-slate-900 uppercase tracking-tight mb-2">Fall Arrest Rigging</h4>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                    Mandatory 100% tie-off using dual-lanyard full-body safety harnesses, shock absorbers, and independent static lifelines.
+                </p>
+            </div>
+
+            <div class="safety-check-item p-6 rounded-2xl border border-gray-200 shadow-sm">
+                <div class="w-12 h-12 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center text-xl mb-4 border border-sky-100">
+                    <i class="fa-solid fa-helmet-safety"></i>
+                </div>
+                <h4 class="font-extrabold text-sm text-slate-900 uppercase tracking-tight mb-2">PPE Compliance</h4>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                    EN-certified chin-strap hard helmets, high-visibility vests, cut-resistant glass handling gloves, and steel-toe safety boots.
+                </p>
+            </div>
+
+            <div class="safety-check-item p-6 rounded-2xl border border-gray-200 shadow-sm">
+                <div class="w-12 h-12 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center text-xl mb-4 border border-sky-100">
+                    <i class="fa-solid fa-crane"></i>
+                </div>
+                <h4 class="font-extrabold text-sm text-slate-900 uppercase tracking-tight mb-2">Lifting Gear Audits</h4>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                    Third-party tested web slings, D-shackles, glass suction cups (dual vacuum circuits), and motorized hoisting cradles.
+                </p>
+            </div>
+
+            <div class="safety-check-item p-6 rounded-2xl border border-gray-200 shadow-sm">
+                <div class="w-12 h-12 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center text-xl mb-4 border border-sky-100">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                </div>
+                <h4 class="font-extrabold text-sm text-slate-900 uppercase tracking-tight mb-2">Barricading &amp; Debris Catch</h4>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                    Ground-level perimeter catch nets, toe-boards on scaffolding, and marked exclusion zones beneath active rigging vertical drops.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action Banner -->
+    <div class="bg-gradient-to-r from-slate-950 to-sky-950 text-white p-8 sm:p-12 rounded-2xl shadow-xl border border-slate-800 text-center relative overflow-hidden">
+        <div class="max-w-2xl mx-auto relative z-10">
+            <span class="text-xs font-bold text-sky-400 uppercase tracking-widest block mb-2">Project Quality Governance</span>
+            <h3 class="text-2xl sm:text-3xl font-black uppercase tracking-tight">Need Detailed ITPs or Method Statements for Tender?</h3>
+            <p class="text-xs sm:text-sm text-slate-300 mt-2 mb-8 leading-relaxed">
+                Our site quality managers and static engineers can furnish standard Project Quality Plans (PQP), safety risk matrices, and testing schedules tailored for your project.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="{% url 'leadership_contact' %}" class="bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs uppercase tracking-wider px-8 py-3.5 rounded shadow-lg transition flex items-center">
+                    <i class="fa-solid fa-envelope-open-text mr-2"></i> Request Quality Dossier
+                </a>
+                <a href="tel:+917992090282" class="border border-white/40 hover:bg-white hover:text-slate-950 text-white font-bold text-xs uppercase tracking-wider px-8 py-3.5 rounded transition flex items-center">
+                    <i class="fa-solid fa-phone mr-2 text-sky-400"></i> Speak to QA Director
+                </a>
+            </div>
+        </div>
+    </div>
+
 </div>
 {% endblock content %}

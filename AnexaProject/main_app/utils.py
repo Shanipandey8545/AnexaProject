@@ -43,7 +43,7 @@ def _email_worker(contact):
             subject=f"New Lead: {contact.name} - {contact.required_facade_scope}",
             body=strip_tags(admin_html),
             from_email=from_sender,
-            to=['info@anexafacade.com']
+            to=['dharmendra@anexafacade.com']
         )
         admin_msg.attach_alternative(admin_html, "text/html")
         admin_msg.send(fail_silently=False)

@@ -133,111 +133,427 @@ endblock description %} {% block extra_css %}
   </div>
 </div>
 
-<!-- 2. OUR SERVICES -->
+  <!-- ARCHITECTURAL EXPERTISE & CORE CAPABILITIES (CIRCULAR ICON GRID) -->
 <section class="py-16 bg-white border-b">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <h2 class="text-2xl font-bold text-sky-800 uppercase tracking-wide mb-10">
-      OUR SERVICES
+    <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Engineered Building Envelopes</span>
+    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 uppercase tracking-tight mt-1 mb-10">
+      OUR CORE CAPABILITIES
     </h2>
 
-    <div
-      class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 items-center"
-    >
-      <!-- 1. Curtain Walls -->
-      <a
-        href="{% url 'our_solutions' %}"
-        class="service-item flex flex-col items-center group"
-      >
-        <div
-          class="service-circle rounded-full flex items-center justify-center mb-3 bg-sky-50"
-        >
-          <i class="fa-solid fa-table-cells text-sky-600 text-2xl"></i>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 sm:gap-8 items-start justify-center">
+      
+      <!-- 1. ACP & HPL Cladding -->
+      <a href="{% url 'service_facade_cladding' %}" class="service-item flex flex-col items-center group">
+        <div class="service-circle rounded-full flex items-center justify-center mb-3 bg-sky-50">
+          <i class="fa-solid fa-layer-group text-sky-600 text-2xl"></i>
         </div>
-        <span
-          class="text-xs font-bold text-gray-700 uppercase tracking-tight group-hover:text-sky-600 transition"
-          >Curtain Walls</span
-        >
+        <span class="text-xs font-bold text-gray-700 uppercase tracking-tight group-hover:text-sky-600 transition text-center">
+          ACP &amp; HPL Cladding
+        </span>
       </a>
 
       <!-- 2. Structural Glazing -->
-      <a
-        href="{% url 'our_solutions' %}"
-        class="service-item flex flex-col items-center group"
-      >
-        <div
-          class="service-circle rounded-full flex items-center justify-center mb-3 bg-sky-50"
-        >
+      <a href="{% url 'service_glazing_systems' %}" class="service-item flex flex-col items-center group">
+        <div class="service-circle rounded-full flex items-center justify-center mb-3 bg-sky-50">
           <i class="fa-regular fa-building text-sky-600 text-2xl"></i>
         </div>
-        <span
-          class="text-xs font-bold text-gray-700 uppercase tracking-tight group-hover:text-sky-600 transition"
-          >Structural Glazing</span
-        >
+        <span class="text-xs font-bold text-gray-700 uppercase tracking-tight group-hover:text-sky-600 transition text-center">
+          Structural Glazing
+        </span>
       </a>
 
-      <!-- 3. ACP Cladding -->
-      <a
-        href="{% url 'our_solutions' %}"
-        class="service-item flex flex-col items-center group"
-      >
-        <div
-          class="service-circle rounded-full flex items-center justify-center mb-3 bg-sky-50"
-        >
-          <i class="fa-solid fa-layer-group text-sky-600 text-2xl"></i>
+      <!-- 3. Curtain Wall Systems -->
+      <a href="{% url 'service_glazing_systems' %}" class="service-item flex flex-col items-center group">
+        <div class="service-circle rounded-full flex items-center justify-center mb-3 bg-sky-50">
+          <i class="fa-solid fa-table-cells text-sky-600 text-2xl"></i>
         </div>
-        <span
-          class="text-xs font-bold text-gray-700 uppercase tracking-tight group-hover:text-sky-600 transition"
-          >ACP Cladding</span
-        >
+        <span class="text-xs font-bold text-gray-700 uppercase tracking-tight group-hover:text-sky-600 transition text-center">
+          Curtain Wall Systems
+        </span>
       </a>
 
-      <!-- 4. Louvers -->
-      <a
-        href="{% url 'our_solutions' %}"
-        class="service-item flex flex-col items-center group"
-      >
-        <div
-          class="service-circle rounded-full flex items-center justify-center mb-3 bg-sky-50"
-        >
-          <i class="fa-solid fa-bars text-sky-600 text-2xl"></i>
+      <!-- 4. Spider Glazing -->
+      <a href="{% url 'service_glazing_systems' %}" class="service-item flex flex-col items-center group">
+        <div class="service-circle rounded-full flex items-center justify-center mb-3 bg-sky-50">
+          <i class="fa-solid fa-diagram-project text-sky-600 text-2xl"></i>
         </div>
-        <span
-          class="text-xs font-bold text-gray-700 uppercase tracking-tight group-hover:text-sky-600 transition"
-          >Louvers</span
-        >
+        <span class="text-xs font-bold text-gray-700 uppercase tracking-tight group-hover:text-sky-600 transition text-center">
+          Spider Glazing
+        </span>
       </a>
 
-      <!-- 5. Canopies -->
-      <a
-        href="{% url 'our_solutions' %}"
-        class="service-item flex flex-col items-center group"
-      >
-        <div
-          class="service-circle rounded-full flex items-center justify-center mb-3 bg-sky-50"
-        >
-          <i class="fa-solid fa-umbrella text-sky-600 text-2xl"></i>
+      <!-- 5. Aluminium Doors & Windows -->
+      <a href="{% url 'service_aluminium_works' %}" class="service-item flex flex-col items-center group">
+        <div class="service-circle rounded-full flex items-center justify-center mb-3 bg-sky-50">
+          <i class="fa-regular fa-window-maximize text-sky-600 text-2xl"></i>
         </div>
-        <span
-          class="text-xs font-bold text-gray-700 uppercase tracking-tight group-hover:text-sky-600 transition"
-          >Canopies</span
-        >
+        <span class="text-xs font-bold text-gray-700 uppercase tracking-tight group-hover:text-sky-600 transition text-center">
+          Aluminium Doors &amp; Windows
+        </span>
       </a>
 
-      <!-- 6. Handrails -->
-      <a
-        href="{% url 'our_solutions' %}"
-        class="service-item flex flex-col items-center group"
-      >
-        <div
-          class="service-circle rounded-full flex items-center justify-center mb-3 bg-sky-50"
-        >
+      <!-- 6. Glass Facades & Shopfronts -->
+      <a href="{% url 'service_glass_works' %}" class="service-item flex flex-col items-center group">
+        <div class="service-circle rounded-full flex items-center justify-center mb-3 bg-sky-50">
+          <i class="fa-solid fa-store text-sky-600 text-2xl"></i>
+        </div>
+        <span class="text-xs font-bold text-gray-700 uppercase tracking-tight group-hover:text-sky-600 transition text-center">
+          Glass Facades &amp; Shopfronts
+        </span>
+      </a>
+
+      <!-- 7. Glass Partitions & Railings -->
+      <a href="{% url 'service_glass_works' %}" class="service-item flex flex-col items-center group">
+        <div class="service-circle rounded-full flex items-center justify-center mb-3 bg-sky-50">
           <i class="fa-solid fa-grip-lines text-sky-600 text-2xl"></i>
         </div>
-        <span
-          class="text-xs font-bold text-gray-700 uppercase tracking-tight group-hover:text-sky-600 transition"
-          >Handrails</span
-        >
+        <span class="text-xs font-bold text-gray-700 uppercase tracking-tight group-hover:text-sky-600 transition text-center">
+          Glass Partitions &amp; Railings
+        </span>
       </a>
+
+      <!-- 8. Canopies & Skylights -->
+      <a href="{% url 'service_special_facade_works' %}" class="service-item flex flex-col items-center group">
+        <div class="service-circle rounded-full flex items-center justify-center mb-3 bg-sky-50">
+          <i class="fa-solid fa-umbrella text-sky-600 text-2xl"></i>
+        </div>
+        <span class="text-xs font-bold text-gray-700 uppercase tracking-tight group-hover:text-sky-600 transition text-center">
+          Canopies &amp; Skylights
+        </span>
+      </a>
+
+      <!-- 9. Louvers & Architectural Metal Cladding -->
+      <a href="{% url 'service_facade_cladding' %}" class="service-item flex flex-col items-center group">
+        <div class="service-circle rounded-full flex items-center justify-center mb-3 bg-sky-50">
+          <i class="fa-solid fa-bars text-sky-600 text-2xl"></i>
+        </div>
+        <span class="text-xs font-bold text-gray-700 uppercase tracking-tight group-hover:text-sky-600 transition text-center">
+          Louvers &amp; Metal Cladding
+        </span>
+      </a>
+
+      <!-- 10. Facade Engineering & Installation -->
+      <a href="{% url 'service_engineering_execution' %}" class="service-item flex flex-col items-center group">
+        <div class="service-circle rounded-full flex items-center justify-center mb-3 bg-sky-50">
+          <i class="fa-solid fa-compass-drafting text-sky-600 text-2xl"></i>
+        </div>
+        <span class="text-xs font-bold text-gray-700 uppercase tracking-tight group-hover:text-sky-600 transition text-center">
+          Engineering &amp; Installation
+        </span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- 2. OUR SERVICES (6 COMPREHENSIVE CARDS) -->
+<section class="py-20 bg-slate-50 border-b">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Our Expertise</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 uppercase tracking-tight mt-1.5">Comprehensive Architectural Services</h2>
+      <div class="w-20 h-1 bg-sky-600 mx-auto mt-3 mb-4"></div>
+      <p class="text-gray-600 text-xs sm:text-sm">Engineered external envelopes, precision glazing, metal skins, and turnkey execution tailored to modern specifications.</p>
+    </div>
+
+    <div class="space-y-16">
+
+      <!-- 1. Facade & Cladding -->
+      <a href="{% url 'service_facade_cladding' %}" class="block group bg-white border border-gray-200 rounded-3xl p-6 sm:p-8 shadow-sm hover:shadow-xl hover:border-sky-500 transition-all duration-300">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-5 relative rounded-2xl overflow-hidden h-72 sm:h-80 bg-slate-900">
+            <img src="{% static 'images/HomeFacade.png'%}" alt="Facade and Cladding" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6">
+              <span class="bg-sky-600 text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded">Core Envelope</span>
+              <h3 class="text-white text-xl sm:text-2xl font-bold uppercase mt-2">Facade &amp; Cladding</h3>
+              <p class="text-gray-300 text-xs mt-1">Weather-resistant, fire-retardant external metal and composite envelopes.</p>
+            </div>
+          </div>
+          <div class="lg:col-span-7 space-y-4">
+            <div>
+              <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Service Division 01</span>
+              <h3 class="text-2xl font-extrabold text-slate-900 uppercase tracking-tight mt-1 group-hover:text-sky-600 transition">Modern Architectural Skins</h3>
+              <div class="w-12 h-1 bg-sky-600 mt-2"></div>
+            </div>
+            <p class="text-gray-600 text-xs sm:text-sm leading-relaxed">
+              Engineered rainscreen cladding and composite panelling systems designed for superior thermal shielding, wind resistance, and clean joint lines across high-traffic buildings.
+            </p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
+              <div class="p-3 bg-slate-50 border border-gray-200 rounded-xl text-xs font-semibold text-slate-800 flex items-center space-x-2">
+                <i class="fa-solid fa-layer-group text-sky-600"></i><span>ACP Cladding</span>
+              </div>
+              <div class="p-3 bg-slate-50 border border-gray-200 rounded-xl text-xs font-semibold text-slate-800 flex items-center space-x-2">
+                <i class="fa-solid fa-cubes text-sky-600"></i><span>HPL Cladding</span>
+              </div>
+              <div class="p-3 bg-slate-50 border border-gray-200 rounded-xl text-xs font-semibold text-slate-800 flex items-center space-x-2">
+                <i class="fa-solid fa-sheet-plastic text-sky-600"></i><span>Aluminium Cladding</span>
+              </div>
+              <div class="p-3 bg-slate-50 border border-gray-200 rounded-xl text-xs font-semibold text-slate-800 flex items-center space-x-2">
+                <i class="fa-solid fa-shield text-sky-600"></i><span>Metal Cladding</span>
+              </div>
+              <div class="p-3 bg-slate-50 border border-gray-200 rounded-xl text-xs font-semibold text-slate-800 flex items-center space-x-2">
+                <i class="fa-solid fa-bars text-sky-600"></i><span>Architectural Louvers</span>
+              </div>
+              <div class="p-3 bg-slate-50 border border-gray-200 rounded-xl text-xs font-semibold text-slate-800 flex items-center space-x-2">
+                <i class="fa-solid fa-grip-lines-vertical text-sky-600"></i><span>Fluted Panels</span>
+              </div>
+            </div>
+            <div class="pt-3 flex items-center text-xs font-bold uppercase tracking-wider text-sky-600 group-hover:translate-x-2 transition-transform">
+              <span>View Full Specifications &amp; Details</span>
+              <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- 2. Glazing Systems -->
+      <a href="{% url 'service_glazing_systems' %}" class="block group bg-white border border-gray-200 rounded-3xl p-6 sm:p-8 shadow-sm hover:shadow-xl hover:border-sky-500 transition-all duration-300">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-5 relative rounded-2xl overflow-hidden h-72 sm:h-80 bg-slate-900">
+            <img src="{% static 'images/GlazingSystems.jpg'%}" alt="Glazing Systems" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6">
+              <span class="bg-sky-600 text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded">High-Rise Glass</span>
+              <h3 class="text-white text-xl sm:text-2xl font-bold uppercase mt-2">Glazing Systems</h3>
+              <p class="text-gray-300 text-xs mt-1">High-performance curtain walling, structural silicone, and spider glazing.</p>
+            </div>
+          </div>
+          <div class="lg:col-span-7 space-y-4">
+            <div>
+              <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Service Division 02</span>
+              <h3 class="text-2xl font-extrabold text-slate-900 uppercase tracking-tight mt-1 group-hover:text-sky-600 transition">Curtain Walls &amp; Structural Glazing</h3>
+              <div class="w-12 h-1 bg-sky-600 mt-2"></div>
+            </div>
+            <p class="text-gray-600 text-xs sm:text-sm leading-relaxed">
+              Custom-profiled mullion and transom systems, factory-glazed unitized frames, and point-fixed spider assemblies engineered for optimum acoustic insulation and wind-load pressures.
+            </p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
+              <div class="p-3 bg-slate-50 border border-gray-200 rounded-xl text-xs font-semibold text-slate-800 flex items-center space-x-2">
+                <i class="fa-regular fa-building text-sky-600"></i><span>Structural Glazing</span>
+              </div>
+              <div class="p-3 bg-slate-50 border border-gray-200 rounded-xl text-xs font-semibold text-slate-800 flex items-center space-x-2">
+                <i class="fa-solid fa-table-cells text-sky-600"></i><span>Curtain Walls</span>
+              </div>
+              <div class="p-3 bg-slate-50 border border-gray-200 rounded-xl text-xs font-semibold text-slate-800 flex items-center space-x-2">
+                <i class="fa-solid fa-cubes-stacked text-sky-600"></i><span>Unitized System</span>
+              </div>
+              <div class="p-3 bg-slate-50 border border-gray-200 rounded-xl text-xs font-semibold text-slate-800 flex items-center space-x-2">
+                <i class="fa-solid fa-diagram-project text-sky-600"></i><span>Spider Glazing</span>
+              </div>
+              <div class="p-3 bg-slate-50 border border-gray-200 rounded-xl text-xs font-semibold text-slate-800 flex items-center space-x-2">
+                <i class="fa-solid fa-circle-dot text-sky-600"></i><span>Point-Fixed</span>
+              </div>
+              <div class="p-3 bg-slate-50 border border-gray-200 rounded-xl text-xs font-semibold text-slate-800 flex items-center space-x-2">
+                <i class="fa-solid fa-shield-halved text-sky-600"></i><span>Laminated Glass</span>
+              </div>
+            </div>
+            <div class="pt-3 flex items-center text-xs font-bold uppercase tracking-wider text-sky-600 group-hover:translate-x-2 transition-transform">
+              <span>View Full Specifications &amp; Details</span>
+              <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- 3. Aluminium Works -->
+      <a href="{% url 'service_aluminium_works' %}" class="block group bg-white border border-gray-200 rounded-3xl p-6 sm:p-8 shadow-sm hover:shadow-xl hover:border-sky-500 transition-all duration-300">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-5 relative rounded-2xl overflow-hidden h-72 sm:h-80 bg-slate-900">
+            <img src="{% static 'images/AluminiumWorks.jpg'%}" alt="Aluminium Works" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6">
+              <span class="bg-sky-600 text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded">Precision Fabrication</span>
+              <h3 class="text-white text-xl sm:text-2xl font-bold uppercase mt-2">Aluminium Works</h3>
+              <p class="text-gray-300 text-xs mt-1">Slimline architectural fenestrations, robust shopfronts, and thermal extrusions.</p>
+            </div>
+          </div>
+          <div class="lg:col-span-7 space-y-4">
+            <div>
+              <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Service Division 03</span>
+              <h3 class="text-2xl font-extrabold text-slate-900 uppercase tracking-tight mt-1 group-hover:text-sky-600 transition">Architectural Fenestrations</h3>
+              <div class="w-12 h-1 bg-sky-600 mt-2"></div>
+            </div>
+            <p class="text-gray-600 text-xs sm:text-sm leading-relaxed">
+              Heavy-duty sliding, casement, and pivot systems designed using 6063-T6 alloy extrusions with anodized and powder-coated surface treatments that endure environmental weathering.
+            </p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
+              <div class="p-3 bg-slate-50 border border-gray-200 rounded-xl text-xs font-semibold text-slate-800 flex items-center space-x-2">
+                <i class="fa-solid fa-door-open text-sky-600"></i><span>Aluminium Doors</span>
+              </div>
+              <div class="p-3 bg-slate-50 border border-gray-200 rounded-xl text-xs font-semibold text-slate-800 flex items-center space-x-2">
+                <i class="fa-regular fa-window-maximize text-sky-600"></i><span>Aluminium Windows</span>
+              </div>
+              <div class="p-3 bg-slate-50 border border-gray-200 rounded-xl text-xs font-semibold text-slate-800 flex items-center space-x-2">
+                <i class="fa-solid fa-bars text-sky-600"></i><span>Aerofoil Louvers</span>
+              </div>
+              <div class="p-3 bg-slate-50 border border-gray-200 rounded-xl text-xs font-semibold text-slate-800 flex items-center space-x-2">
+                <i class="fa-solid fa-store text-sky-600"></i><span>Shopfront Systems</span>
+              </div>
+              <div class="p-3 bg-slate-50 border border-gray-200 rounded-xl text-xs font-semibold text-slate-800 flex items-center space-x-2">
+                <i class="fa-solid fa-border-all text-sky-600"></i><span>Framing Systems</span>
+              </div>
+              <div class="p-3 bg-slate-50 border border-gray-200 rounded-xl text-xs font-semibold text-slate-800 flex items-center space-x-2">
+                <i class="fa-solid fa-sliders text-sky-600"></i><span>Slimline Hardware</span>
+              </div>
+            </div>
+            <div class="pt-3 flex items-center text-xs font-bold uppercase tracking-wider text-sky-600 group-hover:translate-x-2 transition-transform">
+              <span>View Full Specifications &amp; Details</span>
+              <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- 4. Glass Works -->
+      <a href="{% url 'service_glass_works' %}" class="block group bg-white border border-gray-200 rounded-3xl p-6 sm:p-8 shadow-sm hover:shadow-xl hover:border-sky-500 transition-all duration-300">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-5 relative rounded-2xl overflow-hidden h-72 sm:h-80 bg-slate-900">
+            <img src="{% static 'images/GlassWork.png'%}" alt="Interior and Structural Glass" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6">
+              <span class="bg-sky-600 text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded">Interior &amp; Exterior Glass</span>
+              <h3 class="text-white text-xl sm:text-2xl font-bold uppercase mt-2">Glass Works</h3>
+              <p class="text-gray-300 text-xs mt-1">Frameless glass partitions, acoustic railings, skylights, and balustrades.</p>
+            </div>
+          </div>
+          <div class="lg:col-span-7 space-y-4">
+            <div>
+              <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Service Division 04</span>
+              <h3 class="text-2xl font-extrabold text-slate-900 uppercase tracking-tight mt-1 group-hover:text-sky-600 transition">Architectural Glass Applications</h3>
+              <div class="w-12 h-1 bg-sky-600 mt-2"></div>
+            </div>
+            <p class="text-gray-600 text-xs sm:text-sm leading-relaxed">
+              Crystal-clear, impact-tested tempered and laminated glass assemblies providing seamless sightlines, sound dampening, and rigorous fall-protection safety.
+            </p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
+              <div class="p-3 bg-slate-50 border border-gray-200 rounded-xl text-xs font-semibold text-slate-800 flex items-center space-x-2">
+                <i class="fa-solid fa-table-columns text-sky-600"></i><span>Glass Partitions</span>
+              </div>
+              <div class="p-3 bg-slate-50 border border-gray-200 rounded-xl text-xs font-semibold text-slate-800 flex items-center space-x-2">
+                <i class="fa-solid fa-door-closed text-sky-600"></i><span>Frameless Doors</span>
+              </div>
+              <div class="p-3 bg-slate-50 border border-gray-200 rounded-xl text-xs font-semibold text-slate-800 flex items-center space-x-2">
+                <i class="fa-solid fa-grip-lines text-sky-600"></i><span>Glass Railings</span>
+              </div>
+              <div class="p-3 bg-slate-50 border border-gray-200 rounded-xl text-xs font-semibold text-slate-800 flex items-center space-x-2">
+                <i class="fa-solid fa-umbrella text-sky-600"></i><span>Glass Canopies</span>
+              </div>
+              <div class="p-3 bg-slate-50 border border-gray-200 rounded-xl text-xs font-semibold text-slate-800 flex items-center space-x-2">
+                <i class="fa-solid fa-sun text-sky-600"></i><span>Glass Skylights</span>
+              </div>
+              <div class="p-3 bg-slate-50 border border-gray-200 rounded-xl text-xs font-semibold text-slate-800 flex items-center space-x-2">
+                <i class="fa-solid fa-store text-sky-600"></i><span>Retail Shopfronts</span>
+              </div>
+            </div>
+            <div class="pt-3 flex items-center text-xs font-bold uppercase tracking-wider text-sky-600 group-hover:translate-x-2 transition-transform">
+              <span>View Full Specifications &amp; Details</span>
+              <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- 5. Special Facade Works -->
+      <a href="{% url 'service_special_facade_works' %}" class="block group bg-white border border-gray-200 rounded-3xl p-6 sm:p-8 shadow-sm hover:shadow-xl hover:border-sky-500 transition-all duration-300">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-5 relative rounded-2xl overflow-hidden h-72 sm:h-80 bg-slate-900">
+            <img src="{% static 'images/SpecialFacadeWorks.png'%}" alt="Special Facades" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6">
+              <span class="bg-sky-600 text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded">Custom Engineering</span>
+              <h3 class="text-white text-xl sm:text-2xl font-bold uppercase mt-2">Special Facade Works</h3>
+              <p class="text-gray-300 text-xs mt-1">Monumental entrance porticos, tension-cable atriums, and 3D architectural features.</p>
+            </div>
+          </div>
+          <div class="lg:col-span-7 space-y-4">
+            <div>
+              <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Service Division 05</span>
+              <h3 class="text-2xl font-extrabold text-slate-900 uppercase tracking-tight mt-1 group-hover:text-sky-600 transition">Complex &amp; Geometric Envelopes</h3>
+              <div class="w-12 h-1 bg-sky-600 mt-2"></div>
+            </div>
+            <p class="text-gray-600 text-xs sm:text-sm leading-relaxed">
+              Bespoke geometric structures combining structural steelwork, point-supported glass, and sculptural cladding to create standout architectural building entrances.
+            </p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
+              <div class="p-3 bg-slate-50 border border-gray-200 rounded-xl text-xs font-semibold text-slate-800 flex items-center space-x-2">
+                <i class="fa-solid fa-umbrella text-sky-600"></i><span>Cantilever Canopies</span>
+              </div>
+              <div class="p-3 bg-slate-50 border border-gray-200 rounded-xl text-xs font-semibold text-slate-800 flex items-center space-x-2">
+                <i class="fa-solid fa-cloud-sun text-sky-600"></i><span>Pyramid Skylights</span>
+              </div>
+              <div class="p-3 bg-slate-50 border border-gray-200 rounded-xl text-xs font-semibold text-slate-800 flex items-center space-x-2">
+                <i class="fa-solid fa-landmark text-sky-600"></i><span>Atrium Glazing</span>
+              </div>
+              <div class="p-3 bg-slate-50 border border-gray-200 rounded-xl text-xs font-semibold text-slate-800 flex items-center space-x-2">
+                <i class="fa-solid fa-shapes text-sky-600"></i><span>Feature Facades</span>
+              </div>
+              <div class="p-3 bg-slate-50 border border-gray-200 rounded-xl text-xs font-semibold text-slate-800 flex items-center space-x-2">
+                <i class="fa-solid fa-archway text-sky-600"></i><span>Entrance Portals</span>
+              </div>
+              <div class="p-3 bg-slate-50 border border-gray-200 rounded-xl text-xs font-semibold text-slate-800 flex items-center space-x-2">
+                <i class="fa-solid fa-gem text-sky-600"></i><span>Glass Features</span>
+              </div>
+            </div>
+            <div class="pt-3 flex items-center text-xs font-bold uppercase tracking-wider text-sky-600 group-hover:translate-x-2 transition-transform">
+              <span>View Full Specifications &amp; Details</span>
+              <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- 6. Facade Engineering & Execution -->
+      <a href="{% url 'service_engineering_execution' %}" class="block group bg-white border border-gray-200 rounded-3xl p-6 sm:p-8 shadow-sm hover:shadow-xl hover:border-sky-500 transition-all duration-300">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-5 relative rounded-2xl overflow-hidden h-72 sm:h-80 bg-slate-900">
+            <img src="{% static 'images/FacadeEngineering.jpg'%}" alt="Engineering and Site Execution" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6">
+              <span class="bg-sky-600 text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded">Turnkey Operations</span>
+              <h3 class="text-white text-xl sm:text-2xl font-bold uppercase mt-2">Engineering &amp; Execution</h3>
+              <p class="text-gray-300 text-xs mt-1">From wind load sizing and fabrication drawings to crane hoisting and water testing.</p>
+            </div>
+          </div>
+          <div class="lg:col-span-7 space-y-4">
+            <div>
+              <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Service Division 06</span>
+              <h3 class="text-2xl font-extrabold text-slate-900 uppercase tracking-tight mt-1 group-hover:text-sky-600 transition">End-to-End Project Delivery</h3>
+              <div class="w-12 h-1 bg-sky-600 mt-2"></div>
+            </div>
+            <p class="text-gray-600 text-xs sm:text-sm leading-relaxed">
+              Complete engineering consultancy, fabrication drawings, structural static calculation, calibrated field hose testing, and lifecycle maintenance audits.
+            </p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
+              <div class="p-3 bg-slate-50 border border-gray-200 rounded-xl text-xs font-semibold text-slate-800 flex items-center space-x-2">
+                <i class="fa-solid fa-compass-drafting text-sky-600"></i><span>Shop Drawings</span>
+              </div>
+              <div class="p-3 bg-slate-50 border border-gray-200 rounded-xl text-xs font-semibold text-slate-800 flex items-center space-x-2">
+                <i class="fa-solid fa-ruler-combined text-sky-600"></i><span>Fabrication Plans</span>
+              </div>
+              <div class="p-3 bg-slate-50 border border-gray-200 rounded-xl text-xs font-semibold text-slate-800 flex items-center space-x-2">
+                <i class="fa-solid fa-calculator text-sky-600"></i><span>Static Engineering</span>
+              </div>
+              <div class="p-3 bg-slate-50 border border-gray-200 rounded-xl text-xs font-semibold text-slate-800 flex items-center space-x-2">
+                <i class="fa-solid fa-truck-ramp-box text-sky-600"></i><span>Material Supply</span>
+              </div>
+              <div class="p-3 bg-slate-50 border border-gray-200 rounded-xl text-xs font-semibold text-slate-800 flex items-center space-x-2">
+                <i class="fa-solid fa-person-digging text-sky-600"></i><span>Site Rigging</span>
+              </div>
+              <div class="p-3 bg-slate-50 border border-gray-200 rounded-xl text-xs font-semibold text-slate-800 flex items-center space-x-2">
+                <i class="fa-solid fa-screwdriver-wrench text-sky-600"></i><span>Testing &amp; QA</span>
+              </div>
+            </div>
+            <div class="pt-3 flex items-center text-xs font-bold uppercase tracking-wider text-sky-600 group-hover:translate-x-2 transition-transform">
+              <span>View Full Specifications &amp; Details</span>
+              <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+            </div>
+          </div>
+        </div>
+      </a>
+
     </div>
   </div>
 </section>
