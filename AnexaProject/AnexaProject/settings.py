@@ -66,9 +66,22 @@ WSGI_APPLICATION = 'AnexaProject.wsgi.application'
 # }
 
 
+### Render
+
+# DATABASES = {
+#     'default': dj_database_url.parse(
+#         "postgresql://anexafacedsdb_user:N9U0CsAugbgcW3vwxOtHM3lBK0dovhx4@dpg-dadptnf40ujc73ch4kk0-a.oregon-postgres.render.com/anexafacedsdb",
+#         conn_max_age=600,
+#         ssl_require=True
+#     )
+# }
+
+
+
+# https://console.neon.tech/app/projects/late-sun-90503737?database=neondb
 DATABASES = {
     'default': dj_database_url.parse(
-        "postgresql://anexafacedsdb_user:N9U0CsAugbgcW3vwxOtHM3lBK0dovhx4@dpg-dadptnf40ujc73ch4kk0-a.oregon-postgres.render.com/anexafacedsdb",
+        "postgresql://neondb_owner:npg_XHcsn0lCkrV2@ep-cool-cloud-ay8yxwd3-pooler.c-5.us-east-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require",
         conn_max_age=600,
         ssl_require=True
     )
