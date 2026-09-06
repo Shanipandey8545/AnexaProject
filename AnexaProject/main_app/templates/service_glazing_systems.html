@@ -2,102 +2,299 @@
 {% load static %}
 
 {% block title %}Glazing Systems & Curtain Walls | ANEXA Facade Systems LLP{% endblock title %}
+{% block description %}Engineered high-performance glazing systems by ANEXA Facade Systems LLP: Structural Glazing, Stick Curtain Walls, Unitized & Semi-Unitized Systems, Spider Glazing, Point-Fixed Hardware, Fixed Windows, and HST Toughened & Laminated Safety Glass.{% endblock description %}
 
 {% block content %}
-<div class="relative bg-slate-900 py-24 px-4 sm:px-6 lg:px-8">
+<!-- Top Category Banner -->
+<div class="relative bg-slate-950 py-20 sm:py-28 px-4 sm:px-6 lg:px-8 overflow-hidden">
   <div class="max-w-7xl mx-auto relative z-10">
-    <span class="text-sky-400 text-xs font-bold uppercase tracking-widest">Service Division 02</span>
-    <h1 class="text-4xl sm:text-6xl font-black text-white uppercase mt-2">Glazing Systems</h1>
-    <p class="text-gray-300 text-sm sm:text-base max-w-3xl mt-4 leading-relaxed">
-      Unitized curtain walling, structural silicone glazing, spider glass, and point-fixed assemblies engineered to counter high wind dynamics, thermal movements, and seismic loads.
+    <span class="inline-block px-3 py-1 bg-sky-600 text-white text-[10px] sm:text-xs font-bold uppercase tracking-widest rounded mb-3">Service Division 02</span>
+    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white uppercase tracking-tight">Glazing Systems &amp; Curtain Walls</h1>
+    <div class="w-16 h-1 bg-sky-500 my-4"></div>
+    <p class="text-slate-300 text-xs sm:text-sm md:text-base max-w-3xl leading-relaxed">
+      Engineered architectural glass envelopes built for extreme wind dynamics, live floor deflections, seismic shear, and thermal-acoustic isolation. From fully unitized high-rise facades to transparent spider-hung lobbies, ANEXA delivers certified precision from structural design to field water testing.
     </p>
   </div>
   <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/90 to-transparent"></div>
 </div>
 
+<!-- Detailed Sub-Services Breakdown (All 8 Distinct Types) -->
 <div class="py-20 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
 
-    <!-- Structural & Curtain Wall Glazing -->
+    <!-- Sub 2.1: Structural Glazing -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div class="rounded-3xl overflow-hidden shadow-xl h-80 sm:h-96 bg-slate-900">
-        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=900&q=80" alt="Curtain Wall Glazing" class="w-full h-full object-cover" />
+        <img src="{% static 'images/glazing_systems1_1.jpeg' %}" alt="Structural Silicone Glazing" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
       </div>
       <div>
-        <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Type 2.1 &amp; 2.2</span>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 uppercase mt-1">Structural &amp; Curtain Wall Glazing</h2>
+        <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Type 2.1</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 uppercase mt-1">Structural Glazing Systems</h2>
         <div class="w-12 h-1 bg-sky-600 my-3"></div>
-        <p class="text-gray-600 text-sm leading-relaxed mb-4">
-          Continuous glass envelopes suspended along building floor slabs. Mullions and transoms absorb live floor deflection while high-strength structural silicone bonds insulated glass units (DGU) with zero exterior metal cap exposure.
+        <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4">
+          Frameless exterior glass skins where insulated glass units (IGU/DGU) are structurally bonded to concealed sub-frames using high-tensile silicone sealant. Eliminates external metal pressure plates, creating a sleek, monolithic reflective surface with minimal air resistance and superior weather protection.
         </p>
         <ul class="space-y-2 text-xs text-gray-700">
-          <li class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Two-sided and four-sided structural silicone systems.</li>
-          <li class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Double glazed units with Low-E hard and soft coatings for solar control.</li>
-          <li class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>EPDM pressure gaskets guaranteeing air-tight weather sealing.</li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Available in 2-sided structural (mechanical top/bottom support) and 4-sided flush flush-silicone systems.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Dual-component neutral cure structural silicone meeting ASTM C1184 and ASTM C1401 standards.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Thermal break polyamide insulation strips preventing condensation and indoor heat transfer.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Factory degreasing and peel-adhesion testing on every production batch before site delivery.</span></li>
         </ul>
       </div>
     </div>
 
-    <!-- Unitized & Semi-Unitized Systems -->
+    <!-- Sub 2.2: Curtain Wall Glazing (Stick System) -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div class="order-2 lg:order-1">
-        <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Type 2.3 &amp; 2.4</span>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 uppercase mt-1">Unitized &amp; Semi-Unitized Curtain Walls</h2>
+        <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Type 2.2</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 uppercase mt-1">Curtain Wall Glazing (Stick System)</h2>
         <div class="w-12 h-1 bg-sky-600 my-3"></div>
-        <p class="text-gray-600 text-sm leading-relaxed mb-4">
-          Fully factory-assembled and factory-glazed cassettes hoisted directly onto slab cast-in channels. Eliminates exterior scaffolding needs and allows skyscrapers to achieve complete glass enclosure at a rapid floor-per-week pace.
+        <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4">
+          A versatile field-assembled envelope system where vertical aluminium mullions and horizontal transoms are erected piece-by-piece on site before glass panels are secured with exterior pressure plates and snap-on decorative caps. Ideal for low-to-mid rise commercial complexes, shopping malls, and institutional facades with complex geometric planes.
         </p>
         <ul class="space-y-2 text-xs text-gray-700">
-          <li class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Controlled clean-room structural silicone curing.</li>
-          <li class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Interlocking male-female split mullions absorbing building sway.</li>
-          <li class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Factory QA testing reducing site human errors.</li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Adaptable on-site assembly accommodating civil concrete slab deviations up to &plusmn;25mm.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Architectural exterior face caps available in aerofoil, bullnose, box, and deep blade profiles.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Engineered internal weep holes and drainage pathways preventing moisture accumulation.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Stainless steel 304/316 bracketry designed with slotted holes for thermal expansion movement.</span></li>
         </ul>
       </div>
       <div class="order-1 lg:order-2 rounded-3xl overflow-hidden shadow-xl h-80 sm:h-96 bg-slate-900">
-        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80" alt="Unitized Curtain Wall" class="w-full h-full object-cover" />
+        <img src="{% static 'images/glazing_systems1_2.jpeg' %}" alt="Curtain Wall Glazing Stick System" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
       </div>
     </div>
 
-    <!-- Spider & Point-Fixed Glazing -->
+    <!-- Sub 2.3: Unitized Curtain Wall -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div class="rounded-3xl overflow-hidden shadow-xl h-80 sm:h-96 bg-slate-900">
-        <img src="https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=900&q=80" alt="Spider Glazing" class="w-full h-full object-cover" />
+        <img src="{% static 'images/glazing_systems1_3.jpeg' %}" alt="Unitized Curtain Wall System" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
       </div>
       <div>
-        <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Type 2.5 &amp; 2.6</span>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 uppercase mt-1">Spider &amp; Point-Fixed Glazing</h2>
+        <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Type 2.3</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 uppercase mt-1">Unitized Curtain Wall Systems</h2>
         <div class="w-12 h-1 bg-sky-600 my-3"></div>
-        <p class="text-gray-600 text-sm leading-relaxed mb-4">
-          Frameless structural glass panels anchored through precision-drilled countersunk holes and SS-316 stainless steel spider brackets. Suspended using glass fins or stainless steel tension rods to maximize visual transparency.
+        <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4">
+          Prefabricated, story-high panel cassettes fabricated, glazed, and silicone-bonded completely under controlled factory clean-room conditions. Hoisted via floor-mounted mini cranes or monorail winches directly onto heavy-duty 3D-adjustable cast-in channel brackets, eliminating the requirement for external scaffolding on high-rise towers.
         </p>
         <ul class="space-y-2 text-xs text-gray-700">
-          <li class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>High-grade marine SS 316 castings with articulated routels.</li>
-          <li class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Ball-joint routels preventing local stress concentration on glass.</li>
-          <li class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Ideal for grand hotel lobbies, showrooms, and glass vestibules.</li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Rapid installation speed enabling completion of up to 1 full structural floor per week.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Interlocking male-female split mullions and transoms accommodating seismic sway and building drift.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Continuous internal dual-barrier vulcanized EPDM gaskets creating certified air-tight seals.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Integrated floor-to-floor firestops and smoke barrier seals meeting 2-hour fire integrity ratings.</span></li>
         </ul>
       </div>
     </div>
 
-    <!-- Toughened & Laminated Safety Glass -->
+    <!-- Sub 2.4: Semi-Unitized Glazing -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div class="order-2 lg:order-1">
-        <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Type 2.7 &amp; 2.8</span>
+        <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Type 2.4</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 uppercase mt-1">Semi-Unitized Glazing Systems</h2>
+        <div class="w-12 h-1 bg-sky-600 my-3"></div>
+        <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4">
+          A high-efficiency hybrid engineering approach combining stick-built structural framework with factory-glazed glass sub-cassettes. Vertical mullions and horizontal transoms are fixed on site first, after which shop-glazed cassettes are quickly hung and locked into place using concealed mechanical clips.
+        </p>
+        <ul class="space-y-2 text-xs text-gray-700">
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Delivers factory-cured structural silicone quality without needing heavy high-rise hoisting rigs.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Independent cassette replacement allows damaged glass units to be swapped out without dismantling frames.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Excellent balance of commercial cost efficiency and factory quality assurance for mid-rise towers.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Concealed drainage channels direct wind-driven rain water safely out to the exterior facade base.</span></li>
+        </ul>
+      </div>
+      <div class="order-1 lg:order-2 rounded-3xl overflow-hidden shadow-xl h-80 sm:h-96 bg-slate-900">
+        <img src="{% static 'images/glazing_systems1_4.jpeg' %}" alt="Semi-Unitized Glazing System" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+      </div>
+    </div>
+
+    <!-- Sub 2.5: Spider Glazing -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="rounded-3xl overflow-hidden shadow-xl h-80 sm:h-96 bg-slate-900">
+        <img src="{% static 'images/glazing_systems1_5.jpeg' %}" alt="Spider Glazing with Glass Fin" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+      </div>
+      <div>
+        <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Type 2.5</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 uppercase mt-1">Spider Glazing Systems</h2>
+        <div class="w-12 h-1 bg-sky-600 my-3"></div>
+        <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4">
+          Point-supported frameless curtain wall technology where multi-arm cast stainless steel spider brackets fasten heavy glass panes at four corners. Supported vertically by structural glass fins, steel pipe trusses, or high-tensile stainless steel cable trusses to deliver unmatched architectural transparency and unobstructed light ingress.
+        </p>
+        <ul class="space-y-2 text-xs text-gray-700">
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Investment-cast Grade 316 marine stainless steel 1-way, 2-way, 3-way, and 4-way spider arms.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Articulated swivel-head ball routels that pivot freely to relieve localized glass bending stresses.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Compatible with monolithic toughened, laminated, and double-glazed insulating units.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Engineered for grand hotel lobbies, automotive showrooms, airport atriums, and glass canopies.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Sub 2.6: Point-Fixed Glazing -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="order-2 lg:order-1">
+        <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Type 2.6</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 uppercase mt-1">Point-Fixed Glazing Assemblies</h2>
+        <div class="w-12 h-1 bg-sky-600 my-3"></div>
+        <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4">
+          Bespoke architectural bolting hardware engineering where precision-drilled countersunk or disc-fitting glass panels are anchored directly to structural steel skeletons, cantilevers, and elevator shafts. Emphasizes clean minimalist hardware, flush glass faces, and flexible mechanical fasteners that handle dynamic building vibration.
+        </p>
+        <ul class="space-y-2 text-xs text-gray-700">
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Countersunk flush routels seated precisely within CNC-beveled conical holes in laminated glass.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>High-durability POM/Teflon and aluminium-bronze isolation washers preventing metal-to-glass contact.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Tension tie-rod rigging systems engineered for expansive wind loads without heavy columns.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Ideal for scenic capsule lift shafts, glass pedestrian bridges, and monumental entrance screens.</span></li>
+        </ul>
+      </div>
+      <div class="order-1 lg:order-2 rounded-3xl overflow-hidden shadow-xl h-80 sm:h-96 bg-slate-900">
+        <img src="{% static 'images/glazing_systems1_6.jpeg' %}" alt="Point-Fixed Glazing Assembly" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+      </div>
+    </div>
+
+    <!-- Sub 2.7: Fixed Glazing -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="rounded-3xl overflow-hidden shadow-xl h-80 sm:h-96 bg-slate-900">
+        <img src="{% static 'images/glazing_systems1_7.jpeg' %}" alt="Fixed Architectural Glazing" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+      </div>
+      <div>
+        <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Type 2.7</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 uppercase mt-1">Fixed Architectural Glazing</h2>
+        <div class="w-12 h-1 bg-sky-600 my-3"></div>
+        <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4">
+          Non-operable, heavy-duty aluminium framed vision lights, picture windows, and continuous strip ribbon glazing. Built using thermally broken architectural extrusions with deep glazing pockets, engineered for high acoustic insulation, maximum energy ratings, and zero air infiltration across commercial offices and premium residences.
+        </p>
+        <ul class="space-y-2 text-xs text-gray-700">
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Heavy-gauge 6063-T6 extruded aluminium profiles with multi-chamber thermal break insulation.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Glazing channels accommodating high-performance DGU glass thicknesses from 24mm up to 38mm.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>High-density synthetic setting blocks ensuring proper glass dead-load distribution to sill frames.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Continuous co-extruded EPDM interior and exterior wedge gaskets for durable airtightness.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Sub 2.8: Toughened & Laminated Glass -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="order-2 lg:order-1">
+        <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Type 2.8</span>
         <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 uppercase mt-1">Toughened &amp; Laminated High-Safety Glass</h2>
         <div class="w-12 h-1 bg-sky-600 my-3"></div>
-        <p class="text-gray-600 text-sm leading-relaxed mb-4">
-          Thermally tempered glass 5x stronger than standard annealed glass, combined with multi-layer Polyvinyl Butyral (PVB) or SentryGlas (SGP) interlayers for blast protection, acoustic mitigation, and zero fall-out hazard upon breakage.
+        <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4">
+          Thermal tempering produces surface compressive stresses exceeding 69 MPa, resulting in glass 4 to 5 times stronger than annealed glass. When laminated with multi-layer Polyvinyl Butyral (PVB) or structural SentryGlas (SGP) ionoplast interlayers, the assembly retains structural integrity even if both panes fracture, preventing catastrophic fallout at height.
         </p>
         <ul class="space-y-2 text-xs text-gray-700">
-          <li class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Heat Soak Tested (HST) to mitigate spontaneous nickel-sulfide (NiS) failures.</li>
-          <li class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Acoustic interlayer films providing up to 45 dB sound damping.</li>
-          <li class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Conforms strictly to Indian IS 2553 and international ASTM safety codes.</li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Mandatory Heat Soak Testing (HST) per EN 14179 to eliminate spontaneous Nickel Sulfide (NiS) failure.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>High-rigidity SentryGlas (SGP) interlayers offering 5x the tear strength and 100x the stiffness of PVB.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Acoustic PVB interlayers damping high-frequency traffic and railway noise up to 45 dB RW rating.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Strictly compliant with Indian Standard IS 2553 (Part 1 &amp; 2) and international ASTM C1048 specifications.</span></li>
         </ul>
       </div>
       <div class="order-1 lg:order-2 rounded-3xl overflow-hidden shadow-xl h-80 sm:h-96 bg-slate-900">
-        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=80" alt="Laminated Glass" class="w-full h-full object-cover" />
+        <img src="{% static 'images/glazing_systems1_8.jpeg' %}" alt="Toughened and Laminated Safety Glass" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
       </div>
     </div>
 
   </div>
 </div>
+
+<!-- Technical Engineering Comparison Matrix -->
+<section class="bg-slate-50 border-t border-b border-gray-200 py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Engineering Comparison</span>
+      <h2 class="text-2xl sm:text-3xl font-black text-slate-950 uppercase tracking-tight mt-1">Glazing Systems Technical Matrix</h2>
+      <div class="w-14 h-1 bg-sky-600 mx-auto mt-3 mb-4"></div>
+      <p class="text-gray-600 text-xs sm:text-sm">Detailed performance and constructability parameters for building envelope specifications.</p>
+    </div>
+
+    <div class="overflow-x-auto bg-white border border-gray-200 rounded-2xl shadow-sm">
+      <table class="w-full text-left text-xs sm:text-sm border-collapse">
+        <thead>
+          <tr class="bg-slate-900 text-white uppercase text-[11px] tracking-wider">
+            <th class="p-4 font-bold">System Type</th>
+            <th class="p-4 font-bold">Structural Support</th>
+            <th class="p-4 font-bold">Installation Speed</th>
+            <th class="p-4 font-bold">Wind Pressure Capacity</th>
+            <th class="p-4 font-bold">Best Suited Projects</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-200 text-gray-700">
+          <tr class="hover:bg-slate-50 transition">
+            <td class="p-4 font-bold text-slate-900">2.1 Structural Glazing</td>
+            <td class="p-4">Concealed sub-frames + Silicone</td>
+            <td class="p-4">Moderate (Scaffolding / Cradles)</td>
+            <td class="p-4">Up to 2.5 kPa (Engineered)</td>
+            <td class="p-4">Commercial office complexes, retail elevations</td>
+          </tr>
+          <tr class="hover:bg-slate-50 transition">
+            <td class="p-4 font-bold text-slate-900">2.2 Curtain Wall (Stick)</td>
+            <td class="p-4">Mullions &amp; Transoms with caps</td>
+            <td class="p-4">Standard field erection</td>
+            <td class="p-4">Up to 2.2 kPa</td>
+            <td class="p-4">Low-to-mid rise towers, malls, universities</td>
+          </tr>
+          <tr class="hover:bg-slate-50 transition">
+            <td class="p-4 font-bold text-slate-900">2.3 Unitized Curtain Wall</td>
+            <td class="p-4">Floor slab cast-in channels</td>
+            <td class="p-4"><span class="px-2 py-0.5 bg-emerald-50 text-emerald-700 rounded font-bold">Fastest (1 floor/week)</span></td>
+            <td class="p-4"><span class="px-2 py-0.5 bg-sky-50 text-sky-700 rounded font-bold">High (3.5+ kPa / Super High-Rise)</span></td>
+            <td class="p-4">Skyscrapers, corporate headquarters, IT towers</td>
+          </tr>
+          <tr class="hover:bg-slate-50 transition">
+            <td class="p-4 font-bold text-slate-900">2.4 Semi-Unitized Glazing</td>
+            <td class="p-4">Stick grid + Glazed cassettes</td>
+            <td class="p-4">Fast (Cassette hook-on)</td>
+            <td class="p-4">Up to 2.8 kPa</td>
+            <td class="p-4">Mid-rise residential &amp; IT office parks</td>
+          </tr>
+          <tr class="hover:bg-slate-50 transition">
+            <td class="p-4 font-bold text-slate-900">2.5 Spider Glazing</td>
+            <td class="p-4">SS-316 Spiders + Glass fins / Truss</td>
+            <td class="p-4">Precision point rigging</td>
+            <td class="p-4">Custom static engineering</td>
+            <td class="p-4">Grand atriums, luxury hotel lobbies, car showrooms</td>
+          </tr>
+          <tr class="hover:bg-slate-50 transition">
+            <td class="p-4 font-bold text-slate-900">2.6 Point-Fixed Assemblies</td>
+            <td class="p-4">Countersunk routels &amp; Tension rods</td>
+            <td class="p-4">High technical skill required</td>
+            <td class="p-4">Tension-calculated loads</td>
+            <td class="p-4">Glass bridges, elevator towers, canopy screens</td>
+          </tr>
+          <tr class="hover:bg-slate-50 transition">
+            <td class="p-4 font-bold text-slate-900">2.7 Fixed Architectural Glazing</td>
+            <td class="p-4">Thermally broken aluminium frames</td>
+            <td class="p-4">Standard punch opening fitting</td>
+            <td class="p-4">Standard civil opening rating</td>
+            <td class="p-4">Premium residences, hospital suites, executive offices</td>
+          </tr>
+          <tr class="hover:bg-slate-50 transition">
+            <td class="p-4 font-bold text-slate-900">2.8 Toughened &amp; Laminated</td>
+            <td class="p-4">PVB / SGP Structural Interlayer</td>
+            <td class="p-4">Pre-processed supply</td>
+            <td class="p-4"><span class="px-2 py-0.5 bg-emerald-50 text-emerald-700 rounded font-bold">5x Annealed Glass Strength</span></td>
+            <td class="p-4">High-altitude balustrades, skylights, overhead glass</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action Banner -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+  <div class="rounded-3xl bg-gradient-to-r from-slate-950 via-slate-900 to-sky-950 p-8 sm:p-12 text-center text-white relative overflow-hidden shadow-2xl border border-slate-800">
+    <div class="max-w-2xl mx-auto relative z-10">
+      <span class="text-sky-400 font-bold text-xs uppercase tracking-widest block mb-2">Facade Statics &amp; Turnkey Supply</span>
+      <h3 class="text-2xl sm:text-3xl font-black uppercase tracking-tight">Planning a High-Rise Glazing or Curtain Wall Package?</h3>
+      <p class="text-xs sm:text-sm text-gray-300 mt-2 mb-8 leading-relaxed">
+        Our engineering team provides complete wind load calculations according to IS 875 (Part 3), structural silicon joint sizing, profile inertia modeling, and competitive turnkey quotations.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="{% url 'leadership_contact' %}" class="bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs uppercase tracking-wider px-8 py-3.5 rounded-xl shadow-lg transition flex items-center">
+          <i class="fa-solid fa-envelope-open-text mr-2"></i> Submit Glazing BOQ &amp; Elevations
+        </a>
+        <a href="tel:+917992090282" class="border border-white/40 hover:bg-white hover:text-slate-950 text-white font-bold text-xs uppercase tracking-wider px-8 py-3.5 rounded-xl transition flex items-center">
+          <i class="fa-solid fa-phone mr-2 text-sky-400"></i> +91 7992090282
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 {% endblock content %}

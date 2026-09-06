@@ -12,7 +12,28 @@
       content="{% block description %}ANEXA FACADE SYSTEMS LLP specializes in architectural facade engineering, curtain walls, ACP cladding, structural glazing, louvers, and canopies.{% endblock %}"
     />
 
-    <!-- Google Fonts: Inter (Global Font) -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{% static 'images/logo.png' %}" />
+
+    <!-- Open Graph (WhatsApp, LinkedIn, Facebook Link Preview) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ANEXA Facade Systems LLP" />
+    <meta property="og:title" content="{% block og_title %}ANEXA Facade Systems LLP | Building Better Facades{% endblock %}" />
+    <meta property="og:description" content="{% block og_description %}Architectural facade engineering, unitized curtain walls, FR ACP cladding, structural spider glazing, and custom louvers.{% endblock %}" />
+    <meta property="og:image" content="https://www.anexafacade.com{% static 'images/logo.png' %}" />
+    <meta property="og:image:secure_url" content="https://www.anexafacade.com{% static 'images/logo.png' %}" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://www.anexafacade.com{{ request.path }}" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ANEXA Facade Systems LLP" />
+    <meta name="twitter:description" content="Architectural facade engineering, curtain walls, and structural glazing solutions." />
+    <meta name="twitter:image" content="https://www.anexafacade.com{% static 'images/logo.png' %}" />
+
+    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -60,6 +81,60 @@
       .swiper-pagination-bullet-active {
         background: #0284c7 !important;
       }
+
+      /* =========================================================
+         SAFE TARGETED FIX: NO CUTTING, NO BLACK BARS & FULL CARDS
+         ========================================================= */
+
+      /* 1. Sub-services pages ke left/right image containers */
+      .grid > div.rounded-3xl.overflow-hidden:not(.dossier-card),
+      .solution-image-container {
+        height: auto !important;
+        max-height: none !important;
+        min-height: auto !important;
+        aspect-ratio: 16 / 10 !important;
+        background: transparent !important;
+        display: block !important;
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04) !important;
+        border: 1px solid #e2e8f0 !important;
+      }
+
+      /* 2. Sub-services images fitting */
+      .grid > div.rounded-3xl.overflow-hidden:not(.dossier-card) img,
+      .solution-image-container img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: fill !important;
+        display: block !important;
+      }
+
+      /* 3. Services Page (.dossier-card) ko safe rakhna taaki content na chhipe */
+      .dossier-card {
+        height: auto !important;
+        aspect-ratio: auto !important;
+      }
+      .dossier-card .relative.h-60 {
+        height: 15rem !important;
+        aspect-ratio: auto !important;
+      }
+      .dossier-card img {
+        object-fit: cover !important;
+      }
+
+      /* 4. Large screens par crisp 16:9.5 balance */
+      @media (min-width: 1024px) {
+        .grid > div.rounded-3xl.overflow-hidden:not(.dossier-card),
+        .solution-image-container {
+          aspect-ratio: 16 / 9.5 !important;
+        }
+      }
+
+      /* 5. Hero slider & full top banners */
+      .swiper-slide img,
+      .relative.bg-slate-900 img,
+      .relative.bg-slate-950 img {
+        object-fit: cover !important;
+      }
     </style>
     {% block extra_css %}{% endblock %}
   </head>
@@ -82,85 +157,81 @@
           <div class="flex items-center space-x-3 text-sm">
             <a href="#" class="hover:text-sky-400 transition"><i class="fa-brands fa-linkedin-in"></i></a>
             <a href="#" class="hover:text-sky-400 transition"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#" class="hover:text-sky-400 transition"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.instagram.com/anexafacadesystemsllp?stkn=MTVycWh5cnlkYWhjdg%3D%3D&utm_source=qr" class="hover:text-sky-400 transition"><i class="fa-brands fa-instagram"></i></a>
           </div>
         </div>
       </div>
     </div>
 
     <!-- Main Navigation Header -->
-<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-200">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between items-center h-20">
-      
-      <!-- Logo & Tagline -->
-      <a href="{% url 'home' %}" class="flex items-center space-x-3 group shrink-0">
-        <img
-          src="{% static 'images/logo.png' %}"
-          alt="ANEXA Facade Systems Logo"
-          class="h-10 sm:h-11 w-auto object-contain"
-          onerror="this.src='https://placehold.co/180x48?text=ANEXA+FACADE'"
-        />
-        <div class="hidden sm:block border-l pl-3 border-gray-300">
-          <span class="block text-xs font-black tracking-widest text-brandDark uppercase group-hover:text-sky-600 transition">ANEXA FAÇADE SYSTEMS</span>
-          <span class="block text-[10px] text-gray-500 tracking-wider uppercase">Building Better Facades</span>
-        </div>
-      </a>
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+          
+          <!-- Logo & Tagline -->
+          <a href="{% url 'home' %}" class="flex items-center space-x-3 group shrink-0">
+            <img
+              src="{% static 'images/logo.png' %}"
+              alt="ANEXA Facade Systems Logo"
+              class="h-10 sm:h-11 w-auto object-contain"
+              onerror="this.src='https://placehold.co/180x48?text=ANEXA+FACADE'"
+            />
+            <div class="hidden sm:block border-l pl-3 border-gray-300">
+              <span class="block text-xs font-black tracking-widest text-brandDark uppercase group-hover:text-sky-600 transition">ANEXA FAÇADE SYSTEMS</span>
+              <span class="block text-[10px] text-gray-500 tracking-wider uppercase">Building Better Facades</span>
+            </div>
+          </a>
 
-      <!-- Desktop & Laptop Navigation Menu (Always visible on laptops 1024px+) -->
-      <nav class="hidden lg:flex items-center gap-0.5 xl:gap-1 text-[10px] font-bold tracking-wider text-gray-700">
-        <a href="{% url 'home' %}" class="px-2 py-1.5 rounded hover:text-sky-600 hover:bg-slate-50 transition">HOME</a>
-        <a href="{% url 'about' %}" class="px-2 py-1.5 rounded hover:text-sky-600 hover:bg-slate-50 transition">ABOUT</a>
-        <a href="{% url 'our_solutions' %}" class="px-2 py-1.5 rounded hover:text-sky-600 hover:bg-slate-50 transition">SERVICES</a>
-        <!-- <a href="{% url 'project_capabilities' %}" class="px-2 py-1.5 rounded hover:text-sky-600 hover:bg-slate-50 transition">PROJECTS</a> -->
-        <a href="{% url 'quality_safety' %}" class="px-2 py-1.5 rounded hover:text-sky-600 hover:bg-slate-50 transition">INFRASTRUCTURE</a>
-        <a href="{% url 'why_anexa' %}" class="px-2 py-1.5 rounded hover:text-sky-600 hover:bg-slate-50 transition">WHY ANEXA</a>
-        <a href="{% url 'leadership_contact' %}" class="ml-1 bg-brandDark hover:bg-sky-600 text-white px-3 py-1.5 rounded shadow-sm transition">CONTACT</a>
+          <!-- Desktop Navigation Menu -->
+          <nav class="hidden lg:flex items-center gap-0.5 xl:gap-1 text-[10px] font-bold tracking-wider text-gray-700">
+            <a href="{% url 'home' %}" class="px-2 py-1.5 rounded hover:text-sky-600 hover:bg-slate-50 transition">HOME</a>
+            <a href="{% url 'about' %}" class="px-2 py-1.5 rounded hover:text-sky-600 hover:bg-slate-50 transition">ABOUT</a>
+            <a href="{% url 'our_solutions' %}" class="px-2 py-1.5 rounded hover:text-sky-600 hover:bg-slate-50 transition">SERVICES</a>
+            <a href="{% url 'quality_safety' %}" class="px-2 py-1.5 rounded hover:text-sky-600 hover:bg-slate-50 transition">INFRASTRUCTURE</a>
+            <a href="{% url 'why_anexa' %}" class="px-2 py-1.5 rounded hover:text-sky-600 hover:bg-slate-50 transition">WHY ANEXA</a>
+            <a href="{% url 'leadership_contact' %}" class="ml-1 bg-brandDark hover:bg-sky-600 text-white px-3 py-1.5 rounded shadow-sm transition">CONTACT</a>
+
+            {% if request.user.is_authenticated %}
+              <a href="{% url 'contact_list' %}" class="ml-1.5 bg-sky-50 text-sky-700 border border-sky-200 hover:bg-sky-600 hover:text-white px-2.5 py-1.5 rounded transition flex items-center gap-1">
+                <i class="fa-solid fa-clipboard-list text-[11px]"></i>
+                <span>ENQUIRIES</span>
+              </a>
+              <a href="{% url 'adminlogout' %}" class="ml-1 bg-rose-50 text-rose-600 border border-rose-200 hover:bg-rose-600 hover:text-white px-2.5 py-1.5 rounded transition flex items-center gap-1">
+                <i class="fa-solid fa-arrow-right-from-bracket text-[11px]"></i>
+                <span>LOGOUT</span>
+              </a>
+            {% endif %}
+          </nav>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button id="navToggle" type="button" class="lg:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100 focus:outline-none">
+            <i id="navToggleIcon" class="fa-solid fa-bars text-xl"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Drawer Menu -->
+      <div id="mobileMenu" class="hidden lg:hidden bg-white border-t border-gray-200 px-5 py-4 space-y-2 text-xs font-bold uppercase text-gray-700 shadow-xl">
+        <a href="{% url 'home' %}" class="block py-2 border-b border-gray-100 hover:text-sky-600">HOME</a>
+        <a href="{% url 'about' %}" class="block py-2 border-b border-gray-100 hover:text-sky-600">ABOUT</a>
+        <a href="{% url 'our_solutions' %}" class="block py-2 border-b border-gray-100 hover:text-sky-600">SERVICES</a>
+        <a href="{% url 'quality_safety' %}" class="block py-2 border-b border-gray-100 hover:text-sky-600">INFRASTRUCTURE</a>
+        <a href="{% url 'why_anexa' %}" class="block py-2 border-b border-gray-100 hover:text-sky-600">WHY ANEXA</a>
+        <a href="{% url 'leadership_contact' %}" class="block py-2 border-b border-gray-100 text-sky-600">CONTACT</a>
 
         {% if request.user.is_authenticated %}
-          <!-- Enquiries List Link -->
-          <a href="{% url 'contact_list' %}" class="ml-1.5 bg-sky-50 text-sky-700 border border-sky-200 hover:bg-sky-600 hover:text-white px-2.5 py-1.5 rounded transition flex items-center gap-1">
-            <i class="fa-solid fa-clipboard-list text-[11px]"></i>
-            <span>ENQUIRIES</span>
-          </a>
-
-          <!-- Logout Link -->
-          <a href="{% url 'adminlogout' %}" class="ml-1 bg-rose-50 text-rose-600 border border-rose-200 hover:bg-rose-600 hover:text-white px-2.5 py-1.5 rounded transition flex items-center gap-1">
-            <i class="fa-solid fa-arrow-right-from-bracket text-[11px]"></i>
-            <span>LOGOUT</span>
-          </a>
+          <div class="pt-2 flex flex-col gap-2">
+            <a href="{% url 'contact_list' %}" class="flex items-center justify-center gap-2 py-2.5 bg-sky-50 text-sky-700 border border-sky-200 rounded-lg">
+              <i class="fa-solid fa-clipboard-list"></i> ENQUIRIES LIST
+            </a>
+            <a href="{% url 'adminlogout' %}" class="flex items-center justify-center gap-2 py-2.5 bg-rose-50 text-rose-600 border border-rose-200 rounded-lg">
+              <i class="fa-solid fa-arrow-right-from-bracket"></i> LOGOUT
+            </a>
+          </div>
         {% endif %}
-      </nav>
-
-      <!-- Mobile/Tablet Hamburger Toggle (Strictly hidden on Laptop/Desktop) -->
-      <button id="navToggle" type="button" class="lg:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100 focus:outline-none">
-        <i id="navToggleIcon" class="fa-solid fa-bars text-xl"></i>
-      </button>
-    </div>
-  </div>
-
-  <!-- Mobile Drawer Menu (Only displays when toggled on Mobile/Tablet) -->
-  <div id="mobileMenu" class="hidden lg:hidden bg-white border-t border-gray-200 px-5 py-4 space-y-2 text-xs font-bold uppercase text-gray-700 shadow-xl">
-    <a href="{% url 'home' %}" class="block py-2 border-b border-gray-100 hover:text-sky-600">HOME</a>
-    <a href="{% url 'about' %}" class="block py-2 border-b border-gray-100 hover:text-sky-600">ABOUT</a>
-    <a href="{% url 'our_solutions' %}" class="block py-2 border-b border-gray-100 hover:text-sky-600">SERVICES</a>
-    <!-- <a href="{% url 'project_capabilities' %}" class="block py-2 border-b border-gray-100 hover:text-sky-600">PROJECTS</a> -->
-    <a href="{% url 'quality_safety' %}" class="block py-2 border-b border-gray-100 hover:text-sky-600">INFRASTRUCTURE</a>
-    <a href="{% url 'why_anexa' %}" class="block py-2 border-b border-gray-100 hover:text-sky-600">WHY ANEXA</a>
-    <a href="{% url 'leadership_contact' %}" class="block py-2 border-b border-gray-100 text-sky-600">CONTACT</a>
-
-    {% if request.user.is_authenticated %}
-      <div class="pt-2 flex flex-col gap-2">
-        <a href="{% url 'contact_list' %}" class="flex items-center justify-center gap-2 py-2.5 bg-sky-50 text-sky-700 border border-sky-200 rounded-lg">
-          <i class="fa-solid fa-clipboard-list"></i> ENQUIRIES LIST
-        </a>
-        <a href="{% url 'adminlogout' %}" class="flex items-center justify-center gap-2 py-2.5 bg-rose-50 text-rose-600 border border-rose-200 rounded-lg">
-          <i class="fa-solid fa-arrow-right-from-bracket"></i> LOGOUT
-        </a>
       </div>
-    {% endif %}
-  </div>
-</header>
+    </header>
+
     <!-- Dynamic Main Content -->
     <main class="flex-grow">
       {% block content %}{% endblock content %}
@@ -180,10 +251,7 @@
             <li><a href="{% url 'home' %}" class="hover:text-white transition">Home</a></li>
             <li><a href="{% url 'about' %}" class="hover:text-white transition">About Company</a></li>
             <li><a href="{% url 'why_anexa' %}" class="hover:text-white transition">WHY ANEXA</a></li>
-
-
             <li><a href="{% url 'our_solutions' %}" class="hover:text-white transition">Products &amp; Services</a></li>
-            <!-- <li><a href="{% url 'project_capabilities' %}" class="hover:text-white transition">Projects &amp; Systems</a></li> -->
             <li><a href="{% url 'leadership_contact' %}" class="hover:text-white transition">Contact &amp; Support</a></li>
           </ul>
         </div>
@@ -227,14 +295,13 @@
             loop: true,
             autoplay: { delay: 4000, disableOnInteraction: false },
             pagination: { el: ".swiper-pagination", clickable: true },
-           
           });
         }
       });
     </script>
     {% block extra_js %}{% endblock extra_js %}
 
-    <!-- WHATSAPP FLOATING BUTTON -->
+    <!-- WhatsApp Floating Button -->
     <div class="fixed bottom-6 right-6 z-50">
       <a
         href="https://wa.me/917696365606?text=Hello%20ANEXA%20Facade%20Systems,%20I%20have%20a%20facade%20project%20enquiry."
@@ -244,7 +311,6 @@
         title="Chat on WhatsApp"
       >
         <i class="fa-brands fa-whatsapp text-xl"></i>
-        <span class="text-xs font-bold tracking-wide hidden sm:inline">WhatsApp Enquiry</span>
       </a>
     </div>
   </body>

@@ -1,367 +1,512 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}03 | Our Solutions - ANEXA Facade Systems LLP{% endblock title %}
-{% block description %}Curtain Walls, ACP Cladding, Structural Glazing, Handrails, Louvers and Canopies by ANEXA Facade Systems LLP.  {% endblock description %}
+{% block title %}Our Solutions & Scope of Works | ANEXA Facade Systems LLP{% endblock title %}
+{% block description %}Comprehensive architectural facade engineering divisions by ANEXA Facade Systems LLP: Facade & Cladding, Glazing Systems, Aluminium Fenestrations, Architectural Glass Works, Specialty Envelopes, and Turnkey Execution.{% endblock description %}
 
 {% block extra_css %}
 <style>
-    .solution-block {
-        transition: all 0.3s ease;
-    }
-    .solution-image-container {
-        position: relative;
-        overflow: hidden;
-        border-radius: 1rem;
-        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    }
-    .solution-image-container img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.5s ease;
-    }
-    .solution-block:hover .solution-image-container img {
-        transform: scale(1.05);
-    }
-    .badge-chip {
-        display: inline-flex;
-        align-items: center;
-        padding: 0.25rem 0.75rem;
-        border-radius: 9999px;
-        font-size: 0.75rem;
-        font-weight: 600;
-        background-color: #f1f5f9;
-        color: #0f172a;
-    }
+  .dossier-card {
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease;
+  }
+  .dossier-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 25px 35px -12px rgba(14, 165, 233, 0.15), 0 10px 15px -3px rgba(15, 23, 42, 0.08);
+  }
 </style>
 {% endblock extra_css %}
 
 {% block content %}
-<!-- 1. Hero Image Slider with Overlay -->
-<div class="relative w-full bg-brandDark">
-    <div class="swiper pageSwiper w-full h-[360px] md:h-[500px]">
-        <div class="swiper-wrapper">
-            <!-- Slide 1: Curtain Wall Installation -->
-            <div class="swiper-slide relative">
-                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80" alt="Curtain Walls & Glazing" class="w-full h-full object-cover object-center">
-                <div class="absolute inset-0 bg-gradient-to-t from-brandDark via-brandDark/50 to-transparent flex items-end pb-12">
-                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-white">
-                        <span class="bg-brandAccent text-white text-xs font-bold uppercase px-3 py-1 rounded tracking-wider">Architectural Envelopes  </span>
-                        <h1 class="text-3xl md:text-5xl font-black mt-2">Comprehensive Facade Systems </h1>
-                        <p class="text-gray-300 text-xs md:text-sm max-w-2xl mt-2">Engineered curtain walls, ACP cladding, structural glazing, louvers, and bespoke metal canopy solutions. </p>
-                    </div>
-                </div>
-            </div>
-            <!-- Slide 2: Real Glass Lifting On Site -->
-            <div class="swiper-slide relative">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSipYWKn985IIQB1xvZHPhRB_fxEgyQQMNCHzNlIF9RBQ&s=10" alt="Site Glazing Fixers" class="w-full h-full object-cover object-center">
-                <div class="absolute inset-0 bg-gradient-to-t from-brandDark via-brandDark/50 to-transparent flex items-end pb-12">
-                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-white">
-                        <span class="bg-sky-600 text-white text-xs font-bold uppercase px-3 py-1 rounded tracking-wider">Single-Window Delivery </span>
-                        <h2 class="text-3xl md:text-5xl font-black mt-2">Turnkey Execution &amp; Installation </h2>
-                        <p class="text-gray-300 text-xs md:text-sm max-w-2xl mt-2">Precision alignment, sealant weatherproofing, and multi-trade coordinated delivery across all systems. </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="swiper-pagination"></div>
-        <!-- <div class="swiper-button-next !text-white"></div>
-        <div class="swiper-button-prev !text-white"></div> -->
+<!-- 1. Header Banner -->
+<div class="relative bg-slate-950 py-20 sm:py-28 px-4 sm:px-6 lg:px-8 overflow-hidden border-b border-slate-800">
+  <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:24px_24px]"></div>
+  <div class="max-w-7xl mx-auto relative z-10">
+    <div class="inline-flex items-center space-x-2 px-3.5 py-1 bg-sky-500/10 border border-sky-500/20 rounded-full mb-4">
+      <span class="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
+      <span class="text-sky-300 text-[11px] font-bold uppercase tracking-widest">Master Service Index &bull; Engineering Scope</span>
     </div>
+    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white uppercase tracking-tight">
+      Comprehensive Facade <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-cyan-300">Solutions</span>
+    </h1>
+    <p class="text-slate-300 text-xs sm:text-sm md:text-base max-w-3xl mt-4 leading-relaxed">
+      Detailed technical scopes, structural capabilities, and material build-ups across our 6 core architectural envelope divisions. Engineered strictly according to IS 875 wind velocity pressures, ASTM structural silicone bonding standards, and AAMA weather-barrier testing protocols.
+    </p>
+  </div>
 </div>
 
-<!-- 2. Section Header & Key Metrics -->
-<section class="border-b bg-white py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
-            <div>
-                <span class="text-brandAccent font-bold text-xs uppercase tracking-widest block mb-1">Section 03  </span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900">OUR CORE SOLUTIONS  </h2>
-                <div class="w-16 h-1 bg-brandAccent mt-3"></div>
+<!-- 2. Services Grid (Detailed Expanded Dossier Layout) -->
+<section class="py-20 bg-slate-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-14">
+      <div>
+        <span class="text-sky-600 font-bold text-xs uppercase tracking-widest block mb-1">Single-Contract Facade Engineering</span>
+        <h2 class="text-2xl sm:text-4xl font-black text-slate-900 uppercase tracking-tight">Master Division Breakdown</h2>
+        <div class="w-14 h-1 bg-sky-600 mt-3"></div>
+      </div>
+      <p class="text-slate-600 text-xs sm:text-sm max-w-md leading-relaxed">
+        Review sub-system breakdowns, joint dynamics, hardware grades, and execution limits for all commercial envelope disciplines.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+
+      <!-- Division 01: Facade & Cladding -->
+      <div class="dossier-card bg-white border border-slate-200 rounded-3xl overflow-hidden flex flex-col justify-between group hover:border-sky-500">
+        <div>
+          <div class="relative h-60 w-full overflow-hidden bg-slate-900">
+            <img src="{% static 'images/HomeFacade.png' %}" alt="Facade and Cladding Systems" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+            <div class="absolute top-4 left-4">
+              <span class="px-2.5 py-1 bg-slate-950/80 backdrop-blur-md text-sky-400 border border-sky-500/30 text-[10px] font-black uppercase tracking-wider rounded-md">Division 01</span>
             </div>
-            <p class="text-xs sm:text-sm text-gray-600 max-w-xl leading-relaxed">
-                Professional facade solutions focused on design intent, buildability, installation quality and coordinated execution across all commercial and institutional envelopes. 
+            <div class="absolute bottom-4 left-4 right-4">
+              <span class="text-[11px] font-bold text-sky-400 uppercase tracking-wider block">Rainscreen &amp; Thermal Skins</span>
+              <h3 class="text-xl font-black text-white uppercase tracking-tight">Facade &amp; Cladding</h3>
+            </div>
+          </div>
+          
+          <div class="p-6">
+            <p class="text-slate-600 text-xs leading-relaxed mb-6">
+              Precision ventilated rainscreens and architectural metallic skins engineered to eliminate solar heat transmission, isolate noise, and guarantee certified zero-flame fire integrity.
             </p>
+
+            <div class="space-y-4 mb-6">
+              <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+                <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Sub-Scope Matrix (6 Types)</span>
+                <span class="text-[10px] font-bold text-sky-600 bg-sky-50 px-2 py-0.5 rounded">FR &amp; Non-Combustible</span>
+              </div>
+
+              <!-- Subtype items with individual detailed breakdown -->
+              <div class="space-y-3 text-xs">
+                <div class="p-2.5 bg-slate-50 border border-slate-100 rounded-xl hover:bg-sky-50/50 transition">
+                  <strong class="text-slate-900 block font-bold">1.1 Aluminium Composite Panel (ACP)</strong>
+                  <span class="text-slate-600 text-[11px] leading-tight block mt-0.5">Class A2/B1 FR mineral core, CNC cassette routing, 70% PVDF Kynar 500 coating with non-staining silicone joints.</span>
+                </div>
+                <div class="p-2.5 bg-slate-50 border border-slate-100 rounded-xl hover:bg-sky-50/50 transition">
+                  <strong class="text-slate-900 block font-bold">1.2 High-Pressure Laminate (HPL)</strong>
+                  <span class="text-slate-600 text-[11px] leading-tight block mt-0.5">Thermo-cured phenolic resin panels with double-hardened acrylic layer, natural wood textures, and concealed undercut brackets.</span>
+                </div>
+                <div class="p-2.5 bg-slate-50 border border-slate-100 rounded-xl hover:bg-sky-50/50 transition">
+                  <strong class="text-slate-900 block font-bold">1.3 Solid Aluminium Plate Cladding</strong>
+                  <span class="text-slate-600 text-[11px] leading-tight block mt-0.5">2.0mm–4.0mm monolithic 3003-H14 alloy plates with welded stiffener ribs preventing oil-canning under high heat.</span>
+                </div>
+                <div class="p-2.5 bg-slate-50 border border-slate-100 rounded-xl hover:bg-sky-50/50 transition">
+                  <strong class="text-slate-900 block font-bold">1.4 Specialized Metal (Zinc &amp; Corten)</strong>
+                  <span class="text-slate-600 text-[11px] leading-tight block mt-0.5">Titanium zinc, Corten weathered steel, and SS-316 envelopes with self-healing natural patinas and galvanic isolation.</span>
+                </div>
+                <div class="p-2.5 bg-slate-50 border border-slate-100 rounded-xl hover:bg-sky-50/50 transition">
+                  <strong class="text-slate-900 block font-bold">1.5 Architectural Louvers</strong>
+                  <span class="text-slate-600 text-[11px] leading-tight block mt-0.5">Extruded aerofoil &amp; box profiles tested for 45%–60% free-air discharge while providing rain-screen mechanical shielding.</span>
+                </div>
+                <div class="p-2.5 bg-slate-50 border border-slate-100 rounded-xl hover:bg-sky-50/50 transition">
+                  <strong class="text-slate-900 block font-bold">1.6 Fluted Decorative Panels</strong>
+                  <span class="text-slate-600 text-[11px] leading-tight block mt-0.5">Modular interlock clip-on corrugated profiles delivering dynamic rhythmic facade shadows with concealed fasteners.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-slate-50 border border-slate-100 rounded-xl p-3.5 text-[11px] text-slate-600 space-y-1.5">
+              <div class="flex justify-between"><span>Fire Rating:</span><strong class="text-slate-900 font-bold">Class A2 / B1 Non-combustible</strong></div>
+              <div class="flex justify-between"><span>Surface Coating:</span><strong class="text-slate-900 font-bold">PVDF 3-Coat / Super Durable Powder</strong></div>
+              <div class="flex justify-between"><span>Joint Strategy:</span><strong class="text-slate-900 font-bold">Rear-ventilated rainscreen gap</strong></div>
+            </div>
+          </div>
         </div>
 
-        <!-- Quick Spec Counters -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 pt-8 border-t border-gray-100 text-xs text-gray-700">
-            <div class="bg-gray-50 p-4 rounded-lg border border-gray-100">
-                <span class="text-gray-400 block mb-1 font-semibold">Structural System</span>
-                <strong class="text-gray-900 text-sm">Stick &amp; Unitized Types</strong>
-            </div>
-            <div class="bg-gray-50 p-4 rounded-lg border border-gray-100">
-                <span class="text-gray-400 block mb-1 font-semibold">Cladding Panels</span>
-                <strong class="text-gray-900 text-sm">PVDF / FEVE Coated ACP</strong>
-            </div>
-            <div class="bg-gray-50 p-4 rounded-lg border border-gray-100">
-                <span class="text-gray-400 block mb-1 font-semibold">Glass Modules</span>
-                <strong class="text-gray-900 text-sm">DGU / Laminated / Toughened</strong>
-            </div>
-            <div class="bg-gray-50 p-4 rounded-lg border border-gray-100">
-                <span class="text-gray-400 block mb-1 font-semibold">Testing Norms</span>
-                <strong class="text-gray-900 text-sm">Wind Load &amp; Water Ingress</strong>
-            </div>
+        <div class="p-6 pt-0 mt-4">
+          <a href="{% url 'service_facade_cladding' %}" class="w-full flex items-center justify-between px-4 py-3 bg-slate-900 hover:bg-sky-600 text-white rounded-xl text-xs font-bold uppercase tracking-wider transition duration-200">
+            <span>View Full Cladding Specs</span>
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
         </div>
+      </div>
+
+      <!-- Division 02: Glazing Systems -->
+      <div class="dossier-card bg-white border border-slate-200 rounded-3xl overflow-hidden flex flex-col justify-between group hover:border-sky-500">
+        <div>
+          <div class="relative h-60 w-full overflow-hidden bg-slate-900">
+            <img src="{% static 'images/GlazingSystems.jpg' %}" alt="Glazing Systems and Curtain Walls" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+            <div class="absolute top-4 left-4">
+              <span class="px-2.5 py-1 bg-slate-950/80 backdrop-blur-md text-sky-400 border border-sky-500/30 text-[10px] font-black uppercase tracking-wider rounded-md">Division 02</span>
+            </div>
+            <div class="absolute bottom-4 left-4 right-4">
+              <span class="text-[11px] font-bold text-sky-400 uppercase tracking-wider block">High-Rise Enclosures</span>
+              <h3 class="text-xl font-black text-white uppercase tracking-tight">Glazing Systems</h3>
+            </div>
+          </div>
+
+          <div class="p-6">
+            <p class="text-slate-600 text-xs leading-relaxed mb-6">
+              Continuous structural glass envelopes engineered to absorb severe wind suction, floor-slab drift, thermal expansion, and seismic tremors on high-altitude commercial landmarks.
+            </p>
+
+            <div class="space-y-4 mb-6">
+              <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+                <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Sub-Scope Matrix (8 Types)</span>
+                <span class="text-[10px] font-bold text-sky-600 bg-sky-50 px-2 py-0.5 rounded">High Wind Tested</span>
+              </div>
+
+              <!-- Subtype items with individual detailed breakdown -->
+              <div class="space-y-3 text-xs">
+                <div class="p-2.5 bg-slate-50 border border-slate-100 rounded-xl hover:bg-sky-50/50 transition">
+                  <strong class="text-slate-900 block font-bold">2.1 Structural Silicone Glazing</strong>
+                  <span class="text-slate-600 text-[11px] leading-tight block mt-0.5">2-sided and 4-sided flush bonded glass panels using dual-component neutral silicone per ASTM C1184 standards.</span>
+                </div>
+                <div class="p-2.5 bg-slate-50 border border-slate-100 rounded-xl hover:bg-sky-50/50 transition">
+                  <strong class="text-slate-900 block font-bold">2.2 Stick Curtain Walling</strong>
+                  <span class="text-slate-600 text-[11px] leading-tight block mt-0.5">On-site grid-erected mullions and transoms with external pressure plates, snap caps, and slotted bracket movement.</span>
+                </div>
+                <div class="p-2.5 bg-slate-50 border border-slate-100 rounded-xl hover:bg-sky-50/50 transition">
+                  <strong class="text-slate-900 block font-bold">2.3 Unitized Curtain Walls</strong>
+                  <span class="text-slate-600 text-[11px] leading-tight block mt-0.5">Story-high factory-assembled cassettes hoisted via floor cranes. Interlocking split mullions delivering 1 floor/week.</span>
+                </div>
+                <div class="p-2.5 bg-slate-50 border border-slate-100 rounded-xl hover:bg-sky-50/50 transition">
+                  <strong class="text-slate-900 block font-bold">2.4 Semi-Unitized Glazing</strong>
+                  <span class="text-slate-600 text-[11px] leading-tight block mt-0.5">Hybrid system combining stick framing grids with pre-glazed cassettes hooked and locked via mechanical clips.</span>
+                </div>
+                <div class="p-2.5 bg-slate-50 border border-slate-100 rounded-xl hover:bg-sky-50/50 transition">
+                  <strong class="text-slate-900 block font-bold">2.5 Spider Glazing Systems</strong>
+                  <span class="text-slate-600 text-[11px] leading-tight block mt-0.5">Cast SS-316 spider fittings with swivel routels supported by structural glass fins or steel tension trusses.</span>
+                </div>
+                <div class="p-2.5 bg-slate-50 border border-slate-100 rounded-xl hover:bg-sky-50/50 transition">
+                  <strong class="text-slate-900 block font-bold">2.6 Point-Fixed Glazing Assemblies</strong>
+                  <span class="text-slate-600 text-[11px] leading-tight block mt-0.5">Countersunk flush routel fasteners seated in CNC beveled holes for scenic elevator shafts and glass canopies.</span>
+                </div>
+                <div class="p-2.5 bg-slate-50 border border-slate-100 rounded-xl hover:bg-sky-50/50 transition">
+                  <strong class="text-slate-900 block font-bold">2.7 Fixed Architectural Glazing</strong>
+                  <span class="text-slate-600 text-[11px] leading-tight block mt-0.5">Thermally broken heavy-gauge perimeter frames accommodating 24mm–38mm Low-E acoustic double-glazed units.</span>
+                </div>
+                <div class="p-2.5 bg-slate-50 border border-slate-100 rounded-xl hover:bg-sky-50/50 transition">
+                  <strong class="text-slate-900 block font-bold">2.8 Toughened &amp; Laminated Safety Glass</strong>
+                  <span class="text-slate-600 text-[11px] leading-tight block mt-0.5">Heat Soak Tested (HST) glass with rigid SentryGlas (SGP) or acoustic PVB interlayers meeting IS 2553 safety norms.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-slate-50 border border-slate-100 rounded-xl p-3.5 text-[11px] text-slate-600 space-y-1.5">
+              <div class="flex justify-between"><span>Wind Capacity:</span><strong class="text-slate-900 font-bold">Up to 3.5+ kPa (High Rise)</strong></div>
+              <div class="flex justify-between"><span>Safety Standards:</span><strong class="text-slate-900 font-bold">IS 2553 &amp; ASTM C1048 HST</strong></div>
+              <div class="flex justify-between"><span>Gasket Barrier:</span><strong class="text-slate-900 font-bold">Dual co-extruded vulcanized EPDM</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-6 pt-0 mt-4">
+          <a href="{% url 'service_glazing_systems' %}" class="w-full flex items-center justify-between px-4 py-3 bg-slate-900 hover:bg-sky-600 text-white rounded-xl text-xs font-bold uppercase tracking-wider transition duration-200">
+            <span>View Full Glazing Specs</span>
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Division 03: Aluminium Works -->
+      <div class="dossier-card bg-white border border-slate-200 rounded-3xl overflow-hidden flex flex-col justify-between group hover:border-sky-500">
+        <div>
+          <div class="relative h-60 w-full overflow-hidden bg-slate-900">
+            <img src="{% static 'images/AluminiumWorks.jpg' %}" alt="Aluminium Works and Fenestration" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+            <div class="absolute top-4 left-4">
+              <span class="px-2.5 py-1 bg-slate-950/80 backdrop-blur-md text-sky-400 border border-sky-500/30 text-[10px] font-black uppercase tracking-wider rounded-md">Division 03</span>
+            </div>
+            <div class="absolute bottom-4 left-4 right-4">
+              <span class="text-[11px] font-bold text-sky-400 uppercase tracking-wider block">Precision Fenestration</span>
+              <h3 class="text-xl font-black text-white uppercase tracking-tight">Aluminium Works</h3>
+            </div>
+          </div>
+
+          <div class="p-6">
+            <p class="text-slate-600 text-xs leading-relaxed mb-6">
+              Extruded architectural alloy 6063-T6 fenestrations engineered with polyamide thermal barriers, high-security multi-point locking, and structural reinforcement for expansive clear spans.
+            </p>
+
+            <div class="space-y-4 mb-6">
+              <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+                <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Sub-Scope Matrix (5 Types)</span>
+                <span class="text-[10px] font-bold text-sky-600 bg-sky-50 px-2 py-0.5 rounded">Thermal Broken</span>
+              </div>
+
+              <!-- Subtype items with individual detailed breakdown -->
+              <div class="space-y-3 text-xs">
+                <div class="p-2.5 bg-slate-50 border border-slate-100 rounded-xl hover:bg-sky-50/50 transition">
+                  <strong class="text-slate-900 block font-bold">3.1 Aluminium Door Systems</strong>
+                  <span class="text-slate-600 text-[11px] leading-tight block mt-0.5">Heavy-duty pivot, bi-fold, sensor sliding, and swing casement doors with hydraulic crimped corner joints and floor springs.</span>
+                </div>
+                <div class="p-2.5 bg-slate-50 border border-slate-100 rounded-xl hover:bg-sky-50/50 transition">
+                  <strong class="text-slate-900 block font-bold">3.2 Aluminium Window Fenestration</strong>
+                  <span class="text-slate-600 text-[11px] leading-tight block mt-0.5">Polyamide PA66 GF25 thermal break casements, tilt-and-turns, and lift-and-slide patio doors accommodating 42mm DGU glass.</span>
+                </div>
+                <div class="p-2.5 bg-slate-50 border border-slate-100 rounded-xl hover:bg-sky-50/50 transition">
+                  <strong class="text-slate-900 block font-bold">3.3 Extruded Aluminium Louvers</strong>
+                  <span class="text-slate-600 text-[11px] leading-tight block mt-0.5">Aerodynamic double-drainage blades blocking storm water, coupled with rear SS-304 bird guards for HVAC chiller yards.</span>
+                </div>
+                <div class="p-2.5 bg-slate-50 border border-slate-100 rounded-xl hover:bg-sky-50/50 transition">
+                  <strong class="text-slate-900 block font-bold">3.4 Commercial Shopfront Framing</strong>
+                  <span class="text-slate-600 text-[11px] leading-tight block mt-0.5">Deep-pocket wide-span mullions with internal steel reinforcement for luxury automobile dealerships and retail plazas.</span>
+                </div>
+                <div class="p-2.5 bg-slate-50 border border-slate-100 rounded-xl hover:bg-sky-50/50 transition">
+                  <strong class="text-slate-900 block font-bold">3.5 Modular Carrier Framing Systems</strong>
+                  <span class="text-slate-600 text-[11px] leading-tight block mt-0.5">3D-adjustable extruded T-profiles and carrier angles absorbing &plusmn;30mm concrete variances with thermal isolator pads.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-slate-50 border border-slate-100 rounded-xl p-3.5 text-[11px] text-slate-600 space-y-1.5">
+              <div class="flex justify-between"><span>Alloy &amp; Temper:</span><strong class="text-slate-900 font-bold">Alloy 6063-T6 / 6061-T6</strong></div>
+              <div class="flex justify-between"><span>Thermal Barrier:</span><strong class="text-slate-900 font-bold">Polyamide PA66 GF25 Strips</strong></div>
+              <div class="flex justify-between"><span>Hardware Grade:</span><strong class="text-slate-900 font-bold">European Multi-point / SS-304 Stays</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-6 pt-0 mt-4">
+          <a href="{% url 'service_aluminium_works' %}" class="w-full flex items-center justify-between px-4 py-3 bg-slate-900 hover:bg-sky-600 text-white rounded-xl text-xs font-bold uppercase tracking-wider transition duration-200">
+            <span>View Full Fenestration Specs</span>
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Division 04: Glass Works -->
+      <div class="dossier-card bg-white border border-slate-200 rounded-3xl overflow-hidden flex flex-col justify-between group hover:border-sky-500">
+        <div>
+          <div class="relative h-60 w-full overflow-hidden bg-slate-900">
+            <img src="{% static 'images/GlassWork.png' %}" alt="Architectural Glass Works" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+            <div class="absolute top-4 left-4">
+              <span class="px-2.5 py-1 bg-slate-950/80 backdrop-blur-md text-sky-400 border border-sky-500/30 text-[10px] font-black uppercase tracking-wider rounded-md">Division 04</span>
+            </div>
+            <div class="absolute bottom-4 left-4 right-4">
+              <span class="text-[11px] font-bold text-sky-400 uppercase tracking-wider block">Interior &amp; Safety Glass</span>
+              <h3 class="text-xl font-black text-white uppercase tracking-tight">Architectural Glass</h3>
+            </div>
+          </div>
+
+          <div class="p-6">
+            <p class="text-slate-600 text-xs leading-relaxed mb-6">
+              Engineered interior and architectural glass installations designed for boardrooms, balconies, and retail flagships requiring acoustic dampening, crowd containment, and optical clarity.
+            </p>
+
+            <div class="space-y-4 mb-6">
+              <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+                <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Sub-Scope Matrix (6 Types)</span>
+                <span class="text-[10px] font-bold text-sky-600 bg-sky-50 px-2 py-0.5 rounded">Crowd &amp; Sound Rated</span>
+              </div>
+
+              <!-- Subtype items with individual detailed breakdown -->
+              <div class="space-y-3 text-xs">
+                <div class="p-2.5 bg-slate-50 border border-slate-100 rounded-xl hover:bg-sky-50/50 transition">
+                  <strong class="text-slate-900 block font-bold">4.1 Glass Partitions</strong>
+                  <span class="text-slate-600 text-[11px] leading-tight block mt-0.5">Frameless acoustic partitions offering up to 48 dB sound insulation, clear dry polycarbonate joints, and switchable PDLC privacy.</span>
+                </div>
+                <div class="p-2.5 bg-slate-50 border border-slate-100 rounded-xl hover:bg-sky-50/50 transition">
+                  <strong class="text-slate-900 block font-bold">4.2 Frameless Glass Doors</strong>
+                  <span class="text-slate-600 text-[11px] leading-tight block mt-0.5">12mm CNC-polished glass doors equipped with heavy-duty Dorma/Geze hydraulic floor springs (500k cycle tested) and patch fittings.</span>
+                </div>
+                <div class="p-2.5 bg-slate-50 border border-slate-100 rounded-xl hover:bg-sky-50/50 transition">
+                  <strong class="text-slate-900 block font-bold">4.3 Glass Railings &amp; Balustrades</strong>
+                  <span class="text-slate-600 text-[11px] leading-tight block mt-0.5">Continuous aluminium base-shoe clamping systems engineered to resist 1.5 kN to 3.0 kN/m crowd loads per BS 6180 codes.</span>
+                </div>
+                <div class="p-2.5 bg-slate-50 border border-slate-100 rounded-xl hover:bg-sky-50/50 transition">
+                  <strong class="text-slate-900 block font-bold">4.4 Overhead Glass Canopies</strong>
+                  <span class="text-slate-600 text-[11px] leading-tight block mt-0.5">Cantilevered laminated tempered glass with SentryGlas (SGP) core, SS-316 tension tie-rods, and concealed gutter drainage.</span>
+                </div>
+                <div class="p-2.5 bg-slate-50 border border-slate-100 rounded-xl hover:bg-sky-50/50 transition">
+                  <strong class="text-slate-900 block font-bold">4.5 Architectural Skylights</strong>
+                  <span class="text-slate-600 text-[11px] leading-tight block mt-0.5">Thermally broken double-glazed rooflights with internal condensation troughs and ceramic frit patterns for solar glare control.</span>
+                </div>
+                <div class="p-2.5 bg-slate-50 border border-slate-100 rounded-xl hover:bg-sky-50/50 transition">
+                  <strong class="text-slate-900 block font-bold">4.6 Commercial Glass Shopfronts</strong>
+                  <span class="text-slate-600 text-[11px] leading-tight block mt-0.5">Extra-clear low-iron panoramic vision glass spanning up to 4.5m in height, stabilized with structural glass fins.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-slate-50 border border-slate-100 rounded-xl p-3.5 text-[11px] text-slate-600 space-y-1.5">
+              <div class="flex justify-between"><span>Acoustic Isolation:</span><strong class="text-slate-900 font-bold">Up to 48 dB (Rw)</strong></div>
+              <div class="flex justify-between"><span>Crowd Loading:</span><strong class="text-slate-900 font-bold">1.5 kN/m to 3.0 kN/m (BS 6180)</strong></div>
+              <div class="flex justify-between"><span>Structural Core:</span><strong class="text-slate-900 font-bold">Kuraray SentryGlas (SGP)</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-6 pt-0 mt-4">
+          <a href="{% url 'service_glass_works' %}" class="w-full flex items-center justify-between px-4 py-3 bg-slate-900 hover:bg-sky-600 text-white rounded-xl text-xs font-bold uppercase tracking-wider transition duration-200">
+            <span>View Full Glass Specs</span>
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Division 05: Special Facade Works -->
+      <div class="dossier-card bg-white border border-slate-200 rounded-3xl overflow-hidden flex flex-col justify-between group hover:border-sky-500">
+        <div>
+          <div class="relative h-60 w-full overflow-hidden bg-slate-900">
+            <img src="{% static 'images/SpecialFacadeWorks.png' %}" alt="Special Facade Works" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+            <div class="absolute top-4 left-4">
+              <span class="px-2.5 py-1 bg-slate-950/80 backdrop-blur-md text-sky-400 border border-sky-500/30 text-[10px] font-black uppercase tracking-wider rounded-md">Division 05</span>
+            </div>
+            <div class="absolute bottom-4 left-4 right-4">
+              <span class="text-[11px] font-bold text-sky-400 uppercase tracking-wider block">Landmark Geometric Envelopes</span>
+              <h3 class="text-xl font-black text-white uppercase tracking-tight">Special Facade Works</h3>
+            </div>
+          </div>
+
+          <div class="p-6">
+            <p class="text-slate-600 text-xs leading-relaxed mb-6">
+              Bespoke architectural engineering for signature landmarks: large-span structural steel cantilevers, cable-net atriums, kinetic screens, and cantilevered viewing skywalks.
+            </p>
+
+            <div class="space-y-4 mb-6">
+              <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+                <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Sub-Scope Matrix (6 Types)</span>
+                <span class="text-[10px] font-bold text-sky-600 bg-sky-50 px-2 py-0.5 rounded">FEA &amp; BIM Verified</span>
+              </div>
+
+              <!-- Subtype items with individual detailed breakdown -->
+              <div class="space-y-3 text-xs">
+                <div class="p-2.5 bg-slate-50 border border-slate-100 rounded-xl hover:bg-sky-50/50 transition">
+                  <strong class="text-slate-900 block font-bold">5.1 Monumental Canopies</strong>
+                  <span class="text-slate-600 text-[11px] leading-tight block mt-0.5">Heavy structural steel cantilevers with Grade 316 tension tie-rods, integrated LED soffit lighting, and overflow storm channels.</span>
+                </div>
+                <div class="p-2.5 bg-slate-50 border border-slate-100 rounded-xl hover:bg-sky-50/50 transition">
+                  <strong class="text-slate-900 block font-bold">5.2 Geometrical Skylights</strong>
+                  <span class="text-slate-600 text-[11px] leading-tight block mt-0.5">Pyramid, barrel-vault, and polygonal glass domes with multi-tier condensation drainage tested against heavy tropical rainfall.</span>
+                </div>
+                <div class="p-2.5 bg-slate-50 border border-slate-100 rounded-xl hover:bg-sky-50/50 transition">
+                  <strong class="text-slate-900 block font-bold">5.3 Multi-Story Atrium Glazing</strong>
+                  <span class="text-slate-600 text-[11px] leading-tight block mt-0.5">Prestressed stainless-steel cable truss systems and full-height laminated glass fins creating soaring column-free lobbies.</span>
+                </div>
+                <div class="p-2.5 bg-slate-50 border border-slate-100 rounded-xl hover:bg-sky-50/50 transition">
+                  <strong class="text-slate-900 block font-bold">5.4 Feature &amp; Parametric Facades</strong>
+                  <span class="text-slate-600 text-[11px] leading-tight block mt-0.5">Complex 3D parametric screens, CNC laser-perforated sun-shades, and curved panoramic glass corners modeled with BIM tools.</span>
+                </div>
+                <div class="p-2.5 bg-slate-50 border border-slate-100 rounded-xl hover:bg-sky-50/50 transition">
+                  <strong class="text-slate-900 block font-bold">5.5 Monumental Entrance Portals</strong>
+                  <span class="text-slate-600 text-[11px] leading-tight block mt-0.5">Double-height portal frames integrating high-capacity automatic revolving doors and climate-controlled draught vestibules.</span>
+                </div>
+                <div class="p-2.5 bg-slate-50 border border-slate-100 rounded-xl hover:bg-sky-50/50 transition">
+                  <strong class="text-slate-900 block font-bold">5.6 Glass Skywalks &amp; Features</strong>
+                  <span class="text-slate-600 text-[11px] leading-tight block mt-0.5">Multi-ply structural glass flooring with non-slip ceramic frits, scenic capsule lift enclosures, and glass sky-bridges.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-slate-50 border border-slate-100 rounded-xl p-3.5 text-[11px] text-slate-600 space-y-1.5">
+              <div class="flex justify-between"><span>Structural Modeling:</span><strong class="text-slate-900 font-bold">3D BIM &amp; FEA Deflection</strong></div>
+              <div class="flex justify-between"><span>Tension Hardware:</span><strong class="text-slate-900 font-bold">Cast SS-316 &amp; High-tensile Rods</strong></div>
+              <div class="flex justify-between"><span>Post-Breakage:</span><strong class="text-slate-900 font-bold">Redundant multi-ply SGP load hold</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-6 pt-0 mt-4">
+          <a href="{% url 'service_special_facade_works' %}" class="w-full flex items-center justify-between px-4 py-3 bg-slate-900 hover:bg-sky-600 text-white rounded-xl text-xs font-bold uppercase tracking-wider transition duration-200">
+            <span>View Full Special Specs</span>
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Division 06: Facade Engineering & Execution -->
+      <div class="dossier-card bg-white border border-slate-200 rounded-3xl overflow-hidden flex flex-col justify-between group hover:border-sky-500">
+        <div>
+          <div class="relative h-60 w-full overflow-hidden bg-slate-900">
+            <img src="{% static 'images/FacadeEngineering.jpg' %}" alt="Facade Engineering and Execution" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+            <div class="absolute top-4 left-4">
+              <span class="px-2.5 py-1 bg-slate-950/80 backdrop-blur-md text-sky-400 border border-sky-500/30 text-[10px] font-black uppercase tracking-wider rounded-md">Division 06</span>
+            </div>
+            <div class="absolute bottom-4 left-4 right-4">
+              <span class="text-[11px] font-bold text-sky-400 uppercase tracking-wider block">Turnkey Governance</span>
+              <h3 class="text-xl font-black text-white uppercase tracking-tight">Engineering &amp; Execution</h3>
+            </div>
+          </div>
+
+          <div class="p-6">
+            <p class="text-slate-600 text-xs leading-relaxed mb-6">
+              Complete turnkey project stewardship from initial static wind load calculations and CNC cutting schedules to high-altitude laser rigging, AAMA water audits, and lifetime maintenance.
+            </p>
+
+            <div class="space-y-4 mb-6">
+              <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+                <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Execution Lifecycle (7 Phases)</span>
+                <span class="text-[10px] font-bold text-sky-600 bg-sky-50 px-2 py-0.5 rounded">Turnkey Single-Point</span>
+              </div>
+
+              <!-- Subtype items with individual detailed breakdown -->
+              <div class="space-y-3 text-xs">
+                <div class="p-2.5 bg-slate-50 border border-slate-100 rounded-xl hover:bg-sky-50/50 transition">
+                  <strong class="text-slate-900 block font-bold">6.1 Architectural Shop Drawings</strong>
+                  <span class="text-slate-600 text-[11px] leading-tight block mt-0.5">2D CAD and 3D BIM connection details mapping perimeter interfaces, flashing overlaps, and bracket anchors.</span>
+                </div>
+                <div class="p-2.5 bg-slate-50 border border-slate-100 rounded-xl hover:bg-sky-50/50 transition">
+                  <strong class="text-slate-900 block font-bold">6.2 Fabrication Drawings &amp; BOM</strong>
+                  <span class="text-slate-600 text-[11px] leading-tight block mt-0.5">Millimeter-precise CNC bar-nesting cut-lists reducing material waste below 3%, with full hardware bill-of-materials.</span>
+                </div>
+                <div class="p-2.5 bg-slate-50 border border-slate-100 rounded-xl hover:bg-sky-50/50 transition">
+                  <strong class="text-slate-900 block font-bold">6.3 Facade Engineering &amp; Statics</strong>
+                  <span class="text-slate-600 text-[11px] leading-tight block mt-0.5">Calculations for mullion inertia, glass stress deflection, and anchor pull-out limits strictly compliant with IS 875 (Part 3).</span>
+                </div>
+                <div class="p-2.5 bg-slate-50 border border-slate-100 rounded-xl hover:bg-sky-50/50 transition">
+                  <strong class="text-slate-900 block font-bold">6.4 Turnkey Material Supply</strong>
+                  <span class="text-slate-600 text-[11px] leading-tight block mt-0.5">Procurement from primary alloy extruders and certified glass processors with Manufacturer Test Certificates (MTC).</span>
+                </div>
+                <div class="p-2.5 bg-slate-50 border border-slate-100 rounded-xl hover:bg-sky-50/50 transition">
+                  <strong class="text-slate-900 block font-bold">6.5 Laser Site Rigging &amp; Execution</strong>
+                  <span class="text-slate-600 text-[11px] leading-tight block mt-0.5">Optical total station benchmark surveys, floor-mounted crane hoisting, and certified zero-accident HSE rope access.</span>
+                </div>
+                <div class="p-2.5 bg-slate-50 border border-slate-100 rounded-xl hover:bg-sky-50/50 transition">
+                  <strong class="text-slate-900 block font-bold">6.6 Quality Audits &amp; Field Water Testing</strong>
+                  <span class="text-slate-600 text-[11px] leading-tight block mt-0.5">Calibrated AAMA 501.2 hose spray tests at 30–35 PSI, hydraulic anchor pull-out tests, and silicone peel checks.</span>
+                </div>
+                <div class="p-2.5 bg-slate-50 border border-slate-100 rounded-xl hover:bg-sky-50/50 transition">
+                  <strong class="text-slate-900 block font-bold">6.7 Facade Repair &amp; Maintenance</strong>
+                  <span class="text-slate-600 text-[11px] leading-tight block mt-0.5">High-rise fractured glass replacement, weather-seal stripping and re-application, and structural health audits.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-slate-50 border border-slate-100 rounded-xl p-3.5 text-[11px] text-slate-600 space-y-1.5">
+              <div class="flex justify-between"><span>Plumb Tolerances:</span><strong class="text-slate-900 font-bold">Total Station 3D Alignment</strong></div>
+              <div class="flex justify-between"><span>Watertight Audit:</span><strong class="text-slate-900 font-bold">AAMA 501.2 Calibrated Hose</strong></div>
+              <div class="flex justify-between"><span>QA Governance:</span><strong class="text-slate-900 font-bold">ISO 9001 QA &amp; ISO 45001 HSE</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-6 pt-0 mt-4">
+          <a href="{% url 'service_engineering_execution' %}" class="w-full flex items-center justify-between px-4 py-3 bg-slate-900 hover:bg-sky-600 text-white rounded-xl text-xs font-bold uppercase tracking-wider transition duration-200">
+            <span>View Full Execution Specs</span>
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+        </div>
+      </div>
+
     </div>
+  </div>
 </section>
 
-<!-- 3. Alternating Detailed Storyboard Layout -->
-<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-24">
-
-    <!-- 01. CURTAIN WALLS (Left Content, Right Image) -->
-    <div class="solution-block grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-        <div class="lg:col-span-6 order-2 lg:order-1">
-            <div class="flex items-center space-x-3 mb-2">
-                <span class="text-3xl font-black text-brandAccent">01</span>
-                <span class="badge-chip">Building Envelope System </span>
-            </div>
-            <h3 class="text-2xl sm:text-3xl font-black text-gray-900 mb-4">Curtain Walls  </h3>
-            <p class="text-sm text-gray-600 leading-relaxed mb-6">
-                Aluminium-and-glass facade systems for contemporary building envelopes, with attention to grid, mullion/transom coordination, glazing and interfaces. 
-            </p>
-            
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6 text-xs">
-                <div class="p-3 bg-gray-50 rounded border border-gray-100">
-                    <strong class="text-gray-900 block mb-1">Mullion &amp; Transom Grid </strong>
-                    <span class="text-gray-600">Calculated span profiles handling seismic movement and structural wind pressure.</span>
-                </div>
-                <div class="p-3 bg-gray-50 rounded border border-gray-100">
-                    <strong class="text-gray-900 block mb-1">Thermal &amp; Acoustic Barrier</strong>
-                    <span class="text-gray-600">Double glazed acoustic interlayers and EPDM gaskets for weather protection.</span>
-                </div>
-            </div>
-
-            <div class="bg-blue-50/60 border-l-4 border-brandAccent p-4 text-xs text-gray-700">
-                <strong class="text-brandDark">Key Interfaces:</strong> Floor slab embeds, bracket slot adjusters, perimeter fire-stops, and exterior column wraps. 
-            </div>
-        </div>
-        <div class="lg:col-span-6 order-1 lg:order-2">
-            <div class="solution-image-container h-[320px] sm:h-[420px]">
-                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80" alt="Curtain Walls Installation">
-            </div>
-        </div>
-    </div>
-
-    <!-- 02. ACP CLADDING (Left Image, Right Content) -->
-    <div class="solution-block grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-        <div class="lg:col-span-6">
-            <div class="solution-image-container h-[320px] sm:h-[420px]">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSipYWKn985IIQB1xvZHPhRB_fxEgyQQMNCHzNlIF9RBQ&s=10" alt="ACP Panel Cladding">
-            </div>
-        </div>
-        <div class="lg:col-span-6">
-            <div class="flex items-center space-x-3 mb-2">
-                <span class="text-3xl font-black text-brandAccent">02</span>
-                <span class="badge-chip">Architectural Surface Articulation </span>
-            </div>
-            <h3 class="text-2xl sm:text-3xl font-black text-gray-900 mb-4">ACP Cladding </h3>
-            <p class="text-sm text-gray-600 leading-relaxed mb-6">
-                Aluminium composite panel cladding for clean architectural elevations, feature bands, parapets, fins and coordinated facade zones.  
-            </p>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6 text-xs">
-                <div class="p-3 bg-gray-50 rounded border border-gray-100">
-                    <strong class="text-gray-900 block mb-1">Sub-Frame Geometry </strong>
-                    <span class="text-gray-600">Galvanized steel and aluminium runner frameworks engineered for plane level accuracy.</span>
-                </div>
-                <div class="p-3 bg-gray-50 rounded border border-gray-100">
-                    <strong class="text-gray-900 block mb-1">Panels &amp; Grooving  </strong>
-                    <span class="text-gray-600">V-groove folding, non-combustible core routing, and UV-stable weather sealants. </span>
-                </div>
-            </div>
-
-            <div class="bg-blue-50/60 border-l-4 border-brandAccent p-4 text-xs text-gray-700">
-                <strong class="text-brandDark">Key Interfaces:</strong> Parapet copings, masonry anchor tie-backs, window reveal transitions, and sign-band integration.  
-            </div>
-        </div>
-    </div>
-
-    <!-- 03. STRUCTURAL GLAZING (Left Content, Right Image) -->
-    <div class="solution-block grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-        <div class="lg:col-span-6 order-2 lg:order-1">
-            <div class="flex items-center space-x-3 mb-2">
-                <span class="text-3xl font-black text-brandAccent">03</span>
-                <span class="badge-chip">Frameless Elevation  </span>
-            </div>
-            <h3 class="text-2xl sm:text-3xl font-black text-gray-900 mb-4">Structural Glazing </h3>
-            <p class="text-sm text-gray-600 leading-relaxed mb-6">
-                Glass-forward facade applications with a focus on jointing, glass setting, sealant interfaces and clean visual lines. 
-            </p>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6 text-xs">
-                <div class="p-3 bg-gray-50 rounded border border-gray-100">
-                    <strong class="text-gray-900 block mb-1">Structural Silicone Adhesion </strong>
-                    <span class="text-gray-600">Factory-controlled glass bonding to adapter frames using high-modulus silicones.</span>
-                </div>
-                <div class="p-3 bg-gray-50 rounded border border-gray-100">
-                    <strong class="text-gray-900 block mb-1">Flush Glass Sightlines </strong>
-                    <span class="text-gray-600">Uninterrupted reflection aesthetics with uniform weather joint widths.</span>
-                </div>
-            </div>
-
-            <div class="bg-blue-50/60 border-l-4 border-brandAccent p-4 text-xs text-gray-700">
-                <strong class="text-brandDark">Key Interfaces:</strong> Setting block dead load supports, safety retaining clips, and field water barrier beads.  
-            </div>
-        </div>
-        <div class="lg:col-span-6 order-1 lg:order-2">
-            <div class="solution-image-container h-[320px] sm:h-[420px]">
-                <img src="https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=1200&q=80" alt="Structural Glazing Jointing">
-            </div>
-        </div>
-    </div>
-
-    <!-- 04. LOUVERS (Left Image, Right Content) -->
-    <div class="solution-block grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-        <div class="lg:col-span-6">
-            <div class="solution-image-container h-[320px] sm:h-[420px]">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTfdqm-L0kvj1XcxExbCQ30q_yEfPVX6esKU7rjmlEOw&s=10" alt="Architectural Louvers">
-            </div>
-        </div>
-        <div class="lg:col-span-6">
-            <div class="flex items-center space-x-3 mb-2">
-                <span class="text-3xl font-black text-brandAccent">04</span>
-                <span class="badge-chip">Ventilation &amp; Screening  </span>
-            </div>
-            <h3 class="text-2xl sm:text-3xl font-black text-gray-900 mb-4">Louvers  </h3>
-            <p class="text-sm text-gray-600 leading-relaxed mb-6">
-                Fixed or adjustable architectural louvers for screening, ventilation-related applications and facade articulation.  
-            </p>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6 text-xs">
-                <div class="p-3 bg-gray-50 rounded border border-gray-100">
-                    <strong class="text-gray-900 block mb-1">Free Area Aerodynamics </strong>
-                    <span class="text-gray-600">Engineered pitch angles for MEP heat dispersal, chiller acoustic isolation, and weather protection. </span>
-                </div>
-                <div class="p-3 bg-gray-50 rounded border border-gray-100">
-                    <strong class="text-gray-900 block mb-1">Blade Geometries </strong>
-                    <span class="text-gray-600">Box, aerofoil, Z-blade, and drainable profiles custom anodized or powder coated.</span>
-                </div>
-            </div>
-
-            <div class="bg-blue-50/60 border-l-4 border-brandAccent p-4 text-xs text-gray-700">
-                <strong class="text-brandDark">Key Interfaces:</strong> MEP duct shafts, civil perimeter trims, structural lintels, and bird-screen backings. 
-            </div>
-        </div>
-    </div>
-
-    <!-- 05. CANOPIES (Left Content, Right Image) -->
-    <div class="solution-block grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-        <div class="lg:col-span-6 order-2 lg:order-1">
-            <div class="flex items-center space-x-3 mb-2">
-                <span class="text-3xl font-black text-brandAccent">05</span>
-                <span class="badge-chip">Entrance Architecture  </span>
-            </div>
-            <h3 class="text-2xl sm:text-3xl font-black text-gray-900 mb-4">Canopies </h3>
-            <p class="text-sm text-gray-600 leading-relaxed mb-6">
-                Entrance and architectural canopy solutions integrating framing, glazing/cladding and coordinated fixing details. 
-            </p>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6 text-xs">
-                <div class="p-3 bg-gray-50 rounded border border-gray-100">
-                    <strong class="text-gray-900 block mb-1">Structural Framing Steel </strong>
-                    <span class="text-gray-600">Heavy MS/SS cantilevers, tension tie-rods, and spider fittings designed for high load capacity.</span>
-                </div>
-                <div class="p-3 bg-gray-50 rounded border border-gray-100">
-                    <strong class="text-gray-900 block mb-1">Integrated Drainage  </strong>
-                    <span class="text-gray-600">Internal box gutters and downspout channels concealed within cladding enclosures.</span>
-                </div>
-            </div>
-
-            <div class="bg-blue-50/60 border-l-4 border-brandAccent p-4 text-xs text-gray-700">
-                <strong class="text-brandDark">Key Interfaces:</strong> Civil RCC beams, chemical stud anchoring, flashing water seals, and drop-off lighting circuits. 
-            </div>
-        </div>
-        <div class="lg:col-span-6 order-1 lg:order-2">
-            <div class="solution-image-container h-[320px] sm:h-[420px]">
-                <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80" alt="Glass Canopy Framing">
-            </div>
-        </div>
-    </div>
-
-    <!-- 06. HANDRAILS (Left Image, Right Content) -->
-    <div class="solution-block grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-        <div class="lg:col-span-6">
-            <div class="solution-image-container h-[320px] sm:h-[420px]">
-                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" alt="Glass Handrails">
-            </div>
-        </div>
-        <div class="lg:col-span-6">
-            <div class="flex items-center space-x-3 mb-2">
-                <span class="text-3xl font-black text-brandAccent">06</span>
-                <span class="badge-chip">Perimeter Safety Systems </span>
-            </div>
-            <h3 class="text-2xl sm:text-3xl font-black text-gray-900 mb-4">Handrails  </h3>
-            <p class="text-sm text-gray-600 leading-relaxed mb-6">
-                Architectural handrail systems for stairs, balconies, terraces and other required locations, subject to project design and safety requirements. 
-            </p>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6 text-xs">
-                <div class="p-3 bg-gray-50 rounded border border-gray-100">
-                    <strong class="text-gray-900 block mb-1">Impact Resistance &amp; Codes  </strong>
-                    <span class="text-gray-600">Laminated safety glass options tested against line load and point impact benchmarks.</span>
-                </div>
-                <div class="p-3 bg-gray-50 rounded border border-gray-100">
-                    <strong class="text-gray-900 block mb-1">Mounting Hardware  </strong>
-                    <span class="text-gray-600">Concealed base shoes, side-mounted spigots, point-fixed rotules, and continuous top caps.</span>
-                </div>
-            </div>
-
-            <div class="bg-blue-50/60 border-l-4 border-brandAccent p-4 text-xs text-gray-700">
-                <strong class="text-brandDark">Key Interfaces:</strong> Terrace waterproofing membranes, balcony edge curbs, and floor tile expansion joints. 
-            </div>
-        </div>
-    </div>
-
-</section>
-
-<!-- 4. Quality & Engineering Standards Strip -->
-<section class="bg-gray-50 border-t border-b py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-2xl mx-auto mb-10">
-            <span class="text-xs uppercase font-bold text-brandAccent tracking-widest">Engineering Standard </span>
-            <h3 class="text-2xl font-bold text-gray-900 mt-1">Material Integrity &amp; Quality Rigor  </h3>
-            <p class="text-xs text-gray-600 mt-2">Every solution is built with tested materials, strict dimensional control, and certified installation procedures. </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs">
-            <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
-                <i class="fa-solid fa-gem text-brandAccent text-2xl mb-3"></i>
-                <h4 class="font-bold text-gray-900 text-sm mb-1">Alloy Grade &amp; Finish</h4>
-                <p class="text-gray-600 leading-relaxed">6063-T6 architectural aluminium extrusions with certified micron anodizing or high-durability PVDF coatings.</p>
-            </div>
-            <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
-                <i class="fa-solid fa-shield-halved text-brandAccent text-2xl mb-3"></i>
-                <h4 class="font-bold text-gray-900 text-sm mb-1">Safety Glazing Standards</h4>
-                <p class="text-gray-600 leading-relaxed">High-performance Low-E double glazing units (DGU) with PVB/SGP interlayers for thermal insulation and solar control.</p>
-            </div>
-            <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
-                <i class="fa-solid fa-screwdriver-wrench text-brandAccent text-2xl mb-3"></i>
-                <h4 class="font-bold text-gray-900 text-sm mb-1">Weathersealing Chemistry</h4>
-                <p class="text-gray-600 leading-relaxed">Neutral cure, non-staining structural silicone and EPDM perimeter gaskets ensuring tested water and air tightness. </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- 5. Integrated Facade Package Callout (from PDF) -->
+<!-- 3. Integrated Facade Package Callout (Bottom Action) -->
 <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-    <div class="bg-gradient-to-r from-brandDark via-brandBlue to-brandDark text-white p-8 md:p-12 rounded-xl shadow-lg border border-neutral-700">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
-            <div class="lg:col-span-2">
-                <span class="text-xs uppercase font-bold text-sky-400 tracking-widest block mb-2">Turnkey Execution Model </span>
-                <h3 class="text-2xl font-bold mb-3">Integrated Facade Package </h3>
-                <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
-                    Where project scope requires multiple facade trades, ANEXA can coordinate the package around common drawings, material interfaces, setting-out requirements, sequencing and handover priorities.   Final scope remains subject to the project BOQ, approved drawings and contract.  
-                </p>
-            </div>
-            <div class="text-left lg:text-right">
-                <a href="{% url 'leadership_contact' %}" class="inline-block bg-brandAccent hover:bg-blue-600 text-white text-xs font-bold uppercase tracking-wider px-6 py-3.5 rounded transition shadow-md whitespace-nowrap">
-                    Request Package Quotation 
-                </a>
-            </div>
-        </div>
+  <div class="rounded-3xl bg-gradient-to-r from-slate-950 via-slate-900 to-sky-950 p-8 sm:p-14 text-center text-white relative overflow-hidden shadow-2xl border border-slate-800">
+    <div class="max-w-3xl mx-auto relative z-10">
+      <span class="text-sky-400 font-bold text-xs uppercase tracking-widest block mb-2">Turnkey Contract Delivery</span>
+      <h3 class="text-2xl sm:text-4xl font-black uppercase tracking-tight">Need a Single-Window Facade Package?</h3>
+      <p class="text-xs sm:text-sm text-slate-300 mt-3 mb-8 leading-relaxed">
+        Eliminate coordination friction between separate glass vendors, cladding fabricators, and civil bracket crews. ANEXA coordinates the complete building envelope around shared shop drawings, common site benchmarks, and single-point warranty accountability.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="{% url 'leadership_contact' %}" class="bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs uppercase tracking-wider px-8 py-3.5 rounded-xl shadow-lg transition flex items-center">
+          <i class="fa-solid fa-envelope-open-text mr-2"></i> Request Integrated BOQ Quotation
+        </a>
+        <a href="tel:+917992090282" class="border border-white/30 hover:bg-white hover:text-slate-950 text-white font-bold text-xs uppercase tracking-wider px-8 py-3.5 rounded-xl transition flex items-center">
+          <i class="fa-solid fa-phone mr-2 text-sky-400"></i> Direct Line: +91 7992090282
+        </a>
+      </div>
     </div>
+  </div>
 </section>
 {% endblock content %}

@@ -1,83 +1,244 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Special Facade Works | ANEXA Facade Systems LLP{% endblock title %}
+{% block title %}Special Facade Works & Landmark Envelopes | ANEXA Facade Systems LLP{% endblock title %}
+{% block description %}Engineering and turnkey execution of specialized facade systems by ANEXA Facade Systems LLP: Cantilevered canopies, geometrical skylights, tensioned cable atrium glazing, 3D feature facades, monumental entrance facades, and architectural glass structures.{% endblock description %}
 
 {% block content %}
-<div class="relative bg-slate-900 py-24 px-4 sm:px-6 lg:px-8">
+<!-- Top Category Banner -->
+<div class="relative bg-slate-950 py-20 sm:py-28 px-4 sm:px-6 lg:px-8 overflow-hidden">
   <div class="max-w-7xl mx-auto relative z-10">
-    <span class="text-sky-400 text-xs font-bold uppercase tracking-widest">Service Division 05</span>
-    <h1 class="text-4xl sm:text-6xl font-black text-white uppercase mt-2">Special Facade Works</h1>
-    <p class="text-gray-300 text-sm sm:text-base max-w-3xl mt-4 leading-relaxed">
-      Signature architectural features, monumental entrance portals, tensioned cable atriums, kinetic envelopes, and geometrical skylight domes designed for landmark buildings.
+    <span class="inline-block px-3 py-1 bg-sky-600 text-white text-[10px] sm:text-xs font-bold uppercase tracking-widest rounded mb-3">Service Division 05</span>
+    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white uppercase tracking-tight">Special Facade Works</h1>
+    <div class="w-16 h-1 bg-sky-500 my-4"></div>
+    <p class="text-slate-300 text-xs sm:text-sm md:text-base max-w-3xl leading-relaxed">
+      Bespoke architectural engineering for landmark building envelopes. We specialize in non-standard structural steel outriggers, high-transparency cable truss atriums, complex geometrical skylights, and monumental entrance facades requiring rigorous 3D spatial modeling, finite element analysis (FEA), and certified high-altitude rigging.
     </p>
   </div>
   <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/90 to-transparent"></div>
 </div>
 
+<!-- Detailed Sub-Services Breakdown (All 6 Distinct Types) -->
 <div class="py-20 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
 
-    <!-- Canopies & Skylights -->
+    <!-- Sub 5.1: Canopies -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div class="rounded-3xl overflow-hidden shadow-xl h-80 sm:h-96 bg-slate-900">
-        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=900&q=80" alt="Architectural Canopies" class="w-full h-full object-cover" />
+        <img src="{% static 'images/special_facade_works1_1.jpeg' %}" alt="Monumental Architectural Canopies" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
       </div>
       <div>
-        <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Type 5.1 &amp; 5.2</span>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 uppercase mt-1">Monumental Canopies &amp; Complex Skylights</h2>
+        <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Type 5.1</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 uppercase mt-1">Monumental Architectural Canopies</h2>
         <div class="w-12 h-1 bg-sky-600 my-3"></div>
-        <p class="text-gray-600 text-sm leading-relaxed mb-4">
-          Large-span cantilevered structural steel canopies clad with composite metal panels or point-supported structural glass. Skylight structures engineered in barrel-vault, pyramid, and free-form geometries that distribute dead and wind loads safely.
+        <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4">
+          Engineered large-span cantilevered and tie-rod suspended entrance canopies constructed with structural steel hollow sections (SHS/RHS) and clad with solid metal, FR composite cassettes, or point-supported structural glass. Designed with rigorous wind uplift calculations and integrated drainage to shelter building drop-offs and grand reception portals.
         </p>
         <ul class="space-y-2 text-xs text-gray-700">
-          <li class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Finite element analysis (FEA) checking deflection and live wind loads.</li>
-          <li class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Multi-tier internal drainage and condensation troughs.</li>
-          <li class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>High-adhesion silicone seals with UV-inhibitors.</li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Finite Element Analysis (FEA) checking live gust wind uplift, dead loads, and cantilever deflection limits.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Grade 316 marine stainless steel tension tie-rods and CNC-machined clevis fork-end connectors.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Concealed perimeter drainage gutters with integrated heat tracing and high-volume internal downspouts.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Weatherproof soffit cladding with seamless integration of architectural LED downlighting channels.</span></li>
         </ul>
       </div>
     </div>
 
-    <!-- Atrium Glazing & Entrance Portals -->
+    <!-- Sub 5.2: Skylights -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div class="order-2 lg:order-1">
-        <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Type 5.3 &amp; 5.4</span>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 uppercase mt-1">Atrium Glazing &amp; Entrance Portals</h2>
+        <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Type 5.2</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 uppercase mt-1">Architectural Skylight Systems</h2>
         <div class="w-12 h-1 bg-sky-600 my-3"></div>
-        <p class="text-gray-600 text-sm leading-relaxed mb-4">
-          Multi-story entrance atriums built with glass fins or pretensioned stainless-steel cable truss systems. These grand portals provide unhindered transparency, creating imposing entrance statements for corporate headquarters and convention centres.
+        <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4">
+          Complex roof-glazing envelopes engineered in pyramid, hipped, barrel-vault, segmented dome, and free-form polygonal geometries. Fabricated with custom heavy-duty extruded aluminium rafter profiles with multi-tier internal condensation troughs that harvest daylight while completely sealing against torrential rain and heat buildup.
         </p>
         <ul class="space-y-2 text-xs text-gray-700">
-          <li class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Suspended full-height laminated glass fins acting as structural mullions.</li>
-          <li class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Tensioned high-tensile rod cables maintaining tension equilibrium.</li>
-          <li class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Revolving automatic door integration and vestibule air-locks.</li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>High-performance double-glazed units (DGU) with ceramic frit patterns for glare control and solar heat reduction.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Continuous secondary internal condensation guttering draining moisture harmlessly outside the roof curb.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>SentryGlas (SGP) laminated safety inner glass preventing catastrophic overhead fallout upon impact.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Structural rafter spans engineered to withstand maintenance walk-on loads and localized wind vortices.</span></li>
         </ul>
       </div>
       <div class="order-1 lg:order-2 rounded-3xl overflow-hidden shadow-xl h-80 sm:h-96 bg-slate-900">
-        <img src="https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=900&q=80" alt="Atrium Glazing" class="w-full h-full object-cover" />
+        <img src="{% static 'images/special_facade_works1_2.jpeg' %}" alt="Complex Architectural Skylights" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
       </div>
     </div>
 
-    <!-- Feature Facades & Architectural Glass Features -->
+    <!-- Sub 5.3: Atrium Glazing -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div class="rounded-3xl overflow-hidden shadow-xl h-80 sm:h-96 bg-slate-900">
-        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80" alt="Feature Facades" class="w-full h-full object-cover" />
+        <img src="{% static 'images/special_facade_works1_3.jpeg' %}" alt="Multi-Story Atrium Glazing" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
       </div>
       <div>
-        <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Type 5.5 &amp; 5.6</span>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 uppercase mt-1">Feature Facades &amp; Architectural Glass Features</h2>
+        <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Type 5.3</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 uppercase mt-1">Multi-Story Atrium Glazing</h2>
         <div class="w-12 h-1 bg-sky-600 my-3"></div>
-        <p class="text-gray-600 text-sm leading-relaxed mb-4">
-          Complex 3D facade envelopes using perforated metal screens, dynamic LED illumination channels, curved glass corners, and cantilevered viewing skywalks that require custom engineering.
+        <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4">
+          Grand, highly transparent vertical envelopes engineered for central lobbies, hotel atriums, and convention center gathering spaces. Supported structurally by full-height laminated glass fins or prestressed horizontal stainless steel cable trusses, delivering soaring multi-story sightlines without heavy opaque structural columns.
         </p>
         <ul class="space-y-2 text-xs text-gray-700">
-          <li class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>3D spatial coordinate modeling ensuring zero on-site component clashes.</li>
-          <li class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Curved and spherical glass manufacturing with tight optical tolerances.</li>
-          <li class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Integrated maintenance cradle tracks and monorail systems.</li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Multi-ply toughened laminated glass fins engineered as continuous structural vertical mullions.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Pre-tensioned stainless steel cable nets maintaining structural equilibrium under dynamic wind suction.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Heavy-duty sliding top spring boxes absorbing building live-load deflections and thermal expansion.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Non-corrosive investment cast SS 316 spider brackets and articulated routel assemblies.</span></li>
         </ul>
+      </div>
+    </div>
+
+    <!-- Sub 5.4: Feature Facades -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="order-2 lg:order-1">
+        <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Type 5.4</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 uppercase mt-1">Feature &amp; Dynamic Facades</h2>
+        <div class="w-12 h-1 bg-sky-600 my-3"></div>
+        <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4">
+          Complex 3D parametric facade envelopes incorporating perforated metal kinetic screens, twisted architectural fins, curved panoramic corner glazing, and integrated media facade lighting. Tailored for landmark projects where the building skin serves as a sculptural brand icon and an active environmental shade filter.
+        </p>
+        <ul class="space-y-2 text-xs text-gray-700">
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>BIM 3D parametric modeling ensuring clash-free coordinate delivery between steel, glass, and MEP services.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>CNC laser-perforated aluminium panels with custom perforation ratios for optimized solar shading.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Cold-bent and cylindrical curved laminated glass manufactured to strict optical reflection tolerances.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Concealed maintenance walkways, cat-tracks, and facade access cradle tracks engineered directly into the system.</span></li>
+        </ul>
+      </div>
+      <div class="order-1 lg:order-2 rounded-3xl overflow-hidden shadow-xl h-80 sm:h-96 bg-slate-900">
+        <img src="{% static 'images/special_facade_works1_4.jpeg' %}" alt="Dynamic Feature Facades" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+      </div>
+    </div>
+
+    <!-- Sub 5.5: Entrance Facades -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="rounded-3xl overflow-hidden shadow-xl h-80 sm:h-96 bg-slate-900">
+        <img src="{% static 'images/special_facade_works1_5.jpeg' %}" alt="Monumental Entrance Facades" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+      </div>
+      <div>
+        <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Type 5.5</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 uppercase mt-1">Monumental Entrance Facades</h2>
+        <div class="w-12 h-1 bg-sky-600 my-3"></div>
+        <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4">
+          Signature main entrance elevations integrating oversized revolving doors, double-height curtain walls, composite portal framing, and thermal air-lock vestibules. Engineered to handle high pedestrian traffic while presenting an imposing corporate identity and minimizing air-conditioning thermal loss across lobby thresholds.
+        </p>
+        <ul class="space-y-2 text-xs text-gray-700">
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Engineered structural steel portal frame skeletons clad in premium solid aluminium or composite plate.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Seamless integration with high-capacity 3-wing or 4-wing automatic revolving glass doors.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Thermal air-curtain pockets and vestibule draught-lobbies reducing HVAC energy expenditure.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Flush threshold details compliant with universal accessibility and barrier-free building codes.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Sub 5.6: Architectural Glass Features -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="order-2 lg:order-1">
+        <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Type 5.6</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 uppercase mt-1">Architectural Glass Features &amp; Skywalks</h2>
+        <div class="w-12 h-1 bg-sky-600 my-3"></div>
+        <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4">
+          Specialized structural glass installations including glass pedestrian skybridges, cantilevered glass viewing cubes, scenic capsule elevator glass shafts, and illuminated architectural glass sculptures. Constructed with multi-ply laminated tempered safety glass that acts as primary load-bearing structural elements.
+        </p>
+        <ul class="space-y-2 text-xs text-gray-700">
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Triple and quadruple laminated glass panels incorporating high-strength SentryGlas (SGP) structural interlayers.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Slip-resistant ceramic frit patterns and acid-etched treads applied to structural glass flooring planks.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Redundant load-path structural design guaranteeing full barrier containment even if multiple plies fracture.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Custom stainless steel clamp brackets with POM isolation gaskets preventing localized stress risers.</span></li>
+        </ul>
+      </div>
+      <div class="order-1 lg:order-2 rounded-3xl overflow-hidden shadow-xl h-80 sm:h-96 bg-slate-900">
+        <img src="{% static 'images/special_facade_works1_6.jpeg' %}" alt="Architectural Glass Features and Skywalks" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
       </div>
     </div>
 
   </div>
 </div>
+
+<!-- Technical Engineering Comparison Matrix -->
+<section class="bg-slate-50 border-t border-b border-gray-200 py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Engineering Comparison</span>
+      <h2 class="text-2xl sm:text-3xl font-black text-slate-950 uppercase tracking-tight mt-1">Special Facade Works Technical Matrix</h2>
+      <div class="w-14 h-1 bg-sky-600 mx-auto mt-3 mb-4"></div>
+      <p class="text-gray-600 text-xs sm:text-sm">Structural methodology, analysis standards, and performance specifications for specialty envelopes.</p>
+    </div>
+
+    <div class="overflow-x-auto bg-white border border-gray-200 rounded-2xl shadow-sm">
+      <table class="w-full text-left text-xs sm:text-sm border-collapse">
+        <thead>
+          <tr class="bg-slate-900 text-white uppercase text-[11px] tracking-wider">
+            <th class="p-4 font-bold">System Type</th>
+            <th class="p-4 font-bold">Structural Backbone</th>
+            <th class="p-4 font-bold">Analysis / Engineering Standard</th>
+            <th class="p-4 font-bold">Key Safety Feature</th>
+            <th class="p-4 font-bold">Landmark Application</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-200 text-gray-700">
+          <tr class="hover:bg-slate-50 transition">
+            <td class="p-4 font-bold text-slate-900">5.1 Canopies</td>
+            <td class="p-4">Cantilever steel SHS/RHS + Tie-rods</td>
+            <td class="p-4">IS 800 (Steel) &amp; IS 875 (Wind uplift)</td>
+            <td class="p-4">Concealed perimeter gutters + Overflow safety</td>
+            <td class="p-4">Corporate headquarters, luxury hotels, airport terminals</td>
+          </tr>
+          <tr class="hover:bg-slate-50 transition">
+            <td class="p-4 font-bold text-slate-900">5.2 Skylights</td>
+            <td class="p-4">Thermally broken aluminium rafters</td>
+            <td class="p-4">ASTM E330 &amp; AAMA 501.2</td>
+            <td class="p-4">Multi-tier condensation gutter + SGP laminated glass</td>
+            <td class="p-4">Shopping mall atriums, museum domes, hospital courtyards</td>
+          </tr>
+          <tr class="hover:bg-slate-50 transition">
+            <td class="p-4 font-bold text-slate-900">5.3 Atrium Glazing</td>
+            <td class="p-4">Laminated glass fins / SS Cable trusses</td>
+            <td class="p-4">Pre-tensioned cable statics &amp; FEA deflection</td>
+            <td class="p-4">Deflection spring boxes + Swivel ball routels</td>
+            <td class="p-4">Grand commercial lobbies, convention centres, transit hubs</td>
+          </tr>
+          <tr class="hover:bg-slate-50 transition">
+            <td class="p-4 font-bold text-slate-900">5.4 Feature Facades</td>
+            <td class="p-4">3D space frames + CNC sub-grids</td>
+            <td class="p-4">3D Parametric BIM coordinate verification</td>
+            <td class="p-4">Thermal slide brackets + Integrated access cradle paths</td>
+            <td class="p-4">Iconic brand flagships, exhibition centres, cultural landmarks</td>
+          </tr>
+          <tr class="hover:bg-slate-50 transition">
+            <td class="p-4 font-bold text-slate-900">5.5 Entrance Facades</td>
+            <td class="p-4">Heavy portal frames + Vestibule steel</td>
+            <td class="p-4">IS 875 wind pressure + High-cycle endurance</td>
+            <td class="p-4">Automatic revolving door safety + Air-lock containment</td>
+            <td class="p-4">Corporate towers, 5-star hospitality, financial institutions</td>
+          </tr>
+          <tr class="hover:bg-slate-50 transition">
+            <td class="p-4 font-bold text-slate-900">5.6 Glass Features</td>
+            <td class="p-4">Triple/Quad multi-ply structural glass</td>
+            <td class="p-4">BS EN 1991-1-1 &amp; ASTM C1048 criteria</td>
+            <td class="p-4"><span class="px-2 py-0.5 bg-emerald-50 text-emerald-700 rounded font-bold">Redundant multi-ply SGP post-breakage load hold</span></td>
+            <td class="p-4">Cantilevered skywalks, glass bridges, scenic elevator shafts</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action Banner -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+  <div class="rounded-3xl bg-gradient-to-r from-slate-950 via-slate-900 to-sky-950 p-8 sm:p-12 text-center text-white relative overflow-hidden shadow-2xl border border-slate-800">
+    <div class="max-w-2xl mx-auto relative z-10">
+      <span class="text-sky-400 font-bold text-xs uppercase tracking-widest block mb-2">Specialized Engineering &amp; Turnkey Delivery</span>
+      <h3 class="text-2xl sm:text-3xl font-black uppercase tracking-tight">Have a Complex Architectural Facade Feature?</h3>
+      <p class="text-xs sm:text-sm text-gray-300 mt-2 mb-8 leading-relaxed">
+        Our structural engineering desk in Lucknow provides 3D FEA deflection analysis, tension cable statics, bespoke bracket design, and turnkey fabrication &amp; high-altitude erection.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="{% url 'leadership_contact' %}" class="bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs uppercase tracking-wider px-8 py-3.5 rounded-xl shadow-lg transition flex items-center">
+          <i class="fa-solid fa-envelope-open-text mr-2"></i> Submit Architectural Concept / BOQ
+        </a>
+        <a href="tel:+917992090282" class="border border-white/40 hover:bg-white hover:text-slate-950 text-white font-bold text-xs uppercase tracking-wider px-8 py-3.5 rounded-xl transition flex items-center">
+          <i class="fa-solid fa-phone mr-2 text-sky-400"></i> +91 7992090282
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 {% endblock content %}

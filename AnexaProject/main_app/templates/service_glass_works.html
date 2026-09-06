@@ -2,82 +2,243 @@
 {% load static %}
 
 {% block title %}Architectural Glass Works | ANEXA Facade Systems LLP{% endblock title %}
+{% block description %}Precision architectural interior and exterior glass works by ANEXA Facade Systems LLP: Acoustic glass partitions, frameless glass doors, structural glass railings & balustrades, cantilevered glass canopies, overhead skylights, and commercial glass shopfronts.{% endblock description %}
 
 {% block content %}
-<div class="relative bg-slate-900 py-24 px-4 sm:px-6 lg:px-8">
+<!-- Top Category Banner -->
+<div class="relative bg-slate-950 py-20 sm:py-28 px-4 sm:px-6 lg:px-8 overflow-hidden">
   <div class="max-w-7xl mx-auto relative z-10">
-    <span class="text-sky-400 text-xs font-bold uppercase tracking-widest">Service Division 04</span>
-    <h1 class="text-4xl sm:text-6xl font-black text-white uppercase mt-2">Architectural Glass Works</h1>
-    <p class="text-gray-300 text-sm sm:text-base max-w-3xl mt-4 leading-relaxed">
-      Interior and exterior architectural glass installations including frameless acoustic office partitions, laminated glass railings, overhead safety canopies, and crystal-clear shopfronts.
+    <span class="inline-block px-3 py-1 bg-sky-600 text-white text-[10px] sm:text-xs font-bold uppercase tracking-widest rounded mb-3">Service Division 04</span>
+    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white uppercase tracking-tight">Architectural Glass Works</h1>
+    <div class="w-16 h-1 bg-sky-500 my-4"></div>
+    <p class="text-slate-300 text-xs sm:text-sm md:text-base max-w-3xl leading-relaxed">
+      Custom interior and exterior architectural glass installations engineered for acoustic privacy, extreme crowd-load safety, impact resistance, and maximum optical clarity. Fabricated with high-grade tempered glass, SentryGlas (SGP) laminations, and premium architectural hardware.
     </p>
   </div>
   <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/90 to-transparent"></div>
 </div>
 
+<!-- Detailed Sub-Services Breakdown (All 6 Distinct Types) -->
 <div class="py-20 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
 
-    <!-- Partitions & Doors -->
+    <!-- Sub 4.1: Glass Partitions -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div class="rounded-3xl overflow-hidden shadow-xl h-80 sm:h-96 bg-slate-900">
-        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=80" alt="Office Glass Partitions" class="w-full h-full object-cover" />
+        <img src="{% static 'images/glass_work1_1.jpeg' %}" alt="Architectural Glass Partitions" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
       </div>
       <div>
-        <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Type 4.1 &amp; 4.2</span>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 uppercase mt-1">Glass Partitions &amp; Frameless Doors</h2>
+        <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Type 4.1</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 uppercase mt-1">Glass Partitions</h2>
         <div class="w-12 h-1 bg-sky-600 my-3"></div>
-        <p class="text-gray-600 text-sm leading-relaxed mb-4">
-          Minimalist glass office enclosures using single and double-glazed 10mm or 12mm toughened panels. Connected with clear dry-joint polycarbonates or micro-aluminium channels for seamless panoramic office sightlines.
+        <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4">
+          Minimalist interior acoustic glass partition systems designed for modern corporate offices, executive boardrooms, and institutional enclosures. Engineered using single or double-glazed 10mm and 12mm toughened acoustic laminated glass, joined via ultra-clear polycarbonate dry-joints or micro-profile slim aluminium perimeter channels to create panoramic transparency.
         </p>
         <ul class="space-y-2 text-xs text-gray-700">
-          <li class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Acoustic insulation ratings up to 48 dB for boardrooms and cabins.</li>
-          <li class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Dorma/Geze hydraulic patch fittings and soft-closing floor springs.</li>
-          <li class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Smart switchable privacy glass options (PDLC films).</li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>High acoustic mitigation achieving sound transmission loss from 36 dB up to 48 dB Rw.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Dry-joint clear polycarbonate clip connectors eliminating messy silicone smears on vision panels.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Optional smart switchable privacy glass (PDLC films) transitioning instantly from clear to frosted.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Slimline anodized and powder-coated perimeter channels with integrated neoprene acoustic gaskets.</span></li>
         </ul>
       </div>
     </div>
 
-    <!-- Railings & Balustrades -->
+    <!-- Sub 4.2: Glass Doors -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div class="order-2 lg:order-1">
-        <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Type 4.3</span>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 uppercase mt-1">Glass Railings &amp; Balustrades</h2>
+        <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Type 4.2</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 uppercase mt-1">Frameless &amp; Framed Glass Doors</h2>
         <div class="w-12 h-1 bg-sky-600 my-3"></div>
-        <p class="text-gray-600 text-sm leading-relaxed mb-4">
-          Base-shoe aluminium profile railings and spigot-supported glass balustrades for balconies, staircases, and shopping mall parapets. Uses heavy laminated safety glass to resist high horizontal crowd loads.
+        <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4">
+          Heavy-duty architectural swing, sliding, automatic sensor, and center-pivoted glass doors tailored for executive suites, retail storefronts, and commercial entrances. Engineered with CNC-milled edge-polished toughened safety glass and heavy-cycle stainless steel patch hardware to prevent sagging and ensure smooth, controlled closing operation.
         </p>
         <ul class="space-y-2 text-xs text-gray-700">
-          <li class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Engineered to withstand 1.5 kN to 3.0 kN/m horizontal crowd loading.</li>
-          <li class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Continuous aluminium bottom shoe with dry wedge clamping blocks.</li>
-          <li class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Slim stainless steel or aluminium top handrails.</li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Heavy-duty hydraulic floor springs tested for 500,000+ opening cycles with dual-speed valve control.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Premium Grade 304/316 stainless steel patch fittings, top pivots, and bottom corner locks.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Available with integrated electromagnetic drop-bolts, RFID access control, and panic exit hardware.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Soft-closing sliding glass door track systems with concealed dampeners preventing slam impacts.</span></li>
         </ul>
       </div>
       <div class="order-1 lg:order-2 rounded-3xl overflow-hidden shadow-xl h-80 sm:h-96 bg-slate-900">
-        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80" alt="Glass Balustrades" class="w-full h-full object-cover" />
+        <img src="{% static 'images/glass_work1_2.jpeg' %}" alt="Architectural Glass Doors" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
       </div>
     </div>
 
-    <!-- Canopies, Skylights & Shopfronts -->
+    <!-- Sub 4.3: Glass Railings & Balustrades -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div class="rounded-3xl overflow-hidden shadow-xl h-80 sm:h-96 bg-slate-900">
-        <img src="https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=900&q=80" alt="Glass Canopies" class="w-full h-full object-cover" />
+        <img src="{% static 'images/glass_work1_3.jpeg' %}" alt="Glass Railings and Balustrades" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
       </div>
       <div>
-        <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Type 4.4, 4.5 &amp; 4.6</span>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 uppercase mt-1">Glass Canopies, Skylights &amp; Shopfronts</h2>
+        <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Type 4.3</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 uppercase mt-1">Glass Railings &amp; Balustrades</h2>
         <div class="w-12 h-1 bg-sky-600 my-3"></div>
-        <p class="text-gray-600 text-sm leading-relaxed mb-4">
-          Overhead laminated safety glass structures that let in natural sunlight while providing total shelter against rain and storm debris. Designed with structural slope calculations to ensure smooth water drainage.
+        <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4">
+          Engineered structural glass balustrades designed for balconies, high-rise terraces, internal staircases, and shopping mall atrium parapets. Utilizing continuous heavy-duty aluminium bottom base-shoe profiles or point-supported stainless steel spigots, the assembly holds heavy laminated tempered glass that acts as an independent structural barrier.
         </p>
         <ul class="space-y-2 text-xs text-gray-700">
-          <li class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>SentryGlas (SGP) rigid interlayers preventing glass sag upon rupture.</li>
-          <li class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Integrated hidden drainage channels and gutter collectors.</li>
-          <li class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Heat-reflective coating reducing internal solar heat gain.</li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Engineered to withstand heavy line crowd loads from 1.5 kN/m up to 3.0 kN/m (IS 875 &amp; BS 6180).</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Continuous heavy base shoes with dry adjustable wedge clamping systems allowing rapid alignment.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Laminated safety glass with 1.52mm SentryGlas (SGP) interlayer preventing post-breakage barrier collapse.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Slimline top slotted U-channel handrails or side-mounted brackets in SS 304 / SS 316 finish.</span></li>
         </ul>
+      </div>
+    </div>
+
+    <!-- Sub 4.4: Glass Canopies -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="order-2 lg:order-1">
+        <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Type 4.4</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 uppercase mt-1">Overhead Glass Canopies</h2>
+        <div class="w-12 h-1 bg-sky-600 my-3"></div>
+        <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4">
+          Monumental entrance canopies and cantilevered sheltered walkways designed with structural steel outriggers, high-tensile stainless steel tie-rods, and heavy laminated safety glass. Provides complete weather shelter against monsoon storms while preserving clear upward views and maximizing natural light across building portals.
+        </p>
+        <ul class="space-y-2 text-xs text-gray-700">
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Multi-layer laminated tempered glass with SentryGlas (SGP) core engineered for overhead impact loads.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Grade 316 stainless steel tension tie-rods with adjustable fork-end turnbuckles for pitch control.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Engineered water drainage slope with concealed perimeter aluminium collection gutters and drop spouts.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>UV-resistant silicone weather seals maintaining elasticity under direct year-round solar exposure.</span></li>
+        </ul>
+      </div>
+      <div class="order-1 lg:order-2 rounded-3xl overflow-hidden shadow-xl h-80 sm:h-96 bg-slate-900">
+        <img src="{% static 'images/glass_work1_4.jpeg' %}" alt="Overhead Glass Canopies" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+      </div>
+    </div>
+
+    <!-- Sub 4.5: Glass Skylights -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="rounded-3xl overflow-hidden shadow-xl h-80 sm:h-96 bg-slate-900">
+        <img src="{% static 'images/glass_work1_5.jpeg' %}" alt="Architectural Glass Skylights" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+      </div>
+      <div>
+        <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Type 4.5</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 uppercase mt-1">Architectural Glass Skylights</h2>
+        <div class="w-12 h-1 bg-sky-600 my-3"></div>
+        <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4">
+          Custom roof-glazing solutions including pyramid skylights, dome features, barrel vaults, and continuous ridge roof-lights. Engineered with thermally broken structural aluminium rafters, condensation drainage gutters, and solar-control double-glazed insulated units that harvest natural daylight while blocking unwanted solar heat gain.
+        </p>
+        <ul class="space-y-2 text-xs text-gray-700">
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Double glazed units: Outer toughened reflective Low-E glass + Argon cavity + Inner laminated safety pane.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Internal secondary condensation collection channels draining moisture condensation harmlessly outside.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Engineered structural rafter profiles designed to support live maintenance loads and heavy rainwater surges.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Custom curb flashings with EPDM vapor barriers guaranteeing a completely watertight roof penetration.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Sub 4.6: Glass Shopfronts -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="order-2 lg:order-1">
+        <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Type 4.6</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 uppercase mt-1">Commercial Glass Shopfronts</h2>
+        <div class="w-12 h-1 bg-sky-600 my-3"></div>
+        <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4">
+          Floor-to-ceiling all-glass shopfronts tailored for luxury retail flagships, shopping mall boutiques, car dealerships, and commercial bank lobbies. Fabricated with extra-clear low-iron glass panels spanning up to 4.5 meters in height, supported by concealed perimeter structural channels and glass stabilizing fins for maximum display visibility.
+        </p>
+        <ul class="space-y-2 text-xs text-gray-700">
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Low-iron (extra-clear) glass delivering true color reproduction with no greenish edge tint.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Concealed head and sill aluminium pocket channels creating an open, totally frameless look.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Structural glass fin stabilizers providing lateral stiffness against indoor crowd and ventilation pressures.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Seamless integration with sliding-folding stacking glass systems and automatic entrance operators.</span></li>
+        </ul>
+      </div>
+      <div class="order-1 lg:order-2 rounded-3xl overflow-hidden shadow-xl h-80 sm:h-96 bg-slate-900">
+        <img src="{% static 'images/glass_work1_6.jpeg' %}" alt="Commercial Glass Shopfronts" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
       </div>
     </div>
 
   </div>
 </div>
+
+<!-- Technical Engineering Comparison Matrix -->
+<section class="bg-slate-50 border-t border-b border-gray-200 py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Engineering Comparison</span>
+      <h2 class="text-2xl sm:text-3xl font-black text-slate-950 uppercase tracking-tight mt-1">Glass Systems Technical Matrix</h2>
+      <div class="w-14 h-1 bg-sky-600 mx-auto mt-3 mb-4"></div>
+      <p class="text-gray-600 text-xs sm:text-sm">Standard glass configurations, safety ratings, and hardware specifications for architectural glass packages.</p>
+    </div>
+
+    <div class="overflow-x-auto bg-white border border-gray-200 rounded-2xl shadow-sm">
+      <table class="w-full text-left text-xs sm:text-sm border-collapse">
+        <thead>
+          <tr class="bg-slate-900 text-white uppercase text-[11px] tracking-wider">
+            <th class="p-4 font-bold">System Type</th>
+            <th class="p-4 font-bold">Glass Build-Up</th>
+            <th class="p-4 font-bold">Safety / Interlayer</th>
+            <th class="p-4 font-bold">Mounting Hardware</th>
+            <th class="p-4 font-bold">Recommended Environments</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-200 text-gray-700">
+          <tr class="hover:bg-slate-50 transition">
+            <td class="p-4 font-bold text-slate-900">4.1 Glass Partitions</td>
+            <td class="p-4">10mm / 12mm Toughened or Laminated</td>
+            <td class="p-4">Acoustic PVB (Up to 48 dB)</td>
+            <td class="p-4">Slim perimeter channel + Clear dry joint</td>
+            <td class="p-4">Executive cabins, boardrooms, co-working spaces</td>
+          </tr>
+          <tr class="hover:bg-slate-50 transition">
+            <td class="p-4 font-bold text-slate-900">4.2 Glass Doors</td>
+            <td class="p-4">12mm Clear / Frosted Toughened</td>
+            <td class="p-4">Thermal Tempered (IS 2553)</td>
+            <td class="p-4">SS 304 Patch fittings + Floor springs</td>
+            <td class="p-4">Main entrances, meeting rooms, retail doorways</td>
+          </tr>
+          <tr class="hover:bg-slate-50 transition">
+            <td class="p-4 font-bold text-slate-900">4.3 Glass Railings</td>
+            <td class="p-4">12+1.52+12mm or 10+1.52+10mm</td>
+            <td class="p-4"><span class="px-2 py-0.5 bg-emerald-50 text-emerald-700 rounded font-bold">SentryGlas (SGP) Core</span></td>
+            <td class="p-4">Continuous base shoe / Heavy spigots</td>
+            <td class="p-4">Balconies, staircases, atrium voids, rooftop bars</td>
+          </tr>
+          <tr class="hover:bg-slate-50 transition">
+            <td class="p-4 font-bold text-slate-900">4.4 Glass Canopies</td>
+            <td class="p-4">8+1.52+8mm or 10+1.52+10mm</td>
+            <td class="p-4"><span class="px-2 py-0.5 bg-emerald-50 text-emerald-700 rounded font-bold">SentryGlas (SGP) Core</span></td>
+            <td class="p-4">SS 316 Tension rods &amp; spider outriggers</td>
+            <td class="p-4">Building main portals, drop-off porches, walkways</td>
+          </tr>
+          <tr class="hover:bg-slate-50 transition">
+            <td class="p-4 font-bold text-slate-900">4.5 Glass Skylights</td>
+            <td class="p-4">28mm - 34mm Insulated DGU</td>
+            <td class="p-4">Inner laminated + Outer heat-strengthened</td>
+            <td class="p-4">Thermally broken aluminium rafters</td>
+            <td class="p-4">Atrium roofs, courtyard skylights, clubhouse domes</td>
+          </tr>
+          <tr class="hover:bg-slate-50 transition">
+            <td class="p-4 font-bold text-slate-900">4.6 Glass Shopfronts</td>
+            <td class="p-4">12mm / 15mm Low-Iron Monolithic</td>
+            <td class="p-4">Heat Soak Tested (HST) Low-Iron</td>
+            <td class="p-4">Deep pocket channels + Glass fins</td>
+            <td class="p-4">Luxury brand retail stores, auto showrooms, malls</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action Banner -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+  <div class="rounded-3xl bg-gradient-to-r from-slate-950 via-slate-900 to-sky-950 p-8 sm:p-12 text-center text-white relative overflow-hidden shadow-2xl border border-slate-800">
+    <div class="max-w-2xl mx-auto relative z-10">
+      <span class="text-sky-400 font-bold text-xs uppercase tracking-widest block mb-2">Custom Fabrication &amp; Engineering</span>
+      <h3 class="text-2xl sm:text-3xl font-black uppercase tracking-tight">Planning Custom Architectural Glass Works?</h3>
+      <p class="text-xs sm:text-sm text-gray-300 mt-2 mb-8 leading-relaxed">
+        Our technical team handles complete glass thickness structural sizing, SGP interlayer calculations, crowd load compliance audits (IS 875 / BS 6180), and turnkey material installation quotations.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="{% url 'leadership_contact' %}" class="bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs uppercase tracking-wider px-8 py-3.5 rounded-xl shadow-lg transition flex items-center">
+          <i class="fa-solid fa-envelope-open-text mr-2"></i> Submit Glass BOQ &amp; Drawings
+        </a>
+        <a href="tel:+917992090282" class="border border-white/40 hover:bg-white hover:text-slate-950 text-white font-bold text-xs uppercase tracking-wider px-8 py-3.5 rounded-xl transition flex items-center">
+          <i class="fa-solid fa-phone mr-2 text-sky-400"></i> +91 7992090282
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 {% endblock content %}

@@ -2,104 +2,243 @@
 {% load static %}
 
 {% block title %}Facade & Cladding Systems | ANEXA Facade Systems LLP{% endblock title %}
+{% block description %}Engineered architectural facade and cladding solutions by ANEXA Facade Systems LLP: Class A2/B1 FR ACP, exterior HPL, solid aluminium plate, zinc/copper metal envelopes, aerodynamic louvers, and decorative fluted panels.{% endblock description %}
 
 {% block content %}
-<!-- Banner -->
-<div class="relative bg-slate-900 py-24 px-4 sm:px-6 lg:px-8">
+<!-- Top Category Banner -->
+<div class="relative bg-slate-950 py-20 sm:py-28 px-4 sm:px-6 lg:px-8 overflow-hidden">
   <div class="max-w-7xl mx-auto relative z-10">
-    <span class="text-sky-400 text-xs font-bold uppercase tracking-widest">Service Division 01</span>
-    <h1 class="text-4xl sm:text-6xl font-black text-white uppercase mt-2">Facade &amp; Cladding</h1>
-    <p class="text-gray-300 text-sm sm:text-base max-w-3xl mt-4 leading-relaxed">
-      Durable, weather-sealed, fire-retardant architectural exterior cladding solutions. Our engineered rainscreen skins provide advanced thermal insulation, thermal barrier protection, and high-impact resistance for modern high-rises and commercial towers.
+    <span class="inline-block px-3 py-1 bg-sky-600 text-white text-[10px] sm:text-xs font-bold uppercase tracking-widest rounded mb-3">Service Division 01</span>
+    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white uppercase tracking-tight">Facade &amp; Cladding Systems</h1>
+    <div class="w-16 h-1 bg-sky-500 my-4"></div>
+    <p class="text-slate-300 text-xs sm:text-sm md:text-base max-w-3xl leading-relaxed">
+      Durable, weather-sealed, fire-retardant exterior building envelopes. Our engineered rainscreen systems deliver acoustic dampening, structural wind deflection resistance, thermal isolation, and crisp architectural lines for commercial towers, civic landmarks, and high-rise developments.
     </p>
   </div>
   <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/90 to-transparent"></div>
 </div>
 
-<!-- Detailed Sub-Services Breakdown -->
+<!-- Detailed Sub-Services Breakdown (All 6 Distinct Types) -->
 <div class="py-20 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
 
-    <!-- Sub 1: ACP Cladding -->
+    <!-- Sub 1.1: ACP Cladding -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div class="rounded-3xl overflow-hidden shadow-xl h-80 sm:h-96 bg-slate-900">
-        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80" alt="ACP Cladding" class="w-full h-full object-cover" />
+        <img src="{% static 'images/facade_cladding1_1.jpeg' %}" alt="Aluminium Composite Panel Cladding" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
       </div>
       <div>
         <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Type 1.1</span>
         <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 uppercase mt-1">Aluminium Composite Panel (ACP) Cladding</h2>
         <div class="w-12 h-1 bg-sky-600 my-3"></div>
-        <p class="text-gray-600 text-sm leading-relaxed mb-4">
-          We fabricate and install Class A2/B1 Fire-Retardant (FR) composite panels. Panels are grooved and routed on precision CNC routers, folded into cassette trays, and fastened to engineered aluminium sub-framing using stainless steel brackets and EPDM gaskets.
+        <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4">
+          Precision-routed Class A2 and B1 Fire-Retardant (FR) composite sheets engineered for exterior building skins. Panels are fabricated on multi-axis CNC routers into cassette trays with welded corner returns, then mounted to extruded aluminium sub-frames using stainless steel anchors and anti-rattle gaskets.
         </p>
         <ul class="space-y-2 text-xs text-gray-700">
-          <li class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Non-combustible mineral core preventing fire flame propagation.</li>
-          <li class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>PVDF fluoropolymer surface coating resisting UV discoloration.</li>
-          <li class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Non-staining weather silicone sealant joints for waterproof sealing.</li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Non-combustible mineral-filled core resisting extreme flame spread and toxic smoke.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>70% Kynar 500 / PVDF fluoropolymer coatings tested for 20+ years of UV colorfastness.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Weather-sealed using non-bleeding, non-staining neutral structural silicone joints.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Back-ventilated cavity design reducing solar heat transfer into interior concrete slabs.</span></li>
         </ul>
       </div>
     </div>
 
-    <!-- Sub 2: HPL Cladding -->
+    <!-- Sub 1.2: HPL Cladding -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div class="order-2 lg:order-1">
         <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Type 1.2</span>
         <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 uppercase mt-1">High-Pressure Laminate (HPL) Cladding</h2>
         <div class="w-12 h-1 bg-sky-600 my-3"></div>
-        <p class="text-gray-600 text-sm leading-relaxed mb-4">
-          Natural wood-grain, stone, and architectural solid finishes created through thermo-cured phenolic resins under tremendous pressure. Perfect for ventilated facades, villas, and commercial exterior accents that demand warmth and natural textures.
+        <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4">
+          Architectural exterior laminates produced under high pressure and temperature using thermo-cured phenolic resins and cellulose fibres. Ideal for ventilated rainscreen facades, podium accents, and modern villa envelopes requiring authentic organic wood, stone, or deep textured finishes without timber maintenance cycles.
         </p>
         <ul class="space-y-2 text-xs text-gray-700">
-          <li class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Double-hardened acrylic polyurethane layer resisting weather hazards.</li>
-          <li class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Concealed mechanical hanging brackets for seamless surface elevations.</li>
-          <li class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>High graffiti, scratch, and solvent resistance.</li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Double-cured acrylic polyurethane top coat delivering maximum graffiti and solvent resistance.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Concealed mechanical undercut anchor hanging systems with no visible exterior screw heads.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Exceptional modulus of elasticity resisting high wind pressures and heavy hail impact.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Complete resistance to rot, termites, atmospheric acid rain, and fungal moisture rot.</span></li>
         </ul>
       </div>
       <div class="order-1 lg:order-2 rounded-3xl overflow-hidden shadow-xl h-80 sm:h-96 bg-slate-900">
-        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80" alt="HPL Cladding" class="w-full h-full object-cover" />
+        <img src="{% static 'images/facade_cladding1_2.jpeg' %}" alt="High-Pressure Laminate HPL Cladding" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
       </div>
     </div>
 
-    <!-- Sub 3: Aluminium & Solid Metal Cladding -->
+    <!-- Sub 1.3: Aluminium Cladding (Solid Sheet) -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div class="rounded-3xl overflow-hidden shadow-xl h-80 sm:h-96 bg-slate-900">
-        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=900&q=80" alt="Aluminium Cladding" class="w-full h-full object-cover" />
+        <img src="{% static 'images/facade_cladding1_3.jpeg' %}" alt="Solid Aluminium Plate Cladding" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
       </div>
       <div>
-        <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Type 1.3 &amp; 1.4</span>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 uppercase mt-1">Aluminium &amp; Solid Metal Cladding</h2>
+        <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Type 1.3</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 uppercase mt-1">Solid Aluminium Plate Cladding</h2>
         <div class="w-12 h-1 bg-sky-600 my-3"></div>
-        <p class="text-gray-600 text-sm leading-relaxed mb-4">
-          2mm to 4mm solid aluminium sheets, pre-anodized plates, and zinc or copper alloy envelopes. Engineered specifically for projects requiring 100% recyclable, monolithic metal panels with no delamination risks under high ambient heat.
+        <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4">
+          Heavy-gauge 2.0mm to 4.0mm solid architectural aluminium alloy (Grade 3003-H14 / 5005) sheets fabricated with brake-formed returns and welded internal stiffeners. Engineered for premium infrastructure, corporate headquarters, and high-wind environments requiring 100% monolithic non-composite metal panels with zero risk of core delamination.
         </p>
         <ul class="space-y-2 text-xs text-gray-700">
-          <li class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Stiffened rear ribs to eliminate oil-canning and surface buckling.</li>
-          <li class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Custom PVDF wet-spray or architectural powder coatings.</li>
-          <li class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Thermal expansion allowances integrated into anchor slots.</li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>100% non-combustible solid metal construction conforming strictly to NBC fire regulations.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Rear structural stiffeners factory-welded with structural tape/studs to eliminate oil-canning.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Available in 3-coat liquid PVDF, anodized finishes, or hyper-durable architectural powder coats.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Infinitely recyclable metal alloy delivering superior life-cycle sustainability scores.</span></li>
         </ul>
       </div>
     </div>
 
-    <!-- Sub 4: Louvers & Fluted Panels -->
+    <!-- Sub 1.4: Metal Cladding (Zinc, Copper, Stainless Steel) -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div class="order-2 lg:order-1">
-        <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Type 1.5 &amp; 1.6</span>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 uppercase mt-1">Architectural Louvers &amp; Fluted Panels</h2>
+        <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Type 1.4</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 uppercase mt-1">Specialized Metal Cladding (Zinc, Corten &amp; SS)</h2>
         <div class="w-12 h-1 bg-sky-600 my-3"></div>
-        <p class="text-gray-600 text-sm leading-relaxed mb-4">
-          Integrated aerofoil, box-section, and corrugated fluted profiles designed for ventilation louvers (HVAC chiller shielding) and aesthetic rhythmic facades. Louver profiles are configured for continuous airflow while blocking water ingress during storms.
+        <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4">
+          Bespoke facade cladding utilizing titanium zinc, weathered Corten steel, architectural bronze, and Grade 316 stainless steel. These exotic envelope skins develop rich, self-healing natural patinas over time, protecting landmark institutional buildings, museums, and signature commercial facades from corrosion.
         </p>
         <ul class="space-y-2 text-xs text-gray-700">
-          <li class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Tested aerodynamic free-air discharge percentages.</li>
-          <li class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Fluted modular profiles with hidden clip-on engagement ribs.</li>
-          <li class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Vertical and horizontal alignment configurations.</li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Self-healing protective patina layer ensuring multi-decade maintenance-free durability.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Standing seam, flat lock tile, and interlocking cassette installation configurations.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Integrated breathable membranes and vapor-permeable thermal insulation backing layers.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Engineered galvanic isolation separators preventing bimetallic contact corrosion.</span></li>
         </ul>
       </div>
       <div class="order-1 lg:order-2 rounded-3xl overflow-hidden shadow-xl h-80 sm:h-96 bg-slate-900">
-        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80" alt="Louvers and Fluted Panels" class="w-full h-full object-cover" />
+        <img src="{% static 'images/facade_cladding1_4.jpeg' %}" alt="Specialized Metal Cladding Zinc and Steel" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+      </div>
+    </div>
+
+    <!-- Sub 1.5: Architectural Louvers -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="rounded-3xl overflow-hidden shadow-xl h-80 sm:h-96 bg-slate-900">
+        <img src="{% static 'images/facade_cladding1_5.jpeg' %}" alt="Architectural Aluminium Louvers" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+      </div>
+      <div>
+        <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Type 1.5</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 uppercase mt-1">Architectural Louver Systems</h2>
+        <div class="w-12 h-1 bg-sky-600 my-3"></div>
+        <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4">
+          High-performance extruded aluminium louvers engineered for plant room screening, HVAC chiller ventilation, and solar shading. Configured in aerofoil, box-profile, Z-blade, and storm-resistant dual-drainage geometries, our louver installations maintain optimal air exchange while shielding mechanical areas from driving rain and line of sight.
+        </p>
+        <ul class="space-y-2 text-xs text-gray-700">
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Tested free-air discharge ratios (45% to 60%) to prevent HVAC air strangulation.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Continuous horizontal and vertical blade runs with concealed mullion bracketry.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Integrated bird screens and insect meshes fabricated from heavy-gauge SS-304 wire.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Acoustic louver variants available with sound-absorbing perforated mineral wool cores.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Sub 1.6: Fluted / Decorative Panels -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="order-2 lg:order-1">
+        <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Type 1.6</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 uppercase mt-1">Fluted &amp; Decorative Facade Panels</h2>
+        <div class="w-12 h-1 bg-sky-600 my-3"></div>
+        <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4">
+          Modular extruded aluminium and brake-formed fluted panel systems engineered to create rhythmic shadows, corrugated textures, and dynamic visual depth across contemporary building envelopes. Designed with interlock clip-lock flanges for fast, high-altitude installation with completely hidden fasteners.
+        </p>
+        <ul class="space-y-2 text-xs text-gray-700">
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Distinct architectural geometries: Scalloped, V-groove, Box-rib, and Corrugated wave profiles.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Interlocking tongue-and-groove male/female clips concealing all structural fixings.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Engineered thermal movement allowances avoiding creaking sounds under summer sun.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Powder-coated in metallic, solid RAL, and realistic architectural wood-grain sublimation.</span></li>
+        </ul>
+      </div>
+      <div class="order-1 lg:order-2 rounded-3xl overflow-hidden shadow-xl h-80 sm:h-96 bg-slate-900">
+        <img src="{% static 'images/facade_cladding1_5.jpeg' %}" alt="Fluted and Decorative Exterior Facade Panels" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
       </div>
     </div>
 
   </div>
 </div>
+
+<!-- Category Engineering Specifications Table -->
+<section class="bg-slate-50 border-t border-b border-gray-200 py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Engineering Data</span>
+      <h2 class="text-2xl sm:text-3xl font-black text-slate-950 uppercase tracking-tight mt-1">Cladding Systems Matrix</h2>
+      <div class="w-14 h-1 bg-sky-600 mx-auto mt-3 mb-4"></div>
+      <p class="text-gray-600 text-xs sm:text-sm">Comparative technical parameters for architectural facade envelope selection.</p>
+    </div>
+
+    <div class="overflow-x-auto bg-white border border-gray-200 rounded-2xl shadow-sm">
+      <table class="w-full text-left text-xs sm:text-sm border-collapse">
+        <thead>
+          <tr class="bg-slate-900 text-white uppercase text-[11px] tracking-wider">
+            <th class="p-4 font-bold">Sub-System</th>
+            <th class="p-4 font-bold">Standard Gauge / Thickness</th>
+            <th class="p-4 font-bold">Fire Performance</th>
+            <th class="p-4 font-bold">Joint Strategy</th>
+            <th class="p-4 font-bold">Primary Application</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-200 text-gray-700">
+          <tr class="hover:bg-slate-50 transition">
+            <td class="p-4 font-bold text-slate-900">1.1 ACP Cladding</td>
+            <td class="p-4">4mm (0.5mm skin + 3mm core)</td>
+            <td class="p-4"><span class="px-2 py-0.5 bg-emerald-50 text-emerald-700 rounded font-bold">Class A2 / B1 FR</span></td>
+            <td class="p-4">Weather silicone joint with backing rod</td>
+            <td class="p-4">Commercial towers, IT parks, retail elevations</td>
+          </tr>
+          <tr class="hover:bg-slate-50 transition">
+            <td class="p-4 font-bold text-slate-900">1.2 HPL Cladding</td>
+            <td class="p-4">6mm, 8mm, 10mm exterior grade</td>
+            <td class="p-4">Class B-s1, d0 (Fire-retardant)</td>
+            <td class="p-4">Open-joint ventilated rainscreen</td>
+            <td class="p-4">Villas, hospitality, podium feature walls</td>
+          </tr>
+          <tr class="hover:bg-slate-50 transition">
+            <td class="p-4 font-bold text-slate-900">1.3 Solid Aluminium Plate</td>
+            <td class="p-4">2.0mm, 3.0mm, 4.0mm solid alloy</td>
+            <td class="p-4"><span class="px-2 py-0.5 bg-emerald-50 text-emerald-700 rounded font-bold">Class A1 Non-combustible</span></td>
+            <td class="p-4">Recessed sealed or gasketed shadow gap</td>
+            <td class="p-4">High-rise corporate envelopes, metro stations</td>
+          </tr>
+          <tr class="hover:bg-slate-50 transition">
+            <td class="p-4 font-bold text-slate-900">1.4 Specialized Metal</td>
+            <td class="p-4">0.7mm to 1.5mm (Zinc/Corten/SS)</td>
+            <td class="p-4"><span class="px-2 py-0.5 bg-emerald-50 text-emerald-700 rounded font-bold">Class A1 Non-combustible</span></td>
+            <td class="p-4">Standing seam &amp; lock-tile overlap</td>
+            <td class="p-4">Iconic cultural centers, signature roofs &amp; fins</td>
+          </tr>
+          <tr class="hover:bg-slate-50 transition">
+            <td class="p-4 font-bold text-slate-900">1.5 Architectural Louvers</td>
+            <td class="p-4">50mm to 300mm extruded profiles</td>
+            <td class="p-4">Alloy 6063-T6 (Non-combustible)</td>
+            <td class="p-4">Continuous clip-locked blade runs</td>
+            <td class="p-4">Plant rooms, chiller shielding, ventilation shafts</td>
+          </tr>
+          <tr class="hover:bg-slate-50 transition">
+            <td class="p-4 font-bold text-slate-900">1.6 Fluted Panels</td>
+            <td class="p-4">1.5mm to 2.5mm modular sections</td>
+            <td class="p-4">Alloy 6063-T6 (Non-combustible)</td>
+            <td class="p-4">Concealed tongue-and-groove joint</td>
+            <td class="p-4">Entrance portals, soffits, textured facade highlights</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action Banner -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+  <div class="rounded-3xl bg-gradient-to-r from-slate-950 via-slate-900 to-sky-950 p-8 sm:p-12 text-center text-white relative overflow-hidden shadow-2xl border border-slate-800">
+    <div class="max-w-2xl mx-auto relative z-10">
+      <span class="text-sky-400 font-bold text-xs uppercase tracking-widest block mb-2">Engineering &amp; Supply</span>
+      <h3 class="text-2xl sm:text-3xl font-black uppercase tracking-tight">Need Shop Drawings or BOQ Estimation for Cladding?</h3>
+      <p class="text-xs sm:text-sm text-gray-300 mt-2 mb-8 leading-relaxed">
+        Send us your architectural elevations and wall build-up details. Our engineering desk will deliver complete static wind calculations, panel cut-lists, and competitive supply &amp; installation quotations.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="{% url 'leadership_contact' %}" class="bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs uppercase tracking-wider px-8 py-3.5 rounded-xl shadow-lg transition flex items-center">
+          <i class="fa-solid fa-envelope-open-text mr-2"></i> Request Cladding Proposal
+        </a>
+        <a href="tel:+917992090282" class="border border-white/40 hover:bg-white hover:text-slate-950 text-white font-bold text-xs uppercase tracking-wider px-8 py-3.5 rounded-xl transition flex items-center">
+          <i class="fa-solid fa-phone mr-2 text-sky-400"></i> +91 7992090282
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 {% endblock content %}

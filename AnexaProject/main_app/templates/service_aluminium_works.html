@@ -1,83 +1,216 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Aluminium Fenestration & Works | ANEXA Facade Systems LLP{% endblock title %}
+{% block title %}Aluminium Fenestration & Architectural Works | ANEXA Facade Systems LLP{% endblock title %}
+{% block description %}Precision architectural aluminium systems by ANEXA Facade Systems LLP: Heavy-duty commercial doors, high-performance thermal break windows, aerodynamic ventilation louvers, retail shopfronts, and structural aluminium sub-framing.{% endblock description %}
 
 {% block content %}
-<div class="relative bg-slate-900 py-24 px-4 sm:px-6 lg:px-8">
+<!-- Top Category Banner -->
+<div class="relative bg-slate-950 py-20 sm:py-28 px-4 sm:px-6 lg:px-8 overflow-hidden">
   <div class="max-w-7xl mx-auto relative z-10">
-    <span class="text-sky-400 text-xs font-bold uppercase tracking-widest">Service Division 03</span>
-    <h1 class="text-4xl sm:text-6xl font-black text-white uppercase mt-2">Aluminium Works</h1>
-    <p class="text-gray-300 text-sm sm:text-base max-w-3xl mt-4 leading-relaxed">
-      Custom architectural doors, sliding-folding fenestrations, heavy-duty commercial shopfronts, and precision-engineered aluminium framing assemblies.
+    <span class="inline-block px-3 py-1 bg-sky-600 text-white text-[10px] sm:text-xs font-bold uppercase tracking-widest rounded mb-3">Service Division 03</span>
+    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white uppercase tracking-tight">Aluminium Works &amp; Fenestration</h1>
+    <div class="w-16 h-1 bg-sky-500 my-4"></div>
+    <p class="text-slate-300 text-xs sm:text-sm md:text-base max-w-3xl leading-relaxed">
+      Engineered fenestration and structural framing systems fabricated from architectural alloy 6063-T6. From heavy-cycle commercial entrance doors and slim-profile thermal break windows to aerodynamic weather louvers and modular sub-grid assemblies, ANEXA delivers unmatched dimensional precision and weather-tight performance.
     </p>
   </div>
   <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/90 to-transparent"></div>
 </div>
 
+<!-- Detailed Sub-Services Breakdown (All 5 Distinct Types) -->
 <div class="py-20 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
 
-    <!-- Doors & Windows -->
+    <!-- Sub 3.1: Aluminium Doors -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div class="rounded-3xl overflow-hidden shadow-xl h-80 sm:h-96 bg-slate-900">
-        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=900&q=80" alt="Aluminium Doors and Windows" class="w-full h-full object-cover" />
+        <img src="{% static 'images/aluminium_works1_1.jpeg' %}" alt="Commercial Heavy Duty Aluminium Doors" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
       </div>
       <div>
-        <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Type 3.1 &amp; 3.2</span>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 uppercase mt-1">Aluminium Doors &amp; Windows</h2>
+        <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Type 3.1</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 uppercase mt-1">Aluminium Door Systems</h2>
         <div class="w-12 h-1 bg-sky-600 my-3"></div>
-        <p class="text-gray-600 text-sm leading-relaxed mb-4">
-          High-performance casement, sliding, lift-and-slide, and tilt-and-turn windows engineered using extruded alloy 6063-T6. Features thermal break polyamide strips that prevent condensation and thermal bridging across interior living spaces.
+        <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4">
+          High-traffic commercial, institutional, and residential entrance doors engineered with heavy-wall extruded aluminium sections. Configurations include heavy-duty pivot doors, slide-and-fold (bi-fold) partitions, automatic sensor sliding doors, and slim-profile casement swing entries designed to handle continuous operating cycles without sagging or corner joint failure.
         </p>
         <ul class="space-y-2 text-xs text-gray-700">
-          <li class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Multi-point locking systems ensuring superior security against forced entry.</li>
-          <li class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Continuous vulcanized EPDM seals maintaining wind and rainwater exclusion.</li>
-          <li class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Durable powder-coating and hard anodized coatings (up to 25 microns).</li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Heavy-gauge 6063-T6 corner-cleated profiles with hydraulic crimped joints for structural rigidity.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>European multi-point locking mechanisms providing anti-lift and forced-entry security resistance.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Heavy-duty concealed overhead door closers, floor springs, and magnetic drop-seal acoustic sills.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Continuous dual-fin EPDM weather gaskets eliminating air leakage and water ingress at threshold levels.</span></li>
         </ul>
       </div>
     </div>
 
-    <!-- Louvers & Shopfronts -->
+    <!-- Sub 3.2: Aluminium Windows -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div class="order-2 lg:order-1">
-        <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Type 3.3 &amp; 3.4</span>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 uppercase mt-1">Aluminium Louvers &amp; Commercial Shopfronts</h2>
+        <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Type 3.2</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 uppercase mt-1">Aluminium Window Systems</h2>
         <div class="w-12 h-1 bg-sky-600 my-3"></div>
-        <p class="text-gray-600 text-sm leading-relaxed mb-4">
-          Heavy commercial framing profiles engineered for automobile showrooms, luxury brand retail facades, and plant room acoustic louvers. Profiles accommodate large glass spans with minimal framing lines.
+        <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4">
+          Advanced architectural window fenestrations covering casement side-hung, top-hung ventilators, sliding, tilt-and-turn, and heavy-duty lift-and-slide patio formats. Engineered with precision polyamide thermal breaks, multi-cavity chambering, and slim sightlines to deliver high thermal insulation, sound attenuation, and maximum outdoor visual connectivity.
         </p>
         <ul class="space-y-2 text-xs text-gray-700">
-          <li class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Reinforced internal steel stiffeners resisting high wind deflections.</li>
-          <li class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Concealed overhead door closers and magnetic panic hardware.</li>
-          <li class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Bird mesh and insect screens integrated into louver profiles.</li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Polyamide PA66 GF25 thermal break barriers eliminating internal frame condensation and heat transfer.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Acoustic glazing pockets accommodating double and triple-glazed units up to 42mm overall thickness.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Stainless steel friction stays, heavy-duty tandem rollers, and ergonomic aluminum die-cast handles.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Tested to resist hurricane-force wind pressures (IS 875) and driving rainwater penetration (AAMA/EN standards).</span></li>
         </ul>
       </div>
       <div class="order-1 lg:order-2 rounded-3xl overflow-hidden shadow-xl h-80 sm:h-96 bg-slate-900">
-        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=900&q=80" alt="Shopfronts" class="w-full h-full object-cover" />
+        <img src="{% static 'images/aluminium_works1_2.jpeg' %}" alt="High Performance Aluminium Windows" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
       </div>
     </div>
 
-    <!-- Framing Systems -->
+    <!-- Sub 3.3: Aluminium Louvers -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div class="rounded-3xl overflow-hidden shadow-xl h-80 sm:h-96 bg-slate-900">
-        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80" alt="Framing Systems" class="w-full h-full object-cover" />
+        <img src="{% static 'images/aluminium_works1_3.jpeg' %}" alt="Extruded Aluminium Louvers" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+      </div>
+      <div>
+        <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Type 3.3</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 uppercase mt-1">Extruded Aluminium Louvers</h2>
+        <div class="w-12 h-1 bg-sky-600 my-3"></div>
+        <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4">
+          Engineered ventilation and architectural screening assemblies manufactured from custom extruded profiles. Configured in aerofoil sun-blades, storm-proof double-drainage blades, continuous chevron profiles, and acoustic sound-dampening louvers for mechanical plant rooms, generator enclosures, and parking podium facades.
+        </p>
+        <ul class="space-y-2 text-xs text-gray-700">
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Calibrated aerodynamic free-air discharge areas (45% to 65%) preventing chiller airflow starvation.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Double and triple-bank rain-trap geometry blocking horizontal water entry during monsoons.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Hidden clip-bracket mounting onto vertical mullions for seamless, unpenetrated continuous runs.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Integrated rear stainless steel SS-304 bird guards and insect screen wire cloth meshes.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Sub 3.4: Aluminium Shopfronts -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="order-2 lg:order-1">
+        <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Type 3.4</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 uppercase mt-1">Aluminium Commercial Shopfronts</h2>
+        <div class="w-12 h-1 bg-sky-600 my-3"></div>
+        <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4">
+          Heavy-duty, wide-span framing systems tailored for retail store entries, luxury automobile showrooms, shopping mall frontages, and corporate reception zones. Designed with reinforced structural mullions capable of holding floor-to-ceiling panoramic glass panels with minimal framework obstruction and maximum merchandise visibility.
+        </p>
+        <ul class="space-y-2 text-xs text-gray-700">
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Deep-pocket center-glazed and flush-glazed framing accommodating heavy laminated safety glass.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Internal structural steel reinforcement tubes inserted inside mullions for expansive vertical spans.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Seamless integration with automated glass sliding doors, panic exit devices, and access control locks.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Finished in premium architectural Qualicoat-certified powder coating or deep metallic anodizing.</span></li>
+        </ul>
+      </div>
+      <div class="order-1 lg:order-2 rounded-3xl overflow-hidden shadow-xl h-80 sm:h-96 bg-slate-900">
+        <img src="{% static 'images/aluminium_works1_4.jpeg' %}" alt="Aluminium Commercial Shopfronts" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+      </div>
+    </div>
+
+    <!-- Sub 3.5: Aluminium Framing Systems -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="rounded-3xl overflow-hidden shadow-xl h-80 sm:h-96 bg-slate-900">
+        <img src="{% static 'images/aluminium_works1_5.jpeg' %}" alt="Modular Aluminium Framing Systems" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
       </div>
       <div>
         <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Type 3.5</span>
         <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 uppercase mt-1">Modular Aluminium Framing Systems</h2>
         <div class="w-12 h-1 bg-sky-600 my-3"></div>
-        <p class="text-gray-600 text-sm leading-relaxed mb-4">
-          Specialized sub-grid and framing assemblies used to anchor decorative cladding, double-skin facades, solar brise-soleil, and external signage to reinforced concrete superstructures.
+        <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4">
+          Specialized sub-structure grid frameworks and heavy carrier rails engineered to anchor secondary facades, exterior feature fins, double-skin envelopes, and architectural panel claddings back to the primary reinforced concrete building structure. Designed to absorb thermal movement and construction slab variances without transferring stress to finished elements.
         </p>
         <ul class="space-y-2 text-xs text-gray-700">
-          <li class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Slotted bracket connections absorbing thermal expansion and floor shifts.</li>
-          <li class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Anti-corrosion stainless steel A2/A4 fasteners and anchoring chemical studs.</li>
-          <li class="flex items-center"><i class="fa-solid fa-check text-sky-600 mr-2"></i>Pre-machined CNC notched joints for swift site assembly.</li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Structural extruded T-profiles, L-angles, and box channels in structural 6063-T6 / 6061-T6 temper.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>3D-adjustable slotted brackets absorbing civil edge casting out-of-plumb deviations up to &plusmn;30mm.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>ETAG-certified high-tensile chemical anchors and stainless steel A4/316 isolation hardware.</span></li>
+          <li class="flex items-start"><i class="fa-solid fa-circle-check text-sky-600 mr-2.5 mt-0.5"></i><span>Thermal isolator pads installed between concrete slabs and brackets to halt thermal bridging.</span></li>
         </ul>
       </div>
     </div>
 
   </div>
 </div>
+
+<!-- Technical Engineering Comparison Matrix -->
+<section class="bg-slate-50 border-t border-b border-gray-200 py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Engineering Comparison</span>
+      <h2 class="text-2xl sm:text-3xl font-black text-slate-950 uppercase tracking-tight mt-1">Aluminium Systems Technical Matrix</h2>
+      <div class="w-14 h-1 bg-sky-600 mx-auto mt-3 mb-4"></div>
+      <p class="text-gray-600 text-xs sm:text-sm">Comprehensive material, performance, and specification parameters for aluminium fenestration works.</p>
+    </div>
+
+    <div class="overflow-x-auto bg-white border border-gray-200 rounded-2xl shadow-sm">
+      <table class="w-full text-left text-xs sm:text-sm border-collapse">
+        <thead>
+          <tr class="bg-slate-900 text-white uppercase text-[11px] tracking-wider">
+            <th class="p-4 font-bold">System Type</th>
+            <th class="p-4 font-bold">Alloy &amp; Temper</th>
+            <th class="p-4 font-bold">Thermal Strategy</th>
+            <th class="p-4 font-bold">Gasket / Sealing</th>
+            <th class="p-4 font-bold">Target Applications</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-200 text-gray-700">
+          <tr class="hover:bg-slate-50 transition">
+            <td class="p-4 font-bold text-slate-900">3.1 Aluminium Doors</td>
+            <td class="p-4">6063-T6 (2.0mm - 3.0mm wall)</td>
+            <td class="p-4">Non-thermal &amp; Thermal options</td>
+            <td class="p-4">Dual EPDM + Automatic drop seals</td>
+            <td class="p-4">Commercial entrances, high-rise balconies, fire exits</td>
+          </tr>
+          <tr class="hover:bg-slate-50 transition">
+            <td class="p-4 font-bold text-slate-900">3.2 Aluminium Windows</td>
+            <td class="p-4">6063-T6 (1.5mm - 2.5mm wall)</td>
+            <td class="p-4"><span class="px-2 py-0.5 bg-emerald-50 text-emerald-700 rounded font-bold">Polyamide PA66 Break</span></td>
+            <td class="p-4">Co-extruded vulcanized EPDM</td>
+            <td class="p-4">Commercial offices, luxury residences, healthcare</td>
+          </tr>
+          <tr class="hover:bg-slate-50 transition">
+            <td class="p-4 font-bold text-slate-900">3.3 Aluminium Louvers</td>
+            <td class="p-4">6063-T6 (1.8mm - 2.5mm blades)</td>
+            <td class="p-4">Natural convective airflow</td>
+            <td class="p-4">Continuous storm-proof water stops</td>
+            <td class="p-4">HVAC chiller screens, generator rooms, podiums</td>
+          </tr>
+          <tr class="hover:bg-slate-50 transition">
+            <td class="p-4 font-bold text-slate-900">3.4 Commercial Shopfronts</td>
+            <td class="p-4">6063-T6 (Internal steel stiffened)</td>
+            <td class="p-4">Acoustic &amp; solar control glass</td>
+            <td class="p-4">Structural wet seal + EPDM wedge</td>
+            <td class="p-4">Retail malls, automotive showrooms, grand lobbies</td>
+          </tr>
+          <tr class="hover:bg-slate-50 transition">
+            <td class="p-4 font-bold text-slate-900">3.5 Framing Systems</td>
+            <td class="p-4">6061-T6 / 6063-T6 (3.0mm+ heavy structural)</td>
+            <td class="p-4">Thermal barrier isolation pads</td>
+            <td class="p-4">Galvanic isolation gaskets</td>
+            <td class="p-4">Sub-framing for cladding, solar fins, signage grids</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action Banner -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+  <div class="rounded-3xl bg-gradient-to-r from-slate-950 via-slate-900 to-sky-950 p-8 sm:p-12 text-center text-white relative overflow-hidden shadow-2xl border border-slate-800">
+    <div class="max-w-2xl mx-auto relative z-10">
+      <span class="text-sky-400 font-bold text-xs uppercase tracking-widest block mb-2">Technical Sizing &amp; Shop Drawings</span>
+      <h3 class="text-2xl sm:text-3xl font-black uppercase tracking-tight">Need Custom Fenestration Sizing or BOQ Estimates?</h3>
+      <p class="text-xs sm:text-sm text-gray-300 mt-2 mb-8 leading-relaxed">
+        Our technical team handles complete extrusion die section calculations, wind resistance moment-of-inertia analysis, hardware schedules, and competitive turnkey quotations.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="{% url 'leadership_contact' %}" class="bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs uppercase tracking-wider px-8 py-3.5 rounded-xl shadow-lg transition flex items-center">
+          <i class="fa-solid fa-envelope-open-text mr-2"></i> Submit Architectural Window Schedule
+        </a>
+        <a href="tel:+917992090282" class="border border-white/40 hover:bg-white hover:text-slate-950 text-white font-bold text-xs uppercase tracking-wider px-8 py-3.5 rounded-xl transition flex items-center">
+          <i class="fa-solid fa-phone mr-2 text-sky-400"></i> +91 7992090282
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 {% endblock content %}
