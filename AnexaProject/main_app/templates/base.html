@@ -13,8 +13,11 @@
     />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="{% static 'images/logo.png' %}" />
-
+<!-- Favicon Links for Google & Browsers -->
+    <link rel="shortcut icon" href="{{ request.scheme }}://{{ request.get_host }}{% static 'images/logo.png' %}" />
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ request.scheme }}://{{ request.get_host }}{% static 'images/logo.png' %}" />
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ request.scheme }}://{{ request.get_host }}{% static 'images/logo.png' %}" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ request.scheme }}://{{ request.get_host }}{% static 'images/logo.png' %}" />
     <!-- Open Graph (WhatsApp, LinkedIn, Facebook Link Preview) -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="ANEXA Facade Systems LLP" />
@@ -32,7 +35,6 @@
     <meta name="twitter:title" content="ANEXA Facade Systems LLP" />
     <meta name="twitter:description" content="Architectural facade engineering, curtain walls, and structural glazing solutions." />
     <meta name="twitter:image" content="https://www.anexafacade.com{% static 'images/logo.png' %}" />
-
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
