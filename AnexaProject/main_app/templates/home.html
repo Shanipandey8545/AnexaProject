@@ -562,45 +562,55 @@ Systems LLP - Building Better Facades{% endblock title %}
 </section>
 
 <!-- 3. MANUFACTURING & FACTORY FLOOR SHOWCASE (BIG VISUAL TILES) -->
-<section class="py-20 bg-white">
+
+<section class="py-10 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center max-w-3xl mx-auto mb-14">
-      <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">Off-Site Precision</span>
-      <h2 class="text-2xl sm:text-4xl font-extrabold text-gray-900 uppercase tracking-tight mt-1.5">Fabrication &amp; Assembly Standards</h2>
+      <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">In-House Precision Fabrication</span>
+      <h2 class="text-2xl sm:text-4xl font-extrabold text-gray-900 uppercase tracking-tight mt-1.5">Factory Production &amp; Glazing Standards</h2>
       <div class="w-16 h-1 bg-sky-600 mx-auto mt-3 mb-3"></div>
-      <p class="text-gray-600 text-xs sm:text-sm">Factory-controlled workmanship preventing site misalignments and weather-related construction delays.</p>
+      <p class="text-gray-600 text-xs sm:text-sm">Factory-controlled CNC processing, structural silicone bonding, and unitized assembly eliminating site delays.</p>
     </div>
 
-    <!-- 3 Huge High-Resolution Visual Cards -->
+    <!-- 3 Facade-Centric High-Resolution Cards -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       
+      <!-- Stage 01: CNC & Extrusion Profiling -->
       <div class="visual-card group overflow-hidden rounded-2xl bg-slate-950 shadow-md relative h-80 sm:h-96">
-        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=900&q=80" alt="CNC Cutting" class="w-full h-full object-cover transition-transform duration-700" />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+        <img src="{% static 'images/CNC_Aluminium_Milling_Notching.png' %}" 
+             alt="CNC Aluminium Milling for Facades" 
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
         <div class="absolute bottom-6 left-6 right-6">
           <span class="bg-sky-600 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">Stage 01</span>
-          <h4 class="text-white text-base sm:text-lg font-bold mt-2">Automated Profile Milling</h4>
-          <p class="text-gray-300 text-xs mt-1">High-accuracy aluminum extrusion cutting and notch profiling.</p>
+          <h4 class="text-white text-base sm:text-lg font-bold mt-2">CNC Aluminium Milling &amp; Notching</h4>
+          <p class="text-gray-300 text-xs mt-1">High-tolerance cutting, drain slot routing, and bracket corner-cleat machining for structural mullions.</p>
         </div>
       </div>
 
+      <!-- Stage 02: Unitized Assembly & Silicone Bonding -->
       <div class="visual-card group overflow-hidden rounded-2xl bg-slate-950 shadow-md relative h-80 sm:h-96">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyGLUyGET_WncaCQQxS9OU4iiycp1fd4CTbf-CyDFD7Q&s=10" alt="Material Storage" class="w-full h-full object-cover transition-transform duration-700" />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+        <img src="{% static 'images/Structural_Silicone_Bonding.png' %}" 
+             alt="Structural Glazing and Sealant Curing" 
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
         <div class="absolute bottom-6 left-6 right-6">
           <span class="bg-sky-600 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">Stage 02</span>
-          <h4 class="text-white text-base sm:text-lg font-bold mt-2">Material Staging &amp; Racking</h4>
-          <p class="text-gray-300 text-xs mt-1">Certified alloy extrusions, bracket stocks, and gaskets.</p>
+          <h4 class="text-white text-base sm:text-lg font-bold mt-2">Structural Silicone Bonding</h4>
+          <p class="text-gray-300 text-xs mt-1">Controlled two-part silicone application, gasket sealing, and clean-room horizontal frame assembly.</p>
         </div>
       </div>
 
+      <!-- Stage 03: Unit QA, Pressure Tests & Dispatch -->
       <div class="visual-card group overflow-hidden rounded-2xl bg-slate-950 shadow-md relative h-80 sm:h-96">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBpLEOHGwHFbiFOH3HR-0H9-6KEp6O7zoIbDgbIpUWow&s=10" alt="Clean Room Assembly" class="w-full h-full object-cover transition-transform duration-700" />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+        <img src="{% static 'images/QA_Dispatch.png' %}" 
+             alt="Facade Unit Quality Control" 
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
         <div class="absolute bottom-6 left-6 right-6">
           <span class="bg-sky-600 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">Stage 03</span>
-          <h4 class="text-white text-base sm:text-lg font-bold mt-2">Silicone Bonding &amp; Inspection</h4>
-          <p class="text-gray-300 text-xs mt-1">Dust-free structural sealant curing and unit QA approval.</p>
+          <h4 class="text-white text-base sm:text-lg font-bold mt-2">Unitized Rigging &amp; QA Dispatch</h4>
+          <p class="text-gray-300 text-xs mt-1">Comprehensive deglazing pull tests, weather seal verification, and custom steel-stillages staging.</p>
         </div>
       </div>
 
@@ -773,7 +783,7 @@ Systems LLP - Building Better Facades{% endblock title %}
           class="relative group overflow-hidden rounded shadow-sm bg-gray-900 h-48"
         >
           <img
-            src="https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=800&q=80"
+            src="{% static 'images/Institutional_Curtain_Walls.png' %}"
             alt="Corporate Towers"
             class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
           />
