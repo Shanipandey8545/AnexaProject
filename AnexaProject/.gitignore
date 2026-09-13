@@ -6,11 +6,13 @@ anexaenv/
 venv/
 env/
 .env
+*.env
 
 # Database
 *.sqlite3
 db.sqlite3
 
-# Static collected
+# Static collected & Heavy images
 staticfiles/
+main_app/static/images/
 .DS_Store
