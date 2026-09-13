@@ -1,0 +1,371 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Cloudinary Asset Manager | ANEXA Facade Systems LLP{% endblock title %}
+
+{% block content %}
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+
+    <div class="border-b pb-4 mb-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div>
+            <span class="text-brandAccent font-bold text-xs uppercase tracking-widest">Media Storage Engine</span>
+            <h1 class="text-2xl sm:text-3xl font-extrabold text-gray-900 mt-1">Cloudinary File &amp; Asset Hub</h1>
+            <p class="text-xs text-gray-500 mt-1">Multiple files upload karein aur direct CDN URL generate karein (Har file Max 10 MB).</p>
+        </div>
+        <div class="inline-flex items-center px-3 py-1.5 bg-sky-50 border border-sky-200 rounded-lg text-xs font-semibold text-sky-800 self-start sm:self-auto">
+            <i class="fa-solid fa-cloud-arrow-up text-sky-600 mr-2"></i>
+            <span>{{ total_count }} Assets Available</span>
+        </div>
+    </div>
+
+    {% if messages %}
+    <div class="mb-6 space-y-2">
+        {% for message in messages %}
+        <div class="p-3.5 rounded-lg text-xs font-semibold flex items-center justify-between {% if message.tags == 'error' %}bg-rose-50 text-rose-700 border border-rose-200{% elif message.tags == 'warning' %}bg-amber-50 text-amber-700 border border-amber-200{% else %}bg-emerald-50 text-emerald-700 border border-emerald-200{% endif %}">
+            <span class="flex items-center">
+                <i class="fa-solid {% if message.tags == 'error' %}fa-circle-exclamation text-rose-500{% elif message.tags == 'warning' %}fa-triangle-exclamation text-amber-500{% else %}fa-circle-check text-emerald-500{% endif %} mr-2 text-sm"></i>
+                {{ message }}
+            </span>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <div id="clientErrorBox" class="hidden mb-6 p-4 rounded-xl bg-rose-50 border border-rose-300 text-rose-800 text-xs font-semibold flex items-start space-x-3 shadow-sm transition-all duration-300">
+        <i class="fa-solid fa-triangle-exclamation text-rose-600 text-base mt-0.5 shrink-0"></i>
+        <div class="flex-1">
+            <p class="font-bold uppercase tracking-wider text-[11px] text-rose-900">File Size Limit Exceeded (Max 10 MB per file)</p>
+            <p id="clientErrorText" class="text-rose-700 mt-0.5"></p>
+        </div>
+        <button type="button" onclick="dismissClientError()" class="text-rose-500 hover:text-rose-700 text-sm">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-16">
+        
+        <div class="lg:col-span-4 bg-gray-50 border border-gray-200 p-6 rounded-2xl shadow-sm">
+            <div class="flex items-center space-x-2.5 mb-1 text-gray-900">
+                <div class="w-8 h-8 rounded-lg bg-sky-100 flex items-center justify-center text-sky-700">
+                    <i class="fa-solid fa-file-circle-plus text-sm"></i>
+                </div>
+                <h3 class="text-sm font-extrabold uppercase tracking-wide">Upload Assets</h3>
+            </div>
+            <p class="text-[11px] text-gray-500 mb-5">Select single ya multiple files (JPG, PNG, PDF, etc. — Max: <strong>10 MB/file</strong>).</p>
+
+            <form method="POST" action="" enctype="multipart/form-data" id="uploadForm">
+                {% csrf_token %}
+
+                <div class="mb-4">
+                    <label class="block text-xs font-bold text-gray-700 mb-1.5 uppercase tracking-wider">Base Title / Prefix (Optional)</label>
+                    <div class="relative">
+                        <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-gray-400">
+                            <i class="fa-solid fa-tag text-xs"></i>
+                        </span>
+                        <input
+                            type="text"
+                            name="title"
+                            id="assetTitle"
+                            placeholder="e.g. Project Elevation (Khali chhodne par original name save hoga)"
+                            class="w-full text-xs pl-8 p-2.5 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-brandAccent/20 focus:border-brandAccent focus:outline-none transition shadow-sm font-medium text-gray-800"
+                        />
+                    </div>
+                </div>
+
+                <div class="mb-5">
+                    <label class="block text-xs font-bold text-gray-700 mb-1.5 uppercase tracking-wider">Select File(s)</label>
+                    <label for="fileInput" id="dropzoneLabel" class="relative group flex flex-col items-center justify-center border-2 border-dashed border-gray-300 hover:border-sky-500 bg-white rounded-xl p-5 cursor-pointer transition">
+                        <input type="file" name="files" id="fileInput" multiple required class="sr-only" />
+                        
+                        <div id="dropzoneDefault" class="text-center">
+                            <div class="w-10 h-10 mx-auto rounded-full bg-slate-100 group-hover:bg-sky-50 flex items-center justify-center text-gray-500 group-hover:text-sky-600 transition mb-2">
+                                <i class="fa-solid fa-cloud-arrow-up text-base"></i>
+                            </div>
+                            <span class="block text-xs font-bold text-gray-800 group-hover:text-sky-600 transition">Click to browse multiple files</span>
+                            <span class="block text-[10px] text-gray-400 mt-0.5">Images, PDFs or CAD Drawings &le; 10 MB each</span>
+                        </div>
+
+                        <div id="dropzoneSelected" class="hidden w-full text-center">
+                            <div class="flex items-center justify-center space-x-2 text-sky-600 mb-2">
+                                <i class="fa-solid fa-folder-open text-xl"></i>
+                                <span id="previewCountBadge" class="text-xs font-bold bg-sky-100 text-sky-800 px-2 py-0.5 rounded-full"></span>
+                            </div>
+                            <ul id="selectedFilesList" class="text-left text-[11px] text-gray-700 max-h-36 overflow-y-auto divide-y divide-gray-100 bg-slate-50 p-2 rounded border border-gray-200"></ul>
+                            <span class="block text-[10px] text-sky-600 underline mt-2">Click to re-select files</span>
+                        </div>
+                    </label>
+                </div>
+
+                <button
+                    type="submit"
+                    id="uploadBtn"
+                    class="w-full bg-brandDark hover:bg-sky-600 text-white font-bold py-3 rounded-lg text-xs uppercase tracking-wider transition flex items-center justify-center cursor-pointer shadow-md"
+                >
+                    <span id="uploadBtnText"><i class="fa-solid fa-cloud-arrow-up mr-2"></i>Upload All to Cloudinary</span>
+                    <span id="uploadBtnSpinner" class="hidden items-center">
+                        <i class="fa-solid fa-circle-notch fa-spin mr-2"></i>Uploading &amp; Syncing CDN...
+                    </span>
+                </button>
+            </form>
+        </div>
+
+        <div class="lg:col-span-8 bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden flex flex-col justify-between min-h-[520px]">
+            <div>
+                <div class="p-4 border-b bg-gray-50 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                    <form method="GET" action="" class="relative w-full sm:w-72">
+                        <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-gray-400 pointer-events-none">
+                            <i class="fa-solid fa-magnifying-glass text-xs"></i>
+                        </span>
+                        <input 
+                            type="text" 
+                            name="q" 
+                            value="{{ search_query }}" 
+                            placeholder="Search asset title..." 
+                            class="w-full text-xs pl-8 pr-3 py-2 bg-white border border-gray-300 rounded-lg focus:ring-1 focus:ring-brandAccent focus:outline-none placeholder-gray-400 text-gray-800"
+                        />
+                    </form>
+                    <span class="text-[11px] text-gray-500 font-medium">Showing page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs text-gray-600 border-collapse">
+                        <thead class="bg-slate-100 text-[10px] uppercase font-bold text-gray-700 tracking-wider border-b">
+                            <tr>
+                                <th class="py-3 px-4">Item</th>
+                                <th class="py-3 px-4">Type</th>
+                                <th class="py-3 px-4">Cloudinary Secure URL</th>
+                                <th class="py-3 px-4 text-center">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100">
+                            {% for asset in page_obj %}
+                            <tr class="hover:bg-sky-50/50 transition group">
+                                <td class="py-3.5 px-4">
+                                    <div class="flex items-center space-x-3">
+                                        {% if asset.file_type in 'jpg,jpeg,png,webp,svg,gif,bmp' or '.jpg' in asset.file_url or '.png' in asset.file_url or '.jpeg' in asset.file_url or '.webp' in asset.file_url or '.svg' in asset.file_url %}
+                                            <img src="{{ asset.file_url }}" alt="{{ asset.title }}" class="w-10 h-10 rounded-lg object-cover border border-gray-200 shrink-0 bg-white shadow-xs" onerror="this.onerror=null; this.src='https://placehold.co/40x40?text=IMG';" />
+                                        {% elif asset.file_type == 'pdf' or '.pdf' in asset.file_url %}
+                                            <div class="w-10 h-10 rounded-lg bg-rose-50 border border-rose-100 flex items-center justify-center text-rose-600 shrink-0">
+                                                <i class="fa-solid fa-file-pdf text-base"></i>
+                                            </div>
+                                        {% else %}
+                                            <div class="w-10 h-10 rounded-lg bg-sky-50 border border-sky-100 flex items-center justify-center text-sky-600 shrink-0">
+                                                <i class="fa-solid fa-file-lines text-base"></i>
+                                            </div>
+                                        {% endif %}
+
+                                        <div class="truncate max-w-[140px] sm:max-w-[180px]">
+                                            <p class="font-bold text-gray-900 truncate">{{ asset.title }}</p>
+                                            <p class="text-[10px] text-gray-400">{{ asset.created_at|date:"M d, Y" }}</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-3.5 px-4">
+                                    <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider 
+                                        {% if asset.file_type == 'pdf' or '.pdf' in asset.file_url %}
+                                            bg-rose-100 text-rose-800
+                                        {% elif asset.file_type in 'jpg,jpeg,png,webp,svg,gif' or '.png' in asset.file_url or '.jpg' in asset.file_url or '.jpeg' in asset.file_url or '.webp' in asset.file_url or '.svg' in asset.file_url %}
+                                            bg-emerald-100 text-emerald-800
+                                        {% else %}
+                                            bg-sky-100 text-sky-800
+                                        {% endif %}">
+                                        {% if '.png' in asset.file_url %}PNG
+                                        {% elif '.jpg' in asset.file_url or '.jpeg' in asset.file_url %}JPG
+                                        {% elif '.pdf' in asset.file_url %}PDF
+                                        {% elif '.webp' in asset.file_url %}WEBP
+                                        {% elif '.svg' in asset.file_url %}SVG
+                                        {% else %}{{ asset.file_type|default:"FILE"|upper }}
+                                        {% endif %}
+                                    </span>
+                                </td>
+                                <td class="py-3.5 px-4">
+                                    <div class="flex items-center space-x-2">
+                                        <input 
+                                            type="text" 
+                                            readonly 
+                                            value="{{ asset.file_url }}" 
+                                            class="w-40 sm:w-56 text-[11px] bg-slate-50 border border-gray-200 rounded px-2 py-1 text-gray-500 select-all truncate font-mono" 
+                                            id="url-{{ asset.id }}"
+                                        />
+                                        <button 
+                                            type="button" 
+                                            onclick="copyToClipboard('url-{{ asset.id }}', this)" 
+                                            class="p-1.5 text-gray-500 hover:text-sky-600 hover:bg-sky-50 rounded border border-gray-200 transition" 
+                                            title="Copy CDN Link"
+                                        >
+                                            <i class="fa-regular fa-copy text-xs"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                                <td class="py-3.5 px-4 text-center">
+                                    <div class="inline-flex items-center space-x-1.5">
+                                        <a 
+                                            href="{{ asset.file_url }}" 
+                                            target="_blank" 
+                                            rel="noopener noreferrer" 
+                                            class="inline-flex items-center px-2.5 py-1 rounded bg-gray-100 hover:bg-brandDark hover:text-white text-gray-700 text-[11px] font-semibold transition" 
+                                            title="Open file"
+                                        >
+                                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px] mr-1"></i> Open
+                                        </a>
+
+                                        <form method="POST" action="{% url 'delete_asset' asset.id %}" onsubmit="return confirm('Kya aap sach me \'{{ asset.title }}\' ko Cloudinary CDN aur database se permanently delete karna chahte hain?');" class="inline">
+                                            {% csrf_token %}
+                                            <button 
+                                                type="submit" 
+                                                class="inline-flex items-center px-2 py-1 rounded bg-rose-50 hover:bg-rose-600 text-rose-600 hover:text-white border border-rose-200 hover:border-rose-600 text-[11px] font-semibold transition cursor-pointer" 
+                                                title="Delete from Cloudinary"
+                                            >
+                                                <i class="fa-regular fa-trash-can text-xs"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                            {% empty %}
+                            <tr>
+                                <td colspan="4" class="py-14 text-center text-gray-400">
+                                    <i class="fa-solid fa-box-open text-3xl mb-2 text-gray-300"></i>
+                                    <p class="text-xs">No assets uploaded yet.</p>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            {% if page_obj.has_other_pages %}
+            <div class="p-4 bg-gray-50 border-t flex items-center justify-between">
+                <div>
+                    {% if page_obj.has_previous %}
+                    <a href="?page={{ page_obj.previous_page_number }}{% if search_query %}&q={{ search_query }}{% endif %}" class="inline-flex items-center px-3 py-1.5 border border-gray-300 rounded text-xs font-semibold text-gray-700 bg-white hover:bg-slate-50 transition">
+                        <i class="fa-solid fa-chevron-left mr-1.5 text-[10px]"></i> Prev
+                    </a>
+                    {% endif %}
+                </div>
+
+                <div class="flex items-center space-x-1 text-xs font-semibold">
+                    {% for p in page_obj.paginator.page_range %}
+                        {% if p == page_obj.number %}
+                        <span class="px-3 py-1 bg-brandDark text-white rounded">{{ p }}</span>
+                        {% elif p >= page_obj.number|add:"-2" and p <= page_obj.number|add:"2" %}
+                        <a href="?page={{ p }}{% if search_query %}&q={{ search_query }}{% endif %}" class="px-3 py-1 border border-gray-200 bg-white hover:bg-slate-100 rounded text-gray-700 transition">{{ p }}</a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+
+                <div>
+                    {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}{% if search_query %}&q={{ search_query }}{% endif %}" class="inline-flex items-center px-3 py-1.5 border border-gray-300 rounded text-xs font-semibold text-gray-700 bg-white hover:bg-slate-50 transition">
+                        Next <i class="fa-solid fa-chevron-right ml-1.5 text-[10px]"></i>
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+            {% endif %}
+
+        </div>
+    </div>
+</section>
+
+<script>
+    const MAX_ALLOWED_BYTES = 10 * 1024 * 1024; // 10 MB per file
+
+    const fileInput = document.getElementById('fileInput');
+    const dropzoneDefault = document.getElementById('dropzoneDefault');
+    const dropzoneSelected = document.getElementById('dropzoneSelected');
+    const previewCountBadge = document.getElementById('previewCountBadge');
+    const selectedFilesList = document.getElementById('selectedFilesList');
+    const dropzoneLabel = document.getElementById('dropzoneLabel');
+
+    const clientErrorBox = document.getElementById('clientErrorBox');
+    const clientErrorText = document.getElementById('clientErrorText');
+
+    function dismissClientError() {
+        clientErrorBox.classList.add('hidden');
+        dropzoneLabel.classList.remove('border-rose-500', 'bg-rose-50/40');
+    }
+
+    if (fileInput) {
+        fileInput.addEventListener('change', function () {
+            if (!this.files || this.files.length === 0) return;
+
+            const files = Array.from(this.files);
+            const oversized = [];
+            selectedFilesList.innerHTML = '';
+
+            // Sabhi files ka size check karein
+            files.forEach(file => {
+                const sizeMB = (file.size / (1024 * 1024)).toFixed(2);
+                if (file.size > MAX_ALLOWED_BYTES) {
+                    oversized.push(`"${file.name}" (${sizeMB} MB)`);
+                }
+
+                // Dropzone ke andar file ka preview item jodna
+                const li = document.createElement('li');
+                li.className = 'py-1 flex items-center justify-between';
+                li.innerHTML = `
+                    <span class="truncate max-w-[190px] font-medium text-gray-800">${file.name}</span>
+                    <span class="text-[10px] ${file.size > MAX_ALLOWED_BYTES ? 'text-rose-600 font-bold' : 'text-emerald-600 font-semibold'}">${sizeMB} MB</span>
+                `;
+                selectedFilesList.appendChild(li);
+            });
+
+            // Agar koi file 10 MB se badi hai
+            if (oversized.length > 0) {
+                clientErrorText.innerHTML = `Ye file(s) 10 MB limit se badi hain: <strong>${oversized.join(', ')}</strong>. Kripya 10 MB se chhoti files chunein.`;
+                clientErrorBox.classList.remove('hidden');
+                dropzoneLabel.classList.add('border-rose-500', 'bg-rose-50/40');
+
+                fileInput.value = '';
+                dropzoneSelected.classList.add('hidden');
+                dropzoneDefault.classList.remove('hidden');
+                clientErrorBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                return;
+            }
+
+            // Sab valid hone par preview show karein
+            dismissClientError();
+            dropzoneDefault.classList.add('hidden');
+            dropzoneSelected.classList.remove('hidden');
+            previewCountBadge.textContent = `${files.length} file(s) selected`;
+        });
+    }
+
+    // Submit handler
+    const uploadForm = document.getElementById('uploadForm');
+    const uploadBtn = document.getElementById('uploadBtn');
+    const uploadBtnText = document.getElementById('uploadBtnText');
+    const uploadBtnSpinner = document.getElementById('uploadBtnSpinner');
+
+    if (uploadForm && uploadBtn) {
+        uploadForm.addEventListener('submit', function (e) {
+            if (fileInput.files.length === 0) {
+                e.preventDefault();
+                alert('Kripya kam se kam ek file select karein!');
+                return false;
+            }
+
+            uploadBtn.disabled = true;
+            uploadBtn.classList.add('opacity-75', 'cursor-not-allowed');
+            uploadBtnText.classList.add('hidden');
+            uploadBtnSpinner.classList.remove('hidden');
+            uploadBtnSpinner.classList.add('inline-flex');
+        });
+    }
+
+    function copyToClipboard(inputId, btn) {
+        const copyText = document.getElementById(inputId);
+        copyText.select();
+        copyText.setSelectionRange(0, 99999);
+        navigator.clipboard.writeText(copyText.value);
+
+        const originalIcon = btn.innerHTML;
+        btn.innerHTML = '<i class="fa-solid fa-check text-xs text-emerald-600"></i>';
+        setTimeout(() => {
+            btn.innerHTML = originalIcon;
+        }, 1800);
+    }
+</script>
+{% endblock content %}

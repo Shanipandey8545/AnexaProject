@@ -1,13 +1,13 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
-from .models import ContactForm
+from .models import *
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from django.db.models import Q
 from .utils import *
-from django.http import HttpResponse
+import cloudinary.uploader
 
 
 def login_admin(request):
@@ -67,9 +67,6 @@ def quality_safety(request):
 def why_anexa(request):
     return render(request, 'why_anexa.html')
 
-
-
-
 def fill_contact_form(request):
     if request.method == "POST":
         name = request.POST.get('name')
@@ -93,7 +90,6 @@ def fill_contact_form(request):
 
     return render(request, 'leadership_contact.html')
 
-
 @login_required(login_url='login')
 def contact_list(request):
     search_query = request.GET.get('q', '').strip()
@@ -114,7 +110,6 @@ def contact_list(request):
 
     return render(request, 'contact_list.html', {"contact": page_obj})
 
-
 @login_required(login_url='login')
 def update_contact_status(request, pk):
     if request.method == "POST":
@@ -132,7 +127,6 @@ def update_contact_status(request, pk):
     referer = request.META.get('HTTP_REFERER')
     return redirect(referer if referer else 'contact_list')
 
-
 @login_required(login_url='login')
 def delete_contact(request, pk):
     if request.method == "POST":
@@ -143,10 +137,6 @@ def delete_contact(request, pk):
 
     referer = request.META.get('HTTP_REFERER')
     return redirect(referer if referer else 'contact_list')
-
-
-
-
 
 def service_facade_cladding(request):
     return render(request, 'service_facade_cladding.html')
@@ -166,3 +156,109 @@ def service_special_facade_works(request):
 def service_engineering_execution(request):
     return render(request, 'service_engineering_execution.html')
 
+# def upload_file_view(request):
+#     if request.method == 'POST':
+#         title = request.POST.get('title', '').strip()
+#         uploaded_file = request.FILES.get('file')
+
+#         if not title or not uploaded_file:
+#             messages.error(request, "Kripya File Name aur File dono provide karein!")
+#             return redirect('upload_file')
+#         MAX_UPLOAD_SIZE = 10 * 1024 * 1024
+#         if uploaded_file.size > MAX_UPLOAD_SIZE:
+#             size_in_mb = round(uploaded_file.size / (1024 * 1024), 2)
+#             messages.error(request, f"File size ({size_in_mb} MB) 10 MB se badi hai! Kripya 10 MB se chhoti file upload karein.")
+#             return redirect('upload_file')
+#         asset = UploadedAsset(title=title, file=uploaded_file)
+#         asset.save()
+#         messages.success(request, f"'{title}' Cloudinary par successfully upload ho gaya!")
+#         return redirect('upload_file')
+
+
+
+def upload_file_view(request):
+    if request.method == 'POST':
+        base_title = request.POST.get('title', '').strip()
+        uploaded_files = request.FILES.getlist('files')  # 'files' input name HTML me use karein
+
+        if not uploaded_files:
+            messages.error(request, "Kripya kam se kam ek file select karein!")
+            return redirect('upload_file')
+
+        MAX_UPLOAD_SIZE = 10 * 1024 * 1024  # 10 MB limit per file
+        oversized_files = []
+        valid_files = []
+
+        # Pehle sabhi files ka size check karein
+        for file in uploaded_files:
+            if file.size > MAX_UPLOAD_SIZE:
+                size_in_mb = round(file.size / (1024 * 1024), 2)
+                oversized_files.append(f"{file.name} ({size_in_mb} MB)")
+            else:
+                valid_files.append(file)
+
+        # Agar koi file size limit cross kare toh error dikhayein
+        if oversized_files:
+            messages.error(
+                request, 
+                f"Ye files 10 MB se badi hain: {', '.join(oversized_files)}. Kripya chhoti files upload karein."
+            )
+            return redirect('upload_file')
+
+        for index, file in enumerate(valid_files, start=1):
+            final_title = f"{base_title} - {file.name}" if base_title else file.name
+
+            asset = UploadedAsset(title=final_title, file=file)
+            asset.save()
+
+        messages.success(request, f"{len(valid_files)} files Cloudinary par successfully upload ho gayi hain!")
+        return redirect('upload_file')
+
+    search_query = request.GET.get('q', '').strip()
+    assets_queryset = UploadedAsset.objects.all().order_by('title')
+    if search_query:
+        assets_queryset = assets_queryset.filter(title__icontains=search_query)
+
+    paginator = Paginator(assets_queryset, 10)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    return render(request, 'upload_file.html', {
+        'page_obj': page_obj,
+        'search_query': search_query,
+        'total_count': assets_queryset.count()
+    })
+    
+
+def upload_file_delete_view(request, pk):
+    asset = get_object_or_404(UploadedAsset, pk=pk)
+    
+    if request.method == 'POST':
+        try:
+            public_id = None
+            if hasattr(asset.file, 'public_id'):
+                public_id = asset.file.public_id
+            else:
+                url_str = str(asset.file_url)
+                if 'upload/' in url_str:
+                    path_after_upload = url_str.split('upload/')[-1]
+                    parts = path_after_upload.split('/')
+                    if parts[0].startswith('v') and parts[0][1:].isdigit():
+                        parts = parts[1:]
+                    file_with_ext = '/'.join(parts)
+                    public_id = file_with_ext.rsplit('.', 1)[0]
+
+            if public_id:
+                r_type = 'raw' if asset.file_type.lower() in ['pdf', 'doc', 'docx', 'zip'] else 'image'
+                result = cloudinary.uploader.destroy(public_id, resource_type=r_type, invalidate=True)
+                if result.get('result') != 'ok' and r_type == 'raw':
+                    cloudinary.uploader.destroy(public_id, resource_type='image', invalidate=True)
+            asset_title = asset.title
+            asset.delete()
+            messages.success(request, f"'{asset_title}' Cloudinary aur Database dono se successfully delete ho gaya!")
+
+        except Exception as e:
+            asset.delete()
+            messages.warning(request, f"File database se delete ho gayi, par Cloudinary sync warning: {str(e)}")
+
+    return redirect('upload_file')

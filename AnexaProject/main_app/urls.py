@@ -23,5 +23,6 @@ urlpatterns = [
     path('services/glass-works/', views.service_glass_works, name='service_glass_works'),
     path('services/special-facade-works/', views.service_special_facade_works, name='service_special_facade_works'),
     path('services/facade-engineering-execution/', views.service_engineering_execution, name='service_engineering_execution'),
-    
+    path('upload-file/', views.upload_file_view, name='upload_file'),
+    path('upload-file/delete/<int:pk>/', views.upload_file_delete_view, name='delete_asset'),
 ]
