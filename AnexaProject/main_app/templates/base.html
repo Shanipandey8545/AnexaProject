@@ -13,28 +13,18 @@
     />
     <meta name="google-site-verification" content="mFNubB9Khnqv2-a9Kd8Opnxv-V1W_Ij53Rm_0MxErek" />
 
-    <!-- Favicon -->
-<!-- Favicon Links for Google & Browsers -->
-    <!-- <link rel="shortcut icon" href="{{ request.scheme }}://{{ request.get_host }}{% static 'images/logo.png' %}" />
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ request.scheme }}://{{ request.get_host }}{% static 'images/logo.png' %}" />
-    <link rel="icon" type="image/png" sizes="192x192" href="{{ request.scheme }}://{{ request.get_host }}{% static 'images/logo.png' %}" />
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ request.scheme }}://{{ request.get_host }}{% static 'images/logo.png' %}" /> -->
+    <!-- Favicon Links for Google Search & Browsers -->
+    <link rel="icon" type="image/png" sizes="32x32" href="https://res.cloudinary.com/i5cpm5ml/image/upload/ar_1:1,c_pad,b_white,f_png/v1/media/anexa_assets/logo_s8l6no" />
+    <link rel="icon" type="image/png" sizes="48x48" href="https://res.cloudinary.com/i5cpm5ml/image/upload/ar_1:1,c_pad,b_white,f_png/v1/media/anexa_assets/logo_s8l6no" />
+    <link rel="icon" type="image/png" sizes="192x192" href="https://res.cloudinary.com/i5cpm5ml/image/upload/ar_1:1,c_pad,b_white,f_png/v1/media/anexa_assets/logo_s8l6no" />
+    <link rel="shortcut icon" href="https://res.cloudinary.com/i5cpm5ml/image/upload/ar_1:1,c_pad,b_white,f_png/v1/media/anexa_assets/logo_s8l6no" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://res.cloudinary.com/i5cpm5ml/image/upload/ar_1:1,c_pad,b_white,f_png/v1/media/anexa_assets/logo_s8l6no" />
 
-
-<!-- Favicon Links for Google Search & Browsers -->
-<link rel="icon" type="image/png" sizes="32x32" href="https://res.cloudinary.com/i5cpm5ml/image/upload/ar_1:1,c_pad,b_white,f_png/v1/media/anexa_assets/logo_s8l6no" />
-<link rel="icon" type="image/png" sizes="48x48" href="https://res.cloudinary.com/i5cpm5ml/image/upload/ar_1:1,c_pad,b_white,f_png/v1/media/anexa_assets/logo_s8l6no" />
-<link rel="icon" type="image/png" sizes="192x192" href="https://res.cloudinary.com/i5cpm5ml/image/upload/ar_1:1,c_pad,b_white,f_png/v1/media/anexa_assets/logo_s8l6no" />
-<link rel="shortcut icon" href="https://res.cloudinary.com/i5cpm5ml/image/upload/ar_1:1,c_pad,b_white,f_png/v1/media/anexa_assets/logo_s8l6no" />
-<link rel="apple-touch-icon" sizes="180x180" href="https://res.cloudinary.com/i5cpm5ml/image/upload/ar_1:1,c_pad,b_white,f_png/v1/media/anexa_assets/logo_s8l6no" />
-    <!-- Open Graph (WhatsApp, LinkedIn, Facebook Link Preview) -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="ANEXA Facade Systems LLP" />
     <meta property="og:title" content="{% block og_title %}ANEXA Facade Systems LLP | Building Better Facades{% endblock %}" />
     <meta property="og:description" content="{% block og_description %}Architectural facade engineering, unitized curtain walls, FR ACP cladding, structural spider glazing, and custom louvers.{% endblock %}" />
-    <!-- <meta property="og:image" content="https://www.anexafacade.com{% static 'images/logo.png' %}" />
-    <meta property="og:image:secure_url" content="https://www.anexafacade.com{% static 'images/logo.png' %}" /> -->
-
     <meta property="og:image" content="https://res.cloudinary.com/i5cpm5ml/image/upload/f_auto,q_auto/v1/media/anexa_assets/logo_s8l6no" />
     <meta property="og:image:secure_url" content="https://res.cloudinary.com/i5cpm5ml/image/upload/f_auto,q_auto/v1/media/anexa_assets/logo_s8l6no" />
     <meta property="og:image:type" content="image/png" />
@@ -46,7 +36,6 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="ANEXA Facade Systems LLP" />
     <meta name="twitter:description" content="Architectural facade engineering, curtain walls, and structural glazing solutions." />
-    <!-- <meta name="twitter:image" content="https://www.anexafacade.com{% static 'images/logo.png' %}" /> -->
     <meta name="twitter:image" content="https://res.cloudinary.com/i5cpm5ml/image/upload/f_auto,q_auto/v1/media/anexa_assets/logo_s8l6no" />
 
     <!-- Google Fonts: Inter -->
@@ -57,10 +46,11 @@
       rel="stylesheet"
     />
 
-    <!-- Tailwind CSS CDN with Global Font Config -->
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
+        darkMode: 'class',
         theme: {
           extend: {
             fontFamily: {
@@ -74,17 +64,21 @@
           },
         },
       };
+
+      // Theme restore bina screen flicker ke
+      if (
+        localStorage.getItem('theme') === 'dark' ||
+        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+      ) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
     </script>
 
     <!-- Icons & Slider CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <style>
       body {
@@ -99,10 +93,10 @@
       }
 
       /* =========================================================
-         SAFE TARGETED FIX: NO CUTTING, NO BLACK BARS & FULL CARDS
+         SAFE TARGETED FIX: ORIGINAL ASSET RATIOS UNTOUCHED
          ========================================================= */
 
-      /* 1. Sub-services pages ke left/right image containers */
+      /* 1. Sub-services pages ke image containers */
       .grid > div.rounded-3xl.overflow-hidden:not(.dossier-card),
       .solution-image-container {
         height: auto !important;
@@ -124,7 +118,7 @@
         display: block !important;
       }
 
-      /* 3. Services Page (.dossier-card) ko safe rakhna taaki content na chhipe */
+      /* 3. Services Page (.dossier-card) safe fix */
       .dossier-card {
         height: auto !important;
         aspect-ratio: auto !important;
@@ -137,7 +131,7 @@
         object-fit: cover !important;
       }
 
-      /* 4. Large screens par crisp 16:9.5 balance */
+      /* 4. Large screens 16:9.5 balance */
       @media (min-width: 1024px) {
         .grid > div.rounded-3xl.overflow-hidden:not(.dossier-card),
         .solution-image-container {
@@ -145,16 +139,76 @@
         }
       }
 
-      /* 5. Hero slider & full top banners */
+      /* 5. Hero slider & full top banners (untouched & intact) */
       .swiper-slide img,
       .relative.bg-slate-900 img,
       .relative.bg-slate-950 img {
         object-fit: cover !important;
       }
+
+      /* =========================================================
+         SAFE GLOBAL DARK MODE (Does not touch sliders or images)
+         ========================================================= */
+      .dark body {
+        background-color: #0b1329 !important;
+        color: #e2e8f0 !important;
+      }
+
+      /* Sirf plain white sections & cards dark banenge (Sliders/Banners safe rahenge) */
+      .dark section.bg-white,
+      .dark div.bg-white:not(.swiper-slide):not([class*="hero"]) {
+        background-color: #0f172a !important;
+        border-color: #1e293b !important;
+      }
+
+      .dark section.bg-slate-50,
+      .dark div.bg-slate-50,
+      .dark section.bg-gray-50,
+      .dark div.bg-gray-50 {
+        background-color: #151f38 !important;
+        border-color: #1e293b !important;
+      }
+
+      /* Sliders ke text ko chhodkar baki dark text automatically readable white/slate ho jaye */
+      .dark h1:not(.swiper-slide *),
+      .dark h2:not(.swiper-slide *),
+      .dark h3:not(.swiper-slide *),
+      .dark h4:not(.swiper-slide *),
+      .dark .text-gray-900,
+      .dark .text-slate-900,
+      .dark .text-gray-800,
+      .dark .text-slate-800 {
+        color: #f8fafc !important;
+      }
+
+      .dark p:not(.swiper-slide *):not(.swiper-slide),
+      .dark span:not(.swiper-slide *):not(.badge),
+      .dark .text-gray-600,
+      .dark .text-slate-600,
+      .dark .text-gray-700,
+      .dark .text-slate-700 {
+        color: #94a3b8 !important;
+      }
+
+      .dark .border-gray-200,
+      .dark .border-gray-100,
+      .dark .border-slate-200,
+      .dark .border-slate-100 {
+        border-color: #334155 !important;
+      }
+
+      /* Form input elements */
+      .dark input:not([type="submit"]):not([type="button"]),
+      .dark textarea,
+      .dark select {
+        background-color: #1e293b !important;
+        border-color: #475569 !important;
+        color: #f8fafc !important;
+      }
     </style>
     {% block extra_css %}{% endblock %}
   </head>
-  <body class="flex flex-col min-h-screen font-sans text-gray-800 bg-white antialiased">
+  <body class="flex flex-col min-h-screen font-sans text-gray-800 bg-white antialiased transition-colors duration-200">
     
     <!-- Top Contact Bar -->
     <div class="bg-black text-gray-300 text-xs py-2 px-4 border-b border-neutral-800">
@@ -180,7 +234,7 @@
     </div>
 
     <!-- Main Navigation Header -->
-    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-200">
+    <header class="sticky top-0 z-50 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md shadow-sm border-b border-gray-200 dark:border-slate-800 transition-colors duration-200">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-20">
           
@@ -189,58 +243,77 @@
             <img
               src="https://res.cloudinary.com/i5cpm5ml/image/upload/f_auto,q_auto/v1/media/anexa_assets/logo_s8l6no"
               alt="ANEXA Facade Systems Logo"
-              class="h-10 sm:h-11 w-auto object-contain"
+              class="h-10 sm:h-11 w-auto object-contain bg-white dark:bg-white/95 p-1 rounded"
               onerror="this.src='https://placehold.co/180x48?text=ANEXA+FACADE'"
             />
-            <div class="hidden sm:block border-l pl-3 border-gray-300">
-              <span class="block text-xs font-black tracking-widest text-brandDark uppercase group-hover:text-sky-600 transition">ANEXA FAÇADE SYSTEMS</span>
-              <span class="block text-[10px] text-gray-500 tracking-wider uppercase">Building Better Facades</span>
+            <div class="hidden sm:block border-l pl-3 border-gray-300 dark:border-slate-700">
+              <span class="block text-xs font-black tracking-widest text-brandDark dark:text-white uppercase group-hover:text-sky-600 transition">ANEXA FAÇADE SYSTEMS</span>
+              <span class="block text-[10px] text-gray-500 dark:text-gray-400 tracking-wider uppercase">Building Better Facades</span>
             </div>
           </a>
 
           <!-- Desktop Navigation Menu -->
-          <nav class="hidden lg:flex items-center gap-0.5 xl:gap-1 text-[10px] font-bold tracking-wider text-gray-700">
-            <!-- <a href="{% url 'home' %}" class="px-2 py-1.5 rounded hover:text-sky-600 hover:bg-slate-50 transition">HOME</a> -->
-            <a href="{% url 'about' %}" class="px-2 py-1.5 rounded hover:text-sky-600 hover:bg-slate-50 transition">ABOUT</a>
-            <a href="{% url 'our_solutions' %}" class="px-2 py-1.5 rounded hover:text-sky-600 hover:bg-slate-50 transition">SERVICES</a>
-            <a href="{% url 'quality_safety' %}" class="px-2 py-1.5 rounded hover:text-sky-600 hover:bg-slate-50 transition">INFRASTRUCTURE</a>
-            <a href="{% url 'why_anexa' %}" class="px-2 py-1.5 rounded hover:text-sky-600 hover:bg-slate-50 transition">WHY ANEXA</a>
-            <a href="{% url 'leadership_contact' %}" class="ml-1 bg-brandDark hover:bg-sky-600 text-white px-3 py-1.5 rounded shadow-sm transition">CONTACT</a>
+          <nav class="hidden lg:flex items-center gap-0.5 xl:gap-1 text-[10px] font-bold tracking-wider text-gray-700 dark:text-gray-200">
+            <a href="{% url 'about' %}" class="px-2 py-1.5 rounded hover:text-sky-600 dark:hover:text-sky-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition">ABOUT</a>
+            <a href="{% url 'our_solutions' %}" class="px-2 py-1.5 rounded hover:text-sky-600 dark:hover:text-sky-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition">SERVICES</a>
+            <a href="{% url 'quality_safety' %}" class="px-2 py-1.5 rounded hover:text-sky-600 dark:hover:text-sky-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition">INFRASTRUCTURE</a>
+            <a href="{% url 'why_anexa' %}" class="px-2 py-1.5 rounded hover:text-sky-600 dark:hover:text-sky-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition">WHY ANEXA</a>
+            <a href="{% url 'leadership_contact' %}" class="ml-1 bg-brandDark hover:bg-sky-600 dark:bg-sky-600 dark:hover:bg-sky-500 text-white px-3 py-1.5 rounded shadow-sm transition">CONTACT</a>
+
+            <!-- Dark / Light Mode Toggle Button -->
+            <button
+              id="themeToggle"
+              type="button"
+              class="ml-2 p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-800 transition"
+              title="Toggle Dark/Light Mode"
+              aria-label="Toggle Theme"
+            >
+              <i id="themeIcon" class="fa-solid fa-moon text-sm"></i>
+            </button>
 
             {% if request.user.is_authenticated %}
-              <a href="{% url 'contact_list' %}" class="ml-1.5 bg-sky-50 text-sky-700 border border-sky-200 hover:bg-sky-600 hover:text-white px-2.5 py-1.5 rounded transition flex items-center gap-1">
+              <a href="{% url 'contact_list' %}" class="ml-1.5 bg-sky-50 dark:bg-sky-950/50 text-sky-700 dark:text-sky-300 border border-sky-200 dark:border-sky-800 hover:bg-sky-600 hover:text-white px-2.5 py-1.5 rounded transition flex items-center gap-1">
                 <i class="fa-solid fa-clipboard-list text-[11px]"></i>
                 <span>ENQUIRIES</span>
               </a>
-              <a href="{% url 'adminlogout' %}" class="ml-1 bg-rose-50 text-rose-600 border border-rose-200 hover:bg-rose-600 hover:text-white px-2.5 py-1.5 rounded transition flex items-center gap-1">
+              <a href="{% url 'adminlogout' %}" class="ml-1 bg-rose-50 dark:bg-rose-950/50 text-rose-600 dark:text-rose-300 border border-rose-200 dark:border-rose-800 hover:bg-rose-600 hover:text-white px-2.5 py-1.5 rounded transition flex items-center gap-1">
                 <i class="fa-solid fa-arrow-right-from-bracket text-[11px]"></i>
                 <span>LOGOUT</span>
               </a>
             {% endif %}
           </nav>
 
-          <!-- Mobile Hamburger Toggle -->
-          <button id="navToggle" type="button" class="lg:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100 focus:outline-none">
-            <i id="navToggleIcon" class="fa-solid fa-bars text-xl"></i>
-          </button>
+          <!-- Mobile Actions (Theme Toggle & Drawer Button) -->
+          <div class="flex items-center gap-1 lg:hidden">
+            <button
+              id="mobileThemeToggle"
+              type="button"
+              class="p-2 rounded-md text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-slate-800"
+              aria-label="Toggle Theme"
+            >
+              <i id="mobileThemeIcon" class="fa-solid fa-moon text-base"></i>
+            </button>
+            <button id="navToggle" type="button" class="p-2 rounded-md text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-slate-800 focus:outline-none">
+              <i id="navToggleIcon" class="fa-solid fa-bars text-xl"></i>
+            </button>
+          </div>
         </div>
       </div>
 
       <!-- Mobile Drawer Menu -->
-      <div id="mobileMenu" class="hidden lg:hidden bg-white border-t border-gray-200 px-5 py-4 space-y-2 text-xs font-bold uppercase text-gray-700 shadow-xl">
-        <!-- <a href="{% url 'home' %}" class="block py-2 border-b border-gray-100 hover:text-sky-600">HOME</a> -->
-        <a href="{% url 'about' %}" class="block py-2 border-b border-gray-100 hover:text-sky-600">ABOUT</a>
-        <a href="{% url 'our_solutions' %}" class="block py-2 border-b border-gray-100 hover:text-sky-600">SERVICES</a>
-        <a href="{% url 'quality_safety' %}" class="block py-2 border-b border-gray-100 hover:text-sky-600">INFRASTRUCTURE</a>
-        <a href="{% url 'why_anexa' %}" class="block py-2 border-b border-gray-100 hover:text-sky-600">WHY ANEXA</a>
-        <a href="{% url 'leadership_contact' %}" class="block py-2 border-b border-gray-100 text-sky-600">CONTACT</a>
+      <div id="mobileMenu" class="hidden lg:hidden bg-white dark:bg-slate-900 border-t border-gray-200 dark:border-slate-800 px-5 py-4 space-y-2 text-xs font-bold uppercase text-gray-700 dark:text-gray-200 shadow-xl">
+        <a href="{% url 'about' %}" class="block py-2 border-b border-gray-100 dark:border-slate-800 hover:text-sky-600">ABOUT</a>
+        <a href="{% url 'our_solutions' %}" class="block py-2 border-b border-gray-100 dark:border-slate-800 hover:text-sky-600">SERVICES</a>
+        <a href="{% url 'quality_safety' %}" class="block py-2 border-b border-gray-100 dark:border-slate-800 hover:text-sky-600">INFRASTRUCTURE</a>
+        <a href="{% url 'why_anexa' %}" class="block py-2 border-b border-gray-100 dark:border-slate-800 hover:text-sky-600">WHY ANEXA</a>
+        <a href="{% url 'leadership_contact' %}" class="block py-2 border-b border-gray-100 dark:border-slate-800 text-sky-600">CONTACT</a>
 
         {% if request.user.is_authenticated %}
           <div class="pt-2 flex flex-col gap-2">
-            <a href="{% url 'contact_list' %}" class="flex items-center justify-center gap-2 py-2.5 bg-sky-50 text-sky-700 border border-sky-200 rounded-lg">
+            <a href="{% url 'contact_list' %}" class="flex items-center justify-center gap-2 py-2.5 bg-sky-50 dark:bg-sky-950/40 text-sky-700 dark:text-sky-300 border border-sky-200 dark:border-sky-800 rounded-lg">
               <i class="fa-solid fa-clipboard-list"></i> ENQUIRIES LIST
             </a>
-            <a href="{% url 'adminlogout' %}" class="flex items-center justify-center gap-2 py-2.5 bg-rose-50 text-rose-600 border border-rose-200 rounded-lg">
+            <a href="{% url 'adminlogout' %}" class="flex items-center justify-center gap-2 py-2.5 bg-rose-50 dark:bg-rose-950/40 text-rose-600 dark:text-rose-300 border border-rose-200 dark:border-rose-800 rounded-lg">
               <i class="fa-solid fa-arrow-right-from-bracket"></i> LOGOUT
             </a>
           </div>
@@ -254,7 +327,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-brandDark text-gray-400 text-xs mt-auto">
+    <footer class="bg-brandDark text-gray-400 text-xs mt-auto border-t border-slate-800">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 grid grid-cols-1 md:grid-cols-4 gap-8">
         <div>
           <h4 class="text-white text-sm font-bold uppercase mb-2">ANEXA FACADE SYSTEMS LLP</h4>
@@ -295,16 +368,23 @@
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Instant.page: Link hover prefetch for fast 0-delay load -->
+    <script src="https://cdn.jsdelivr.net/npm/instant.page@5.2.0/instantpage.min.js" type="module" defer></script>
+    
     <script>
+      // 1. Mobile Menu Drawer Toggle
       const navToggle = document.getElementById("navToggle");
       const mobileMenu = document.getElementById("mobileMenu");
       const navToggleIcon = document.getElementById("navToggleIcon");
 
-      navToggle.addEventListener("click", () => {
-        const isHidden = mobileMenu.classList.toggle("hidden");
-        navToggleIcon.className = isHidden ? "fa-solid fa-bars text-xl" : "fa-solid fa-xmark text-xl";
-      });
+      if (navToggle) {
+        navToggle.addEventListener("click", () => {
+          const isHidden = mobileMenu.classList.toggle("hidden");
+          navToggleIcon.className = isHidden ? "fa-solid fa-bars text-xl" : "fa-solid fa-xmark text-xl";
+        });
+      }
 
+      // 2. Swiper Init
       document.addEventListener("DOMContentLoaded", function () {
         if (document.querySelector(".pageSwiper")) {
           new Swiper(".pageSwiper", {
@@ -314,6 +394,48 @@
           });
         }
       });
+
+      // 3. Same Page Click -> Smooth Fast Scroll to Top
+      document.querySelectorAll("header nav a, header a.group, #mobileMenu a").forEach((link) => {
+        link.addEventListener("click", function (e) {
+          const targetUrl = new URL(this.href, window.location.origin);
+          
+          if (targetUrl.pathname === window.location.pathname) {
+            e.preventDefault();
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth"
+            });
+            if (mobileMenu && !mobileMenu.classList.contains("hidden")) {
+              mobileMenu.classList.add("hidden");
+              navToggleIcon.className = "fa-solid fa-bars text-xl";
+            }
+          }
+        });
+      });
+
+      // 4. Dark / Light Mode Switch Logic
+      const themeToggle = document.getElementById("themeToggle");
+      const mobileThemeToggle = document.getElementById("mobileThemeToggle");
+      const themeIcon = document.getElementById("themeIcon");
+      const mobileThemeIcon = document.getElementById("mobileThemeIcon");
+
+      function updateThemeIcons(isDark) {
+        const iconClass = isDark ? "fa-solid fa-sun text-amber-400" : "fa-solid fa-moon text-gray-600";
+        if (themeIcon) themeIcon.className = `${iconClass} text-sm`;
+        if (mobileThemeIcon) mobileThemeIcon.className = `${iconClass} text-base`;
+      }
+
+      updateThemeIcons(document.documentElement.classList.contains("dark"));
+
+      function toggleTheme() {
+        const isDark = document.documentElement.classList.toggle("dark");
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+        updateThemeIcons(isDark);
+      }
+
+      if (themeToggle) themeToggle.addEventListener("click", toggleTheme);
+      if (mobileThemeToggle) mobileThemeToggle.addEventListener("click", toggleTheme);
     </script>
     {% block extra_js %}{% endblock extra_js %}
 
